@@ -2,27 +2,25 @@ import json
 
 ATTRIBUTES = ['name','race','alignment','location']
 TO_DELETE_SUB = ['hash','race','alignment','country']
-TO_DELETE=['ip','finger','levelGroup','spells','weapons','castingStat','hash']
+TO_DELETE=['ip','finger','background','levelGroup','spells','weapons','castingStat','hash']
 
 TO_COMPACT=['name','race','location']
 SUB_COMPACT=['alias','processedRace','countryCode']
 
-MISSING_VALUES_STR=['name','race','background','date','feats','alignment','skills','location']
+MISSING_VALUES_STR=['name','race','date','feats','alignment','skills','location']
 SUB_MISSING_VALUES_STR=['processedAlignment','lawful','good']
 
 MISSING_VALUES_INT=['level','HP','AC','attributes']
 SUB_MISSING_VALUES_INT=["Str","Dex","Con","Int","Wis","Cha"]
 
 
-filename = "dnd_chars_all"
-# filename = "dnd_chars_unique"
+# filename = "dnd_chars_all"
+filename = "dnd_chars_unique"
 
 with open(filename + ".json","r",encoding="utf-8") as f:
     data = json.load(f)
     class_count = {}
     race_count = {}
-    print(len(data))
-    exit()
     for character in data:
         sub_index = 0
         comp_index=0
