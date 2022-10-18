@@ -1,0 +1,19 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.player_filter{
+    grid-column: 1/-1;
+}
+
+.grid_charts,
+.grid_filters{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.vis3,
+.country_filter {
+    grid-column: 1/-1;
+  }
