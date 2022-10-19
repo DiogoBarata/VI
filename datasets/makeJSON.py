@@ -73,7 +73,7 @@ def class_align_json(one_class):
     id +=1
     for rel in relation:
         network_json['nodes'].append({'id':id,'name':rel})
-        network_json['links'].append({'source':1,'target':id,'distance':class_align_count[one_class][rel]*10})
+        network_json['links'].append({'source':1,'target':id,'distance':class_align_count[one_class][rel]})
         id+=1
     return network_json
 
