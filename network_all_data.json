@@ -1,0 +1,2242 @@
+{
+   "Class_Align": {
+      "Artificer": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Artificer"
+            },
+            {
+               "id": 2,
+               "name": "NG"
+            },
+            {
+               "id": 3,
+               "name": "LN"
+            },
+            {
+               "id": 4,
+               "name": "LG"
+            },
+            {
+               "id": 5,
+               "name": "NN"
+            },
+            {
+               "id": 6,
+               "name": "CN"
+            },
+            {
+               "id": 7,
+               "name": "CG"
+            },
+            {
+               "id": 8,
+               "name": "LE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            }
+         ]
+      },
+      "Barbarian": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Barbarian"
+            },
+            {
+               "id": 2,
+               "name": "CN"
+            },
+            {
+               "id": 3,
+               "name": "CG"
+            },
+            {
+               "id": 4,
+               "name": "NG"
+            },
+            {
+               "id": 5,
+               "name": "NN"
+            },
+            {
+               "id": 6,
+               "name": "NE"
+            },
+            {
+               "id": 7,
+               "name": "LG"
+            },
+            {
+               "id": 8,
+               "name": "LN"
+            },
+            {
+               "id": 9,
+               "name": "CE"
+            },
+            {
+               "id": 10,
+               "name": "LE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Bard": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Bard"
+            },
+            {
+               "id": 2,
+               "name": "CN"
+            },
+            {
+               "id": 3,
+               "name": "CG"
+            },
+            {
+               "id": 4,
+               "name": "NG"
+            },
+            {
+               "id": 5,
+               "name": "NE"
+            },
+            {
+               "id": 6,
+               "name": "LN"
+            },
+            {
+               "id": 7,
+               "name": "LG"
+            },
+            {
+               "id": 8,
+               "name": "NN"
+            },
+            {
+               "id": 9,
+               "name": "CE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            }
+         ]
+      },
+      "Cleric": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Cleric"
+            },
+            {
+               "id": 2,
+               "name": "CG"
+            },
+            {
+               "id": 3,
+               "name": "CN"
+            },
+            {
+               "id": 4,
+               "name": "NG"
+            },
+            {
+               "id": 5,
+               "name": "LG"
+            },
+            {
+               "id": 6,
+               "name": "LN"
+            },
+            {
+               "id": 7,
+               "name": "NE"
+            },
+            {
+               "id": 8,
+               "name": "NN"
+            },
+            {
+               "id": 9,
+               "name": "LE"
+            },
+            {
+               "id": 10,
+               "name": "CE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Druid": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Druid"
+            },
+            {
+               "id": 2,
+               "name": "CN"
+            },
+            {
+               "id": 3,
+               "name": "CG"
+            },
+            {
+               "id": 4,
+               "name": "LN"
+            },
+            {
+               "id": 5,
+               "name": "LG"
+            },
+            {
+               "id": 6,
+               "name": "NG"
+            },
+            {
+               "id": 7,
+               "name": "NE"
+            },
+            {
+               "id": 8,
+               "name": "NN"
+            },
+            {
+               "id": 9,
+               "name": "LE"
+            },
+            {
+               "id": 10,
+               "name": "CE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Fighter": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Fighter"
+            },
+            {
+               "id": 2,
+               "name": "CG"
+            },
+            {
+               "id": 3,
+               "name": "LG"
+            },
+            {
+               "id": 4,
+               "name": "LN"
+            },
+            {
+               "id": 5,
+               "name": "NG"
+            },
+            {
+               "id": 6,
+               "name": "NN"
+            },
+            {
+               "id": 7,
+               "name": "NE"
+            },
+            {
+               "id": 8,
+               "name": "CN"
+            },
+            {
+               "id": 9,
+               "name": "LE"
+            },
+            {
+               "id": 10,
+               "name": "CE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Monk": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Monk"
+            },
+            {
+               "id": 2,
+               "name": "NG"
+            },
+            {
+               "id": 3,
+               "name": "CG"
+            },
+            {
+               "id": 4,
+               "name": "CN"
+            },
+            {
+               "id": 5,
+               "name": "LN"
+            },
+            {
+               "id": 6,
+               "name": "NN"
+            },
+            {
+               "id": 7,
+               "name": "LG"
+            },
+            {
+               "id": 8,
+               "name": "NE"
+            },
+            {
+               "id": 9,
+               "name": "LE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            }
+         ]
+      },
+      "Paladin": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Paladin"
+            },
+            {
+               "id": 2,
+               "name": "LG"
+            },
+            {
+               "id": 3,
+               "name": "LE"
+            },
+            {
+               "id": 4,
+               "name": "CE"
+            },
+            {
+               "id": 5,
+               "name": "CG"
+            },
+            {
+               "id": 6,
+               "name": "NG"
+            },
+            {
+               "id": 7,
+               "name": "NN"
+            },
+            {
+               "id": 8,
+               "name": "CN"
+            },
+            {
+               "id": 9,
+               "name": "LN"
+            },
+            {
+               "id": 10,
+               "name": "NE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Ranger": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Ranger"
+            },
+            {
+               "id": 2,
+               "name": "CN"
+            },
+            {
+               "id": 3,
+               "name": "NG"
+            },
+            {
+               "id": 4,
+               "name": "CG"
+            },
+            {
+               "id": 5,
+               "name": "LG"
+            },
+            {
+               "id": 6,
+               "name": "LE"
+            },
+            {
+               "id": 7,
+               "name": "LN"
+            },
+            {
+               "id": 8,
+               "name": "NE"
+            },
+            {
+               "id": 9,
+               "name": "NN"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            }
+         ]
+      },
+      "Rogue": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Rogue"
+            },
+            {
+               "id": 2,
+               "name": "CN"
+            },
+            {
+               "id": 3,
+               "name": "CG"
+            },
+            {
+               "id": 4,
+               "name": "LN"
+            },
+            {
+               "id": 5,
+               "name": "LE"
+            },
+            {
+               "id": 6,
+               "name": "CE"
+            },
+            {
+               "id": 7,
+               "name": "NG"
+            },
+            {
+               "id": 8,
+               "name": "NN"
+            },
+            {
+               "id": 9,
+               "name": "LG"
+            },
+            {
+               "id": 10,
+               "name": "NE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Sorcerer": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 2,
+               "name": "CG"
+            },
+            {
+               "id": 3,
+               "name": "CN"
+            },
+            {
+               "id": 4,
+               "name": "NG"
+            },
+            {
+               "id": 5,
+               "name": "NN"
+            },
+            {
+               "id": 6,
+               "name": "NE"
+            },
+            {
+               "id": 7,
+               "name": "LN"
+            },
+            {
+               "id": 8,
+               "name": "LG"
+            },
+            {
+               "id": 9,
+               "name": "CE"
+            },
+            {
+               "id": 10,
+               "name": "LE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Warlock": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Warlock"
+            },
+            {
+               "id": 2,
+               "name": "CG"
+            },
+            {
+               "id": 3,
+               "name": "NG"
+            },
+            {
+               "id": 4,
+               "name": "LN"
+            },
+            {
+               "id": 5,
+               "name": "CE"
+            },
+            {
+               "id": 6,
+               "name": "NN"
+            },
+            {
+               "id": 7,
+               "name": "CN"
+            },
+            {
+               "id": 8,
+               "name": "NE"
+            },
+            {
+               "id": 9,
+               "name": "LG"
+            },
+            {
+               "id": 10,
+               "name": "LE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      },
+      "Wizard": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "Wizard"
+            },
+            {
+               "id": 2,
+               "name": "LG"
+            },
+            {
+               "id": 3,
+               "name": "CN"
+            },
+            {
+               "id": 4,
+               "name": "CG"
+            },
+            {
+               "id": 5,
+               "name": "NG"
+            },
+            {
+               "id": 6,
+               "name": "NN"
+            },
+            {
+               "id": 7,
+               "name": "LN"
+            },
+            {
+               "id": 8,
+               "name": "NE"
+            },
+            {
+               "id": 9,
+               "name": "LE"
+            },
+            {
+               "id": 10,
+               "name": "CE"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            }
+         ]
+      }
+   },
+   "Align_Class": {
+      "CG": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "CG"
+            },
+            {
+               "id": 2,
+               "name": "Fighter"
+            },
+            {
+               "id": 3,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 4,
+               "name": "Warlock"
+            },
+            {
+               "id": 5,
+               "name": "Monk"
+            },
+            {
+               "id": 6,
+               "name": "Cleric"
+            },
+            {
+               "id": 7,
+               "name": "Bard"
+            },
+            {
+               "id": 8,
+               "name": "Druid"
+            },
+            {
+               "id": 9,
+               "name": "Rogue"
+            },
+            {
+               "id": 10,
+               "name": "Barbarian"
+            },
+            {
+               "id": 11,
+               "name": "Wizard"
+            },
+            {
+               "id": 12,
+               "name": "Ranger"
+            },
+            {
+               "id": 13,
+               "name": "Artificer"
+            },
+            {
+               "id": 14,
+               "name": "Paladin"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 73
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 75
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 54
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 50
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 69
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 64
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 36
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 80
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 80
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 57
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 69
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 22
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 49
+            }
+         ]
+      },
+      "CN": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "CN"
+            },
+            {
+               "id": 2,
+               "name": "Druid"
+            },
+            {
+               "id": 3,
+               "name": "Rogue"
+            },
+            {
+               "id": 4,
+               "name": "Bard"
+            },
+            {
+               "id": 5,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 6,
+               "name": "Barbarian"
+            },
+            {
+               "id": 7,
+               "name": "Ranger"
+            },
+            {
+               "id": 8,
+               "name": "Wizard"
+            },
+            {
+               "id": 9,
+               "name": "Cleric"
+            },
+            {
+               "id": 10,
+               "name": "Monk"
+            },
+            {
+               "id": 11,
+               "name": "Artificer"
+            },
+            {
+               "id": 12,
+               "name": "Fighter"
+            },
+            {
+               "id": 13,
+               "name": "Warlock"
+            },
+            {
+               "id": 14,
+               "name": "Paladin"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 40
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 158
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 60
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 73
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 83
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 47
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 41
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 27
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 30
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 8
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 100
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 70
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 11
+            }
+         ]
+      },
+      "LG": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "LG"
+            },
+            {
+               "id": 2,
+               "name": "Fighter"
+            },
+            {
+               "id": 3,
+               "name": "Paladin"
+            },
+            {
+               "id": 4,
+               "name": "Wizard"
+            },
+            {
+               "id": 5,
+               "name": "Cleric"
+            },
+            {
+               "id": 6,
+               "name": "Artificer"
+            },
+            {
+               "id": 7,
+               "name": "Druid"
+            },
+            {
+               "id": 8,
+               "name": "Rogue"
+            },
+            {
+               "id": 9,
+               "name": "Ranger"
+            },
+            {
+               "id": 10,
+               "name": "Barbarian"
+            },
+            {
+               "id": 11,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 12,
+               "name": "Warlock"
+            },
+            {
+               "id": 13,
+               "name": "Bard"
+            },
+            {
+               "id": 14,
+               "name": "Monk"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 46
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 69
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 14
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 73
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 5
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 19
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 7
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 22
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 12
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 13
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 4
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 9
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 25
+            }
+         ]
+      },
+      "NG": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "NG"
+            },
+            {
+               "id": 2,
+               "name": "Monk"
+            },
+            {
+               "id": 3,
+               "name": "Warlock"
+            },
+            {
+               "id": 4,
+               "name": "Cleric"
+            },
+            {
+               "id": 5,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 6,
+               "name": "Bard"
+            },
+            {
+               "id": 7,
+               "name": "Artificer"
+            },
+            {
+               "id": 8,
+               "name": "Barbarian"
+            },
+            {
+               "id": 9,
+               "name": "Wizard"
+            },
+            {
+               "id": 10,
+               "name": "Ranger"
+            },
+            {
+               "id": 11,
+               "name": "Rogue"
+            },
+            {
+               "id": 12,
+               "name": "Fighter"
+            },
+            {
+               "id": 13,
+               "name": "Paladin"
+            },
+            {
+               "id": 14,
+               "name": "Druid"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 49
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 48
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 80
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 30
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 40
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 14
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 28
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 44
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 39
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 37
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 77
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 46
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 50
+            }
+         ]
+      },
+      "LN": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "LN"
+            },
+            {
+               "id": 2,
+               "name": "Fighter"
+            },
+            {
+               "id": 3,
+               "name": "Rogue"
+            },
+            {
+               "id": 4,
+               "name": "Druid"
+            },
+            {
+               "id": 5,
+               "name": "Artificer"
+            },
+            {
+               "id": 6,
+               "name": "Warlock"
+            },
+            {
+               "id": 7,
+               "name": "Monk"
+            },
+            {
+               "id": 8,
+               "name": "Cleric"
+            },
+            {
+               "id": 9,
+               "name": "Wizard"
+            },
+            {
+               "id": 10,
+               "name": "Ranger"
+            },
+            {
+               "id": 11,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 12,
+               "name": "Barbarian"
+            },
+            {
+               "id": 13,
+               "name": "Paladin"
+            },
+            {
+               "id": 14,
+               "name": "Bard"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 48
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 17
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 17
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 8
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 23
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 22
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 36
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 25
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 32
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 10
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 24
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 60
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 6
+            }
+         ]
+      },
+      "LE": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "LE"
+            },
+            {
+               "id": 2,
+               "name": "Paladin"
+            },
+            {
+               "id": 3,
+               "name": "Rogue"
+            },
+            {
+               "id": 4,
+               "name": "Ranger"
+            },
+            {
+               "id": 5,
+               "name": "Fighter"
+            },
+            {
+               "id": 6,
+               "name": "Warlock"
+            },
+            {
+               "id": 7,
+               "name": "Cleric"
+            },
+            {
+               "id": 8,
+               "name": "Artificer"
+            },
+            {
+               "id": 9,
+               "name": "Wizard"
+            },
+            {
+               "id": 10,
+               "name": "Barbarian"
+            },
+            {
+               "id": 11,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 12,
+               "name": "Druid"
+            },
+            {
+               "id": 13,
+               "name": "Monk"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 12
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 20
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 5
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 10
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 8
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 7
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 6
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 2
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 2
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 2
+            }
+         ]
+      },
+      "CE": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "CE"
+            },
+            {
+               "id": 2,
+               "name": "Paladin"
+            },
+            {
+               "id": 3,
+               "name": "Rogue"
+            },
+            {
+               "id": 4,
+               "name": "Warlock"
+            },
+            {
+               "id": 5,
+               "name": "Barbarian"
+            },
+            {
+               "id": 6,
+               "name": "Fighter"
+            },
+            {
+               "id": 7,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 8,
+               "name": "Cleric"
+            },
+            {
+               "id": 9,
+               "name": "Wizard"
+            },
+            {
+               "id": 10,
+               "name": "Bard"
+            },
+            {
+               "id": 11,
+               "name": "Druid"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 4
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 6
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 7
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 4
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 13
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 1
+            }
+         ]
+      },
+      "NN": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "NN"
+            },
+            {
+               "id": 2,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 3,
+               "name": "Fighter"
+            },
+            {
+               "id": 4,
+               "name": "Artificer"
+            },
+            {
+               "id": 5,
+               "name": "Wizard"
+            },
+            {
+               "id": 6,
+               "name": "Warlock"
+            },
+            {
+               "id": 7,
+               "name": "Barbarian"
+            },
+            {
+               "id": 8,
+               "name": "Rogue"
+            },
+            {
+               "id": 9,
+               "name": "Monk"
+            },
+            {
+               "id": 10,
+               "name": "Paladin"
+            },
+            {
+               "id": 11,
+               "name": "Cleric"
+            },
+            {
+               "id": 12,
+               "name": "Druid"
+            },
+            {
+               "id": 13,
+               "name": "Bard"
+            },
+            {
+               "id": 14,
+               "name": "Ranger"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 12
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 45
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 9
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 32
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 31
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 24
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 60
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 28
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 13
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 13
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 35
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 15
+            },
+            {
+               "source": 1,
+               "target": 14,
+               "distance": 27
+            }
+         ]
+      },
+      "NE": {
+         "nodes": [
+            {
+               "id": 1,
+               "name": "NE"
+            },
+            {
+               "id": 2,
+               "name": "Fighter"
+            },
+            {
+               "id": 3,
+               "name": "Sorcerer"
+            },
+            {
+               "id": 4,
+               "name": "Barbarian"
+            },
+            {
+               "id": 5,
+               "name": "Bard"
+            },
+            {
+               "id": 6,
+               "name": "Warlock"
+            },
+            {
+               "id": 7,
+               "name": "Cleric"
+            },
+            {
+               "id": 8,
+               "name": "Druid"
+            },
+            {
+               "id": 9,
+               "name": "Wizard"
+            },
+            {
+               "id": 10,
+               "name": "Rogue"
+            },
+            {
+               "id": 11,
+               "name": "Ranger"
+            },
+            {
+               "id": 12,
+               "name": "Paladin"
+            },
+            {
+               "id": 13,
+               "name": "Monk"
+            }
+         ],
+         "links": [
+            {
+               "source": 1,
+               "target": 2,
+               "distance": 15
+            },
+            {
+               "source": 1,
+               "target": 3,
+               "distance": 6
+            },
+            {
+               "source": 1,
+               "target": 4,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 5,
+               "distance": 4
+            },
+            {
+               "source": 1,
+               "target": 6,
+               "distance": 18
+            },
+            {
+               "source": 1,
+               "target": 7,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 8,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 9,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 10,
+               "distance": 9
+            },
+            {
+               "source": 1,
+               "target": 11,
+               "distance": 3
+            },
+            {
+               "source": 1,
+               "target": 12,
+               "distance": 1
+            },
+            {
+               "source": 1,
+               "target": 13,
+               "distance": 3
+            }
+         ]
+      }
+   }
+}
