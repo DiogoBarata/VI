@@ -10,8 +10,8 @@
 <script>
   // set the dimensions and margins of the graph
   const margin = {top: 10, right: 30, bottom: 30, left: 40},
-      width = 400 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+      width = 500 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
     
   // append the svg object to the body of the page
   const svg = d3.select("#my_dataviz")
@@ -28,23 +28,24 @@
       .data(data.Class_Align.Artificer.links)
       .join("line")
       .style("stroke", "#aaa")
-    console.log(data)
+    
     // Initialize the nodes
     const node = svg
       .selectAll("circle")
       .data(data.Class_Align.Artificer.nodes)
       .join("circle")
       .attr("r", 20)
-      .style("fill", "#69b3a2")
+      .attr("stroke", "black")
+      .style("fill", "white")
 
     // Let's list the force we wanna apply on the network
     const simulation = d3.forceSimulation(data.Class_Align.Artificer.nodes)         // Force algorithm is applied to data.nodes
-      .force("link", d3.forceLink()                           // This force provides links between nodes
+      .force("link", d3.forceLink()                                                 // This force provides links between nodes
       .distance(linkDistance)      
-      .id(function(d) { return d.id; })                       // This provide  the id of a node
+      .id(function(d) { return d.id; })                                             // This provide  the id of a node
       .links(data.Class_Align.Artificer.links)                                      // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-400))     // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-500))     // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
       .on("end", ticked);
       
