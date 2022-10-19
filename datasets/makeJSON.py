@@ -46,7 +46,7 @@ def class_align(data,char):
                 if char_class not in class_align_count:
                     class_align_count[char_class] = {aux_align:1}
                 else:
-                    if aux_align[0] not in class_align_count[char_class]:
+                    if aux_align not in class_align_count[char_class]:
                         class_align_count[char_class][aux_align] = 1
                     else:
                         class_align_count[char_class][aux_align] += 1
