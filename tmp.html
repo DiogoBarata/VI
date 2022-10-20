@@ -1,75 +1,173 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="en">
 
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v7.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+	<div id="view"></div>
+	<!-- <form>
+		<div class="multiselect">
+		  <div class="selectBox" onclick="showCheckboxes()">
+			<select>
+			  <option>Select an option</option>
+			</select>
+			<div class="overSelect"></div>
+		  </div>
+		  <div id="checkboxes">
+			<label for="one">
+			  <input type="checkbox" id="one" />First checkbox</label>
+			<label for="two">
+			  <input type="checkbox" id="two" />Second checkbox</label>
+			<label for="three">
+			  <input type="checkbox" id="three" />Third checkbox</label>
+		  </div>
+		</div>
+	  </form> -->
+</body>
 
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+
+<!-- <script>
+	var expanded = false;
+
+	function showCheckboxes() {
+	var checkboxes = document.getElementById("checkboxes");
+	if (!expanded) {
+		checkboxes.style.display = "block";
+		expanded = true;
+	} else {
+		checkboxes.style.display = "none";
+		expanded = false;
+	}
+	}
+</script>
+<style>
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style> -->
 
 <script>
-	// set the dimensions and margins of the graph
-	margin = {top: 10, right: 30, bottom: 30, left: 40},
-	width = 500 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
-	
-	// append the svg object to the body of the page
-	const svg = d3.select("#my_dataviz")
-		.append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("class","node")
-		.attr("transform",`translate(${margin.left}, ${margin.top})`);
+	// Node content
+	function renderNode(selection, rcd) {
+		selection.append('input')
+    		.attr('type', 'checkbox')
+    		.on('change', function () {
+      			d3.select('#selected')
+				.text(checkboxValues(d3.select('#view')));
+    		});
+		selection.append('span')
+    		.text(rcd.id);
+	}
+	// Return array of ids that is checked
+	function checkboxValues(selection) {
+		console.log(selection.select('.body')
+			.selectAll('input:checked').data().map(d => d.id));
+		return selection.select('.body')
+			.selectAll('input:checked').data().map(d => d.id);
+	}
+	// Recursively append child nodes
+	function nextLevel(selection, node) {
+		const label = selection.append('span');
+		const arrow = label.append('span').classed('arrow', true);
+		label.call(renderNode, node.data);
+		if (!node.hasOwnProperty('children')) return;
+		const items = selection.append('ul')
+			.style('list-style-type', 'none')
+			.selectAll('li')
+			.data(node.children, d => d.id);
+		items.exit().remove();
+		items.enter()
+			.append('li').merge(items)
+			.each(function (d) {
+				d3.select(this).call(nextLevel, d);
+			});
+		label.select('.arrow')
+			.text('▼ ')
+			.on('click', function () {  // Collapse on click
+				const childList = selection.select('ul');
+				if (!childList.size()) return;
+				const expanded = childList.style('display') !== 'none';
+				d3.select(this).text(expanded ? '▶ ' : '▼ ');
+				childList.style('display', expanded ? 'none' : 'inherit');
+			});
+	}
+	// Generate tree view
+	function tree(selection) {
+		selection
+			.classed('viewport', true)
+			.style('overflow-y', 'scroll')
+			.style('height', '500px')
+			.append('div')
+			.classed('body', true)
+			.style('transform', 'scale(1.5)')
+			.style('transform-origin', 'top left');
+	}
+	// Update tree data
+	function updateTree(selection, items) {
+		const root = d3.stratify()
+			.id(d => d.id)
+			.parentId(d => d.parent)(items);
+		selection.select('.body')
+			.call(nextLevel, root);
+		// Remove dummy root node
+		selection.select('.body > span').remove();
+		selection.select('.body > ul').style('padding-left', 0);
+	}
+	var data = {
+		"Classes": [
+			{"id": "root"},
+			{"id": "Classes", "parent":"root"},
+			{"id": "Artificer", "parent": "Classes"},
+			{"id": "Barbarian", "parent": "Classes"},
+			{"id": "Bard", "parent": "Classes"},
+			{"id": "Cleric", "parent": "Classes"},
+			{"id": "Druid", "parent": "Classes"},
+			{"id": "Fighter", "parent": "Classes"},
+			{"id": "Monk", "parent": "Classes"},
+			{"id": "Paladin", "parent": "Classes"},
+			{"id": "Ranger", "parent": "Classes"},
+			{"id": "Rogue", "parent": "Classes"},
+			{"id": "Sorcerer", "parent": "Classes"},
+			{"id": "Warlock", "parent": "Classes"},
+			{"id": "Wizard", "parent": "Classes"}
+		]
+	}
+	// Render
+	d3.select('#view div').remove();
+	d3.select('#view').append('div')
+		.call(tree)
+		.call(updateTree, data['Classes']);
 
-	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/network_all_data.json").then(function(data) {
-
-		// Initialize the links
-		var link = svg
-			.selectAll("line")
-			.data(data.Class_Align.Artificer.links)
-			.join("line")
-			.style("stroke", "#aaa");
-
-		// Initialize the nodes
-		var node = svg.selectAll(".node")
-			.data(data.Class_Align.Artificer.nodes)
-			.enter().append("g")
-			.attr("class","node")
-		node.append("circle")
-			.attr("r",15)
-			.attr("stroke", "green")
-			.style("fill", "green")
-		node.append("text")
-			.text(function(d){ return d.name;})
-		
-		// Initialize the network
-		const simulation = d3.forceSimulation(data.Class_Align.Artificer.nodes)         // Force algorithm is applied to nodes
-			.force("link", d3.forceLink()                                               // This force provides links between nodes
-			.distance(linkDistance)      
-			.id(function(d) { return d.id; })                                           // This provide  the id of a node
-			.links(data.Class_Align.Artificer.links)                                    // and this the list of links
-			)
-			.force("charge", d3.forceManyBody().strength(-1000))     					// This adds repulsion between nodes
-			.force("center", d3.forceCenter(width / 2, height / 2)) 					// This force attracts nodes to the center of the svg area
-			.on("end", ticked);
-
-		function linkDistance(d) {
-			return d.distance;
-		}
-
-		// This function is run at each iteration of the force algorithm, updating the nodes position.
-		function ticked() {
-			link
-				.attr("x1", d => d.source.x)
-				.attr("y1", d => d.source.y)
-				.attr("x2", d => d.target.x)
-				.attr("y2", d => d.target.y);
-
-			node
-				.attr("transform", d => `translate(${d.x},${d.y})`);
-		}
-
-	});
-  
 </script>
