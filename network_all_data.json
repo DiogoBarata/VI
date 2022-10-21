@@ -1,5 +1,5 @@
 {
-  "Class_Align": {
+  "Class_Alignment": {
     "Artificer": {
       "nodes": [
         {
@@ -9979,7 +9979,7 @@
       ]
     }
   },
-  "Race_Align": {
+  "Race_Alignment": {
     "Aarakocra": {
       "nodes": [
         {
@@ -12468,7 +12468,7 @@
       ]
     }
   },
-  "Align_Class": {
+  "Alignment_Class": {
     "CG": {
       "nodes": [
         {
@@ -13568,7 +13568,7 @@
       ]
     }
   },
-  "Align_Race": {
+  "Alignment_Race": {
     "CG": {
       "nodes": [
         {

@@ -165,7 +165,7 @@ with open(filename,"r",encoding="utf-8") as f:
     for fun_class in CLASSES:
         class_align_json[fun_class] = create_json(fun_class,class_align_count)
         class_race_json[fun_class] = create_json(fun_class,class_race_count)
-    new_json['Class_Align'] = class_align_json
+    new_json['Class_Alignment'] = class_align_json
     new_json['Class_Race'] = class_race_json
     
     race_class_json = {}
@@ -174,15 +174,15 @@ with open(filename,"r",encoding="utf-8") as f:
         race_class_json[fun_race] = create_json(fun_race, race_class_count)
         race_align_json[fun_race] = create_json(fun_race, race_align_count)
     new_json['Race_Class'] = race_class_json
-    new_json['Race_Align'] = race_align_json
+    new_json['Race_Alignment'] = race_align_json
 
     align_class_json = {}
     align_race_json = {}
     for fun_align in ALIGNS:
         align_class_json[fun_align] = create_json(fun_align,align_class_count)
         align_race_json[fun_align] = create_json(fun_align,align_race_count)
-    new_json['Align_Class'] = align_class_json
-    new_json['Align_Race'] = align_race_json
+    new_json['Alignment_Class'] = align_class_json
+    new_json['Alignment_Race'] = align_race_json
 
 
 with open('network_all_data.json',"w") as f:
