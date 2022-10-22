@@ -1,91 +1,24 @@
-const margin = {top: 10, right: 30, bottom: 30, left: 40},
-      width = 500 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
 const options = {
-    "Classes": [
-        {"id": "root"},
-        {"id": "Classes", "parent":"root"},
-        {"id": "Artificer", "parent": "Classes"},
-        {"id": "Barbarian", "parent": "Classes"},
-        {"id": "Bard", "parent": "Classes"},
-        {"id": "Cleric", "parent": "Classes"},
-        {"id": "Druid", "parent": "Classes"},
-        {"id": "Fighter", "parent": "Classes"},
-        {"id": "Monk", "parent": "Classes"},
-        {"id": "Paladin", "parent": "Classes"},
-        {"id": "Ranger", "parent": "Classes"},
-        {"id": "Rogue", "parent": "Classes"},
-        {"id": "Sorcerer", "parent": "Classes"},
-        {"id": "Warlock", "parent": "Classes"},
-        {"id": "Wizard", "parent": "Classes"}
-    ],
-    "Races": [
-        {"id": "root"},
-        {"id": "Races", "parent":"root"},
-        {"id":"Aarakocra", "parent":"Races"},
-        {"id":"Aasimar", "parent":"Races"},
-        {"id":"Bugbear", "parent":"Races"},
-        {"id":"Centaur", "parent":"Races"},
-        {"id":"Changeling", "parent":"Races"},
-        {"id":"Custom", "parent":"Races"},
-        {"id":"Dragonborn", "parent":"Races"},
-        {"id":"Dwarf", "parent":"Races"},
-        {"id":"Eladrin", "parent":"Races"},
-        {"id":"Elf", "parent":"Races"},
-        {"id":"Firbolg", "parent":"Races"},
-        {"id":"Genasi", "parent":"Races"},
-        {"id":"Gith", "parent":"Races"},
-        {"id":"Gnome", "parent":"Races"},
-        {"id":"Goblin", "parent":"Races"},
-        {"id":"Goliath", "parent":"Races"},
-        {"id":"Half-Elf", "parent":"Races"},
-        {"id":"Half-Orc", "parent":"Races"},
-        {"id":"Halfling", "parent":"Races"},
-        {"id":"Hobgoblin", "parent":"Races"},
-        {"id":"Human", "parent":"Races"},
-        {"id":"Kalashtar", "parent":"Races"},
-        {"id":"Kenku", "parent":"Races"},
-        {"id":"Kobold", "parent":"Races"},
-        {"id":"Leonin", "parent":"Races"},
-        {"id":"Lizardfolk", "parent":"Races"},
-        {"id":"Loxodon", "parent":"Races"},
-        {"id":"Minotaur", "parent":"Races"},
-        {"id":"Orc", "parent":"Races"},
-        {"id":"Satyr", "parent":"Races"},
-        {"id":"Shifter", "parent":"Races"},
-        {"id":"Simic hybrid", "parent":"Races"},
-        {"id":"Tabaxi", "parent":"Races"},
-        {"id":"Tiefling", "parent":"Races"},
-        {"id":"Triton", "parent":"Races"},
-        {"id":"Turtle", "parent":"Races"},
-        {"id":"Vedalken", "parent":"Races"},
-        {"id":"Warforged", "parent":"Races"},
-        {"id":"Yaun-Ti", "parent":"Races"}
-    ]
-}
-const optionsNet = {
-    'NetFilter':[
-        {"id": "root"},
-        {"id": "Relation Node", "parent":"root"},
-        {"id": "Centre Node", "parent":"root"},
-        {"id": "Classes", "parent":"Relation Node"},
-        {"id": "Races", "parent":"Relation Node"},
-        {"id":"Alignment", "parent":"Relation Node"},
-        {"id": "Classes", "parent":"Centre Node"},
-        {"id": "Races", "parent":"Centre Node"},
-        {"id":"Alignment", "parent":"Centre Node"}
-    ]
+	"Classes":['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
+	'Ranger','Rogue','Sorcerer','Warlock','Wizard'],
+	"Races":['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
+	'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
+	'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
+	'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
+	'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
+	'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
 }
 
 function init(){
-    createVis3(".vis3",'Align_Race','LG');
-    // someFilter('.class_filter','Classes',options);
-    // someFilter('.race_filter','Races',options);
-    // netFilter('.country_filter','NetFilter',optionsNet);
+	selectFilter('class_filter', options['Classes'],'Classes:');
+	selectFilter('race_filter', options['Races'], 'Races:');
 }
 
 
 function createVis3(id,relation,centre){
+	const margin = {top: 10, right: 30, bottom: 30, left: 40},
+      width = 700 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
     // Append the svg object to the body of the page
     const svg = d3.select(id)
         .append("svg")
@@ -97,7 +30,7 @@ function createVis3(id,relation,centre){
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
     d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/network_all_data.json").then(function(data) {
-        const linkObject = data[relation][centre].links;
+		const linkObject = data[relation][centre].links;
         const nodeObject = data[relation][centre].nodes;
         // Initialize the links
         var link = svg
@@ -112,8 +45,8 @@ function createVis3(id,relation,centre){
             .attr("class","node")
         node.append("circle")
             .attr("r",15)
-            .attr("stroke", "green")
-            .style("fill", "green")
+            .attr("stroke", "grey")
+            .style("fill", "grey")
         node.append("text")
             .text(function(d){ return d.name;})
 
@@ -125,11 +58,10 @@ function createVis3(id,relation,centre){
                 .links(linkObject)                                  // and this the list of links
             )
             .force("charge", d3.forceManyBody().strength(-1000))    // This adds repulsion between nodes
-            .force("center", d3.forceCenter(width / 1.5, height / 1.5)) // This force attracts nodes to the center of the svg area
+            .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
             .on("end", ticked);
         function linkDistance(d) {
-            calcDist = 10*(1/d.distance) + 1 
-            console.log(calcDist, d.target)
+            calcDist = 10*(1/d.distance) + 1
             return calcDist;
         }
         // This function is run at each iteration of the force algorithm
@@ -148,157 +80,100 @@ function createVis3(id,relation,centre){
 }
 
 function updateNet(relation,centre){
-    d3.select("#netVis").remove();
-    createVis3(".vis3",relation,centre);
-}
-
-function someFilter(filterId,filterType,data){
-    // Node content
-	function renderNode(selection, rcd) {
-		selection.append('input')
-    		.attr('type', 'checkbox')
-    		.on('change', function () {
-      			d3.select('#selected')
-				.text(checkboxValues(d3.select(filterId)));
-    		});
-		selection.append('span')
-    		.text(rcd.id);
+	if(centre=='' && !(relation == ''|| relation.startsWith('None') || relation.endsWith('None'))){
+		d3.select("#netVis").remove();
 	}
-	// Return array of ids that is checked
-	function checkboxValues(selection) {
-		console.log(selection.select('.body')
-			.selectAll('input:checked').data().map(d => d.id));
-		return selection.select('.body')
-			.selectAll('input:checked').data().map(d => d.id);
+	if(centre!='' && !(relation == ''|| relation.startsWith('None') || relation.endsWith('None'))){
+		d3.select("#netVis").remove();
+		createVis3(".vis3",relation,centre);
 	}
-	// Recursively append child nodes
-	function nextLevel(selection, node) {
-		const label = selection.append('span');
-		const arrow = label.append('span').classed('arrow', true);
-		label.call(renderNode, node.data);
-		if (!node.hasOwnProperty('children')) return;
-		const items = selection.append('ul')
-			.style('list-style-type', 'none')
-			.selectAll('li')
-			.data(node.children, d => d.id);
-		items.exit().remove();
-		items.enter()
-			.append('li').merge(items)
-			.each(function (d) {
-				d3.select(this).call(nextLevel, d);
-			});
-		label.select('.arrow')
-			.text('▼ ')
-			.on('click', function () {  // Collapse on click
-				const childList = selection.select('ul');
-				if (!childList.size()) return;
-				const expanded = childList.style('display') !== 'none';
-				d3.select(this).text(expanded ? '▶ ' : '▼ ');
-				childList.style('display', expanded ? 'none' : 'inherit');
-			});
-	}
-	// Generate tree view
-	function tree(selection) {
-		selection
-			.classed('viewport', true)
-			.style('overflow-y', 'scroll')
-			.style('height', '500px')
-			.append('div')
-			.classed('body', true)
-			.style('transform', 'scale(1.5)')
-			.style('transform-origin', 'top left');
-	}
-	// Update tree data
-	function updateTree(selection, items) {
-		const root = d3.stratify()
-			.id(d => d.id)
-			.parentId(d => d.parent)(items);
-		selection.select('.body')
-			.call(nextLevel, root);
-		// Remove dummy root node
-		selection.select('.body > span').remove();
-		selection.select('.body > ul').style('padding-left', 0);
-	}
-	
-	// Render
-	d3.select(filterId + ' div').remove();
-	d3.select(filterId).append('div')
-		.call(tree)
-		.call(updateTree, data[filterType]);
 
 }
 
-function netFilter(filterId,filterType,data){
-    // Node content
-	function renderNode(selection, rcd) {
-		selection.append('input')
-    		.attr('type', 'checkbox')
-    		.on('change', function () {
-      			d3.select('#selected')
-				.text(checkboxValues(d3.select(filterId)));
-    		});
-		selection.append('span')
-    		.text(rcd.id);
-	}
-	// Return array of ids that is checked
-	function checkboxValues(selection) {
-		var selectedNetFilters = (selection.select('.body')
-			.selectAll('input:checked').data().map(d => d.id));
-        console.log(selectedNetFilters)
-	}
-	// Recursively append child nodes
-	function nextLevel(selection, node) {
-		const label = selection.append('span');
-		const arrow = label.append('span').classed('arrow', true);
-		label.call(renderNode, node.data);
-		if (!node.hasOwnProperty('children')) return;
-		const items = selection.append('ul')
-			.style('list-style-type', 'none')
-			.selectAll('li')
-			.data(node.children, d => d.id);
-		items.exit().remove();
-		items.enter()
-			.append('li').merge(items)
-			.each(function (d) {
-				d3.select(this).call(nextLevel, d);
-			});
-		label.select('.arrow')
-			.text('▼ ')
-			.on('click', function () {  // Collapse on click
-				const childList = selection.select('ul');
-				if (!childList.size()) return;
-				const expanded = childList.style('display') !== 'none';
-				d3.select(this).text(expanded ? '▶ ' : '▼ ');
-				childList.style('display', expanded ? 'none' : 'inherit');
-			});
-	}
-	// Generate tree view
-	function tree(selection) {
-		selection
-			.classed('viewport', true)
-			.style('overflow-y', 'scroll')
-			.style('height', '500px')
-			.append('div')
-			.classed('body', true)
-			.style('transform', 'scale(1.5)')
-			.style('transform-origin', 'top left');
-	}
-	// Update tree data
-	function updateTree(selection, items) {
-		const root = d3.stratify()
-			.id(d => d.id)
-			.parentId(d => d.parent)(items);
-		selection.select('.body')
-			.call(nextLevel, root);
-		// Remove dummy root node
-		selection.select('.body > span').remove();
-		selection.select('.body > ul').style('padding-left', 0);
-	}
-	
-	// Render
-	d3.select(filterId + ' div').remove();
-	d3.select(filterId).append('div')
-		.call(tree)
-		.call(updateTree, data[filterType]);
-
+function selectFilter(filterId, data,legend){
+	d3.select(".div_"+filterId).remove();
+	var filter = d3.select('.'+filterId)
+		.append('div')
+		.attr('class','div_'+ filterId)
+	filter
+		.append('legend')
+		.text(legend)
+	filter
+		.selectAll("input")
+		.data(data)
+		.enter()
+		.append('label')
+		.attr('for',function(d,i){ return filterId+i; })
+		.text(function(d) { return d; })
+		.append("input")
+		.attr("type", "checkbox")
+		.attr("id", function(d,i) { return filterId+i; })
+		.attr("onClick", "changeSelect(this)");
 }
+
+function radioFilter(filterId, data,legend){
+	d3.select(".div_"+filterId).remove();
+	var filter = d3.select('.'+filterId)
+		.append('div')
+		.attr('class','div_'+ filterId)
+	filter
+		.append('legend')
+		.text(legend)
+	filter
+		.selectAll("input")
+		.data(data)
+		.enter()
+		.append('label')
+		.attr('for',function(d,i){ return filterId+i; })
+		.text(function(d) { return d; })
+		.append("input")
+		.attr("type", "radio")
+		.attr("name","radio_filter")
+		.attr("id", function(d,i) { return filterId+i; })
+		.attr("value", function(d,i) { return d; })
+		.attr("onClick", "changeRadio(this)");
+}
+
+var centreNode=''
+var sel_relation = ''
+
+function changeSelect(select_selection){}
+
+function changeRadio(radio_selection){
+	centreNode=radio_selection.value;
+	updateNet(sel_relation,centreNode)
+}
+
+var prevCentreSel = ''
+var $selects = $('select');
+$selects.on('change', function() {
+    $("option", $selects).prop("disabled", false);
+    $selects.each(function() {
+        var $select = $(this), 
+            $options = $selects.not($select).find('option'),
+            selectedText = $select.children('option:selected').text();
+        $options.each(function() {
+            if($(this).text() == selectedText) $(this).prop("disabled", true);
+        });
+    });
+	var sel = document.getElementById('select_1');
+	var sel1 = sel.options[sel.selectedIndex].value;
+	var sel = document.getElementById('select_2');
+	var sel2 = sel.options[sel.selectedIndex].value;
+	sel_relation = sel1 + '_' + sel2
+
+	if (sel1=='Class'){
+		radioFilter('class_filter', options['Classes'], 'Classes:');
+		selectFilter('race_filter', options['Races'], 'Races:');
+		if(prevCentreSel =='Race'){centreNode='';}
+		prevCentreSel = 'Class'
+	}
+	else if(sel1=='Race'){
+		radioFilter('race_filter', options['Races'], 'Races:');
+		selectFilter('class_filter', options['Classes'],'Classes:');
+		if(prevCentreSel =='Class'){centreNode='';}
+		prevCentreSel = 'Race'
+	}
+	updateNet(sel_relation,centreNode)
+});
+$selects.eq(0).trigger('change');

@@ -1,3 +1,7 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -7,13 +11,46 @@
     grid-column: 1/-1;
 }
 
+.class_filter >div,
+.race_filter >div{
+    height: 300px;
+    width: auto;
+    overflow-y: auto;
+    padding: 20px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+
+}
+
+.class_filter label,
+.race_filter label{
+    display: block;
+}
+
 .grid_charts,
 .grid_filters{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.vis3,
+.vis3{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: 1px solid #ccc;
+    width: 630px;
+    height: 460px;
+}
+
+.vis3_filter_rel,
+.vis3_filter_centre{
+    display: block;
+    margin-bottom: 70px;
+    border: 1px solid #ccc;
+}
+
 .country_filter {
     grid-column: 1/-1;
-  }
+}
+
