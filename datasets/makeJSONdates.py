@@ -38,7 +38,7 @@ RACES = ['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom',
         'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
         'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
         'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
-YEARS = ['18-19','20-21','22','All']
+YEARS = ['18','19','20','21','22','All']
 VARS = ["class","alignment"]
 filename = "datasets/cleaned/dnd_chars_all_cleaned.json"
 
@@ -47,23 +47,18 @@ filename = "datasets/cleaned/dnd_chars_all_cleaned.json"
 # class     |   x   |   \   |   x   |
 # align     |   X   |   x   |   \   |
 
-class_align_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
-align_class_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
+class_align_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+align_class_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
 
-race_class_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
-class_race_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
+race_class_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+class_race_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
 
-race_align_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
-align_race_count = {'All':{},'18-19':{},'20-21':{},'22':{}}
+race_align_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+align_race_count = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
 
 
 def checkYear(year):
-    if year == '2018' or year == '2019':
-        return '18-19'
-    elif year == '2020' or year == '2021':
-        return '20-21'
-    else:
-        return '22'
+    return year[-2:]
 
 # Generate dicts to use for the JSON
 def class_align(data,char,year):
@@ -220,33 +215,33 @@ with open(filename,"r",encoding="utf-8") as f:
         align_race(data,character,year)
 
     # Create and append the network JSON structure to a JSON file
-    class_align_json = {}
-    class_race_json = {}
+    class_align_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+    class_race_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
     for fun_year in class_align_count:
         for fun_class in class_align_count[fun_year]:
-            class_align_json[fun_year]={fun_class:create_json(fun_class,class_align_count[fun_year])}
+            class_align_json[fun_year][fun_class]=create_json(fun_class,class_align_count[fun_year])
         for fun_class in class_race_count[fun_year]:
-            class_race_json[fun_year]={fun_class:create_json(fun_class,class_race_count[fun_year])}
+            class_race_json[fun_year][fun_class]=create_json(fun_class,class_race_count[fun_year])
     new_json['Class_Alignment'] = class_align_json
     new_json['Class_Race'] = class_race_json
     
-    race_class_json = {}
-    race_align_json = {}
+    race_class_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+    race_align_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
     for fun_year in class_align_count:
         for fun_race in race_class_count[fun_year]:
-            race_class_json[fun_year]={fun_race : create_json(fun_race, race_class_count[fun_year])}
+            race_class_json[fun_year][fun_race] = create_json(fun_race, race_class_count[fun_year])
         for fun_race in race_align_count[fun_year]:
-            race_align_json[fun_year]={fun_race : create_json(fun_race, race_align_count[fun_year])}
+            race_align_json[fun_year][fun_race] = create_json(fun_race, race_align_count[fun_year])
     new_json['Race_Class'] = race_class_json
     new_json['Race_Alignment'] = race_align_json
 
-    align_class_json = {}
-    align_race_json = {}
+    align_class_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
+    align_race_json = {'All':{},'18':{},'19':{},'20':{},'21':{},'22':{}}
     for fun_year in class_align_count:
         for fun_align in align_class_count[fun_year]:
-            align_class_json[fun_year]={fun_align : create_json(fun_align,align_class_count[fun_year])}
+            align_class_json[fun_year][fun_align] = create_json(fun_align,align_class_count[fun_year])
         for fun_align in align_race_count[fun_year]:
-            align_race_json[fun_year]={fun_align : create_json(fun_align,align_race_count[fun_year])}
+            align_race_json[fun_year][fun_align] = create_json(fun_align,align_race_count[fun_year])
     new_json['Alignment_Class'] = align_class_json
     new_json['Alignment_Race'] = align_race_json
 
