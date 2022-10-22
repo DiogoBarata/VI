@@ -13,12 +13,12 @@ const svg = d3.select("#my_dataviz")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
 // Parse the Data
-d3.csv("years.csv").then( function(data) {
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv").then( function(data) {
 
 // X axis
 const x = d3.scaleBand()
   .range([ 0, width ])
-  .domain(data.map(d => d.Year))
+  .domain(data.map(d => d.Country))
   .padding(0.2);
 svg.append("g")
   .attr("transform", `translate(0, ${height})`)
@@ -29,7 +29,7 @@ svg.append("g")
 
 // Add Y axis
 const y = d3.scaleLinear()
-  .domain([0, 2500])
+  .domain([0, 13000])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
@@ -38,14 +38,14 @@ svg.append("g")
 svg.selectAll("mybar")
   .data(data)
   .join("rect")
-    .attr("x", d => x(d.Year))
-    .attr("y", d => y(d.Players))
+    .attr("x", d => x(d.Country))
+    .attr("y", d => y(d.Value))
     .attr("width", x.bandwidth())
-    .attr("height", d => height - y(d.Players))
+    .attr("height", d => height - y(d.Value))
     .attr("fill", "#69b3a2")
     .on("mouseover", function(event, d){
 
-      console.log(d3.select(this.Year))
+      console.log(d3.select(this.Country))
 
       // Reduce opacity of all rect to 0.2
       d3.selectAll(".myRect").style("opacity", 0.2)
@@ -58,17 +58,29 @@ svg.selectAll("mybar")
         .duration(100)
         .style("opacity", 1)
       tooltip
-        .html("Range: " + d.x0 + " - " + d.x1)
-        .style("left", (d3.mouse(this)[0]+20) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
+        .html("Range: ")
+        .style("left", (event.x)/2-100 + "px")
+        .style("top", (event.y)/2 + "px")
     })
     .on("mouseleave", function (event,d) { // When user do not hover anymore
 
       // Back to normal opacity: 1
       d3.selectAll(".myRect")
       .style("opacity",1)
+
+      tooltip
+      .transition()
+      .duration(100)
+      .style("opacity", 0)
     })
-    .on("click", selectYear)
+
+    .on("mouseclick", selectYear)
+    .on("mousemove", function (event,d) {
+      tooltip
+        .style("left", (event.x)/2-100 + "px")
+        .style("top", (event.y)/2 + "px")
+    })
+
 
 var tooltip = d3.select("#my_dataviz")
 .append("div")
@@ -80,7 +92,7 @@ var tooltip = d3.select("#my_dataviz")
 .style("padding", "10px")
 
 var selectYear = function(d){
-//TODO
+
 }
 
 })
