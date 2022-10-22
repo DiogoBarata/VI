@@ -1,0 +1,2228 @@
+{
+  "Class_Alignment": {
+    "All": {
+      "Artificer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Artificer"
+          },
+          {
+            "id": 2,
+            "name": "NG"
+          },
+          {
+            "id": 3,
+            "name": "LN"
+          },
+          {
+            "id": 4,
+            "name": "LG"
+          },
+          {
+            "id": 5,
+            "name": "NN"
+          },
+          {
+            "id": 6,
+            "name": "CN"
+          },
+          {
+            "id": 7,
+            "name": "CG"
+          },
+          {
+            "id": 8,
+            "name": "LE"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 14
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 8
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 8
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 22
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "Monk": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Monk"
+          },
+          {
+            "id": 2,
+            "name": "NG"
+          },
+          {
+            "id": 3,
+            "name": "CG"
+          },
+          {
+            "id": 4,
+            "name": "LN"
+          },
+          {
+            "id": 5,
+            "name": "NE"
+          },
+          {
+            "id": 6,
+            "name": "NN"
+          },
+          {
+            "id": 7,
+            "name": "CN"
+          },
+          {
+            "id": 8,
+            "name": "LG"
+          },
+          {
+            "id": 9,
+            "name": "LE"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 26
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 32
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 14
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 17
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 21
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 21
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 2
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "Sorcerer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 2,
+            "name": "LN"
+          },
+          {
+            "id": 3,
+            "name": "NE"
+          },
+          {
+            "id": 4,
+            "name": "NG"
+          },
+          {
+            "id": 5,
+            "name": "CN"
+          },
+          {
+            "id": 6,
+            "name": "LG"
+          },
+          {
+            "id": 7,
+            "name": "CG"
+          },
+          {
+            "id": 8,
+            "name": "CE"
+          },
+          {
+            "id": 9,
+            "name": "NN"
+          },
+          {
+            "id": 10,
+            "name": "LE"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 10
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 26
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 43
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "Artificer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Artificer"
+          },
+          {
+            "id": 2,
+            "name": "NG"
+          },
+          {
+            "id": 3,
+            "name": "LN"
+          },
+          {
+            "id": 4,
+            "name": "LG"
+          },
+          {
+            "id": 5,
+            "name": "NN"
+          },
+          {
+            "id": 6,
+            "name": "CN"
+          },
+          {
+            "id": 7,
+            "name": "CG"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 1
+          }
+        ]
+      }
+    }
+  },
+  "Class_Race": {
+    "All": {
+      "Artificer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Artificer"
+          },
+          {
+            "id": 2,
+            "name": "Human"
+          },
+          {
+            "id": 3,
+            "name": "Gnome"
+          },
+          {
+            "id": 4,
+            "name": "Warforged"
+          },
+          {
+            "id": 5,
+            "name": "Kalashtar"
+          },
+          {
+            "id": 6,
+            "name": "Aasimar"
+          },
+          {
+            "id": 7,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 8,
+            "name": "Custom"
+          },
+          {
+            "id": 9,
+            "name": "Halfling"
+          },
+          {
+            "id": 10,
+            "name": "Elf"
+          },
+          {
+            "id": 11,
+            "name": "Dwarf"
+          },
+          {
+            "id": 12,
+            "name": "Genasi"
+          },
+          {
+            "id": 13,
+            "name": "Lizardfolk"
+          },
+          {
+            "id": 14,
+            "name": "Aarakocra"
+          },
+          {
+            "id": 15,
+            "name": "Loxodon"
+          },
+          {
+            "id": 16,
+            "name": "Kobold"
+          },
+          {
+            "id": 17,
+            "name": "Firbolg"
+          },
+          {
+            "id": 18,
+            "name": "Kenku"
+          },
+          {
+            "id": 19,
+            "name": "Goblin"
+          },
+          {
+            "id": 20,
+            "name": "Goliath"
+          },
+          {
+            "id": 21,
+            "name": "Half-Orc"
+          },
+          {
+            "id": 22,
+            "name": "Yaun-Ti"
+          },
+          {
+            "id": 23,
+            "name": "Simic hybrid"
+          },
+          {
+            "id": 24,
+            "name": "Tiefling"
+          },
+          {
+            "id": 25,
+            "name": "Tabaxi"
+          },
+          {
+            "id": 26,
+            "name": "Dragonborn"
+          },
+          {
+            "id": 27,
+            "name": "Minotaur"
+          },
+          {
+            "id": 28,
+            "name": "Shifter"
+          },
+          {
+            "id": 29,
+            "name": "Changeling"
+          },
+          {
+            "id": 30,
+            "name": "Eladrin"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 42
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 26
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 46
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 14
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 12
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 13
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 14,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 15,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 16,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 17,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 18,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 19,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 20,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 21,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 22,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 23,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 24,
+            "distance": 10
+          },
+          {
+            "source": 1,
+            "target": 25,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 26,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 27,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 28,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 29,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 30,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "Artificer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Artificer"
+          },
+          {
+            "id": 2,
+            "name": "Human"
+          },
+          {
+            "id": 3,
+            "name": "Elf"
+          },
+          {
+            "id": 4,
+            "name": "Warforged"
+          },
+          {
+            "id": 5,
+            "name": "Dwarf"
+          },
+          {
+            "id": 6,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 7,
+            "name": "Gnome"
+          },
+          {
+            "id": 8,
+            "name": "Kenku"
+          },
+          {
+            "id": 9,
+            "name": "Tabaxi"
+          },
+          {
+            "id": 10,
+            "name": "Eladrin"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "Ranger": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Ranger"
+          },
+          {
+            "id": 2,
+            "name": "Custom"
+          },
+          {
+            "id": 3,
+            "name": "Human"
+          },
+          {
+            "id": 4,
+            "name": "Elf"
+          },
+          {
+            "id": 5,
+            "name": "Goblin"
+          },
+          {
+            "id": 6,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 7,
+            "name": "Halfling"
+          },
+          {
+            "id": 8,
+            "name": "Dwarf"
+          },
+          {
+            "id": 9,
+            "name": "Warforged"
+          },
+          {
+            "id": 10,
+            "name": "Loxodon"
+          },
+          {
+            "id": 11,
+            "name": "Gnome"
+          },
+          {
+            "id": 12,
+            "name": "Tiefling"
+          },
+          {
+            "id": 13,
+            "name": "Tabaxi"
+          },
+          {
+            "id": 14,
+            "name": "Lizardfolk"
+          },
+          {
+            "id": 15,
+            "name": "Centaur"
+          },
+          {
+            "id": 16,
+            "name": "Aasimar"
+          },
+          {
+            "id": 17,
+            "name": "Shifter"
+          },
+          {
+            "id": 18,
+            "name": "Eladrin"
+          },
+          {
+            "id": 19,
+            "name": "Kenku"
+          },
+          {
+            "id": 20,
+            "name": "Aarakocra"
+          },
+          {
+            "id": 21,
+            "name": "Half-Orc"
+          },
+          {
+            "id": 22,
+            "name": "Leonin"
+          },
+          {
+            "id": 23,
+            "name": "Dragonborn"
+          },
+          {
+            "id": 24,
+            "name": "Orc"
+          },
+          {
+            "id": 25,
+            "name": "Simic hybrid"
+          },
+          {
+            "id": 26,
+            "name": "Minotaur"
+          },
+          {
+            "id": 27,
+            "name": "Turtle"
+          },
+          {
+            "id": 28,
+            "name": "Firbolg"
+          },
+          {
+            "id": 29,
+            "name": "Kobold"
+          },
+          {
+            "id": 30,
+            "name": "Genasi"
+          },
+          {
+            "id": 31,
+            "name": "Triton"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 40
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 92
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 16
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 16
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 22
+          },
+          {
+            "source": 1,
+            "target": 14,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 15,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 16,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 17,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 18,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 19,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 20,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 21,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 22,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 23,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 24,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 25,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 26,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 27,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 28,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 29,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 30,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 31,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "Artificer": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Artificer"
+          },
+          {
+            "id": 2,
+            "name": "Human"
+          },
+          {
+            "id": 3,
+            "name": "Gnome"
+          },
+          {
+            "id": 4,
+            "name": "Warforged"
+          },
+          {
+            "id": 5,
+            "name": "Kalashtar"
+          },
+          {
+            "id": 6,
+            "name": "Aasimar"
+          },
+          {
+            "id": 7,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 8,
+            "name": "Custom"
+          },
+          {
+            "id": 9,
+            "name": "Halfling"
+          },
+          {
+            "id": 10,
+            "name": "Elf"
+          },
+          {
+            "id": 11,
+            "name": "Dwarf"
+          },
+          {
+            "id": 12,
+            "name": "Genasi"
+          },
+          {
+            "id": 13,
+            "name": "Lizardfolk"
+          },
+          {
+            "id": 14,
+            "name": "Aarakocra"
+          },
+          {
+            "id": 15,
+            "name": "Loxodon"
+          },
+          {
+            "id": 16,
+            "name": "Kobold"
+          },
+          {
+            "id": 17,
+            "name": "Firbolg"
+          },
+          {
+            "id": 18,
+            "name": "Kenku"
+          },
+          {
+            "id": 19,
+            "name": "Goblin"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 14,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 15,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 16,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 17,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 18,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 19,
+            "distance": 2
+          }
+        ]
+      }
+    }
+  },
+  "Race_Class": {
+    "All": {
+      "Simic hybrid": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Simic hybrid"
+          },
+          {
+            "id": 2,
+            "name": "Rogue"
+          },
+          {
+            "id": 3,
+            "name": "Druid"
+          },
+          {
+            "id": 4,
+            "name": "Fighter"
+          },
+          {
+            "id": 5,
+            "name": "Artificer"
+          },
+          {
+            "id": 6,
+            "name": "Wizard"
+          },
+          {
+            "id": 7,
+            "name": "Barbarian"
+          },
+          {
+            "id": 8,
+            "name": "Ranger"
+          },
+          {
+            "id": 9,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 10,
+            "name": "Monk"
+          },
+          {
+            "id": 11,
+            "name": "Cleric"
+          },
+          {
+            "id": 12,
+            "name": "Paladin"
+          },
+          {
+            "id": 13,
+            "name": "Warlock"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "Vedalken": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Vedalken"
+          },
+          {
+            "id": 2,
+            "name": "Wizard"
+          },
+          {
+            "id": 3,
+            "name": "Fighter"
+          },
+          {
+            "id": 4,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 5,
+            "name": "Warlock"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "Vedalken": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Vedalken"
+          },
+          {
+            "id": 2,
+            "name": "Wizard"
+          },
+          {
+            "id": 3,
+            "name": "Rogue"
+          },
+          {
+            "id": 4,
+            "name": "Monk"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "Centaur": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Centaur"
+          },
+          {
+            "id": 2,
+            "name": "Druid"
+          },
+          {
+            "id": 3,
+            "name": "Rogue"
+          },
+          {
+            "id": 4,
+            "name": "Ranger"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 1
+          }
+        ]
+      }
+    }
+  },
+  "Race_Alignment": {
+    "All": {
+      "Simic hybrid": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Simic hybrid"
+          },
+          {
+            "id": 2,
+            "name": "CN"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "Kalashtar": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Kalashtar"
+          },
+          {
+            "id": 2,
+            "name": "LN"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "Centaur": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Centaur"
+          },
+          {
+            "id": 2,
+            "name": "CN"
+          },
+          {
+            "id": 3,
+            "name": "NG"
+          },
+          {
+            "id": 4,
+            "name": "CG"
+          },
+          {
+            "id": 5,
+            "name": "LG"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "Custom": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "Custom"
+          },
+          {
+            "id": 2,
+            "name": "CG"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          }
+        ]
+      }
+    }
+  },
+  "Alignment_Class": {
+    "All": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Fighter"
+          },
+          {
+            "id": 3,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 4,
+            "name": "Barbarian"
+          },
+          {
+            "id": 5,
+            "name": "Bard"
+          },
+          {
+            "id": 6,
+            "name": "Warlock"
+          },
+          {
+            "id": 7,
+            "name": "Cleric"
+          },
+          {
+            "id": 8,
+            "name": "Druid"
+          },
+          {
+            "id": 9,
+            "name": "Wizard"
+          },
+          {
+            "id": 10,
+            "name": "Rogue"
+          },
+          {
+            "id": 11,
+            "name": "Ranger"
+          },
+          {
+            "id": 12,
+            "name": "Paladin"
+          },
+          {
+            "id": 13,
+            "name": "Monk"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 15
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 6
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 18
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 3
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Cleric"
+          },
+          {
+            "id": 3,
+            "name": "Monk"
+          },
+          {
+            "id": 4,
+            "name": "Wizard"
+          },
+          {
+            "id": 5,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 6,
+            "name": "Warlock"
+          },
+          {
+            "id": 7,
+            "name": "Fighter"
+          },
+          {
+            "id": 8,
+            "name": "Rogue"
+          },
+          {
+            "id": 9,
+            "name": "Bard"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 11
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Bard"
+          },
+          {
+            "id": 3,
+            "name": "Warlock"
+          },
+          {
+            "id": 4,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 5,
+            "name": "Cleric"
+          },
+          {
+            "id": 6,
+            "name": "Fighter"
+          },
+          {
+            "id": 7,
+            "name": "Druid"
+          },
+          {
+            "id": 8,
+            "name": "Barbarian"
+          },
+          {
+            "id": 9,
+            "name": "Wizard"
+          },
+          {
+            "id": 10,
+            "name": "Rogue"
+          },
+          {
+            "id": 11,
+            "name": "Ranger"
+          },
+          {
+            "id": 12,
+            "name": "Paladin"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Fighter"
+          },
+          {
+            "id": 3,
+            "name": "Sorcerer"
+          },
+          {
+            "id": 4,
+            "name": "Barbarian"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 4
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 2
+          }
+        ]
+      }
+    }
+  },
+  "Alignment_Race": {
+    "All": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Bugbear"
+          },
+          {
+            "id": 3,
+            "name": "Half-Orc"
+          },
+          {
+            "id": 4,
+            "name": "Warforged"
+          },
+          {
+            "id": 5,
+            "name": "Eladrin"
+          },
+          {
+            "id": 6,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 7,
+            "name": "Elf"
+          },
+          {
+            "id": 8,
+            "name": "Human"
+          },
+          {
+            "id": 9,
+            "name": "Aasimar"
+          },
+          {
+            "id": 10,
+            "name": "Yaun-Ti"
+          },
+          {
+            "id": 11,
+            "name": "Tiefling"
+          },
+          {
+            "id": 12,
+            "name": "Lizardfolk"
+          },
+          {
+            "id": 13,
+            "name": "Kenku"
+          },
+          {
+            "id": 14,
+            "name": "Goblin"
+          },
+          {
+            "id": 15,
+            "name": "Kobold"
+          },
+          {
+            "id": 16,
+            "name": "Goliath"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 12
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 10
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 8
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 12,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 13,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 14,
+            "distance": 8
+          },
+          {
+            "source": 1,
+            "target": 15,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 16,
+            "distance": 2
+          }
+        ]
+      }
+    },
+    "18-19": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Kobold"
+          },
+          {
+            "id": 3,
+            "name": "Elf"
+          },
+          {
+            "id": 4,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 5,
+            "name": "Goliath"
+          },
+          {
+            "id": 6,
+            "name": "Tiefling"
+          },
+          {
+            "id": 7,
+            "name": "Goblin"
+          },
+          {
+            "id": 8,
+            "name": "Human"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 9
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 7
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 5
+          }
+        ]
+      }
+    },
+    "20-21": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Eladrin"
+          },
+          {
+            "id": 3,
+            "name": "Half-Elf"
+          },
+          {
+            "id": 4,
+            "name": "Elf"
+          },
+          {
+            "id": 5,
+            "name": "Human"
+          },
+          {
+            "id": 6,
+            "name": "Aasimar"
+          },
+          {
+            "id": 7,
+            "name": "Yaun-Ti"
+          },
+          {
+            "id": 8,
+            "name": "Tiefling"
+          },
+          {
+            "id": 9,
+            "name": "Lizardfolk"
+          },
+          {
+            "id": 10,
+            "name": "Kenku"
+          },
+          {
+            "id": 11,
+            "name": "Goblin"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 5
+          },
+          {
+            "source": 1,
+            "target": 5,
+            "distance": 3
+          },
+          {
+            "source": 1,
+            "target": 6,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 7,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 8,
+            "distance": 2
+          },
+          {
+            "source": 1,
+            "target": 9,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 10,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 11,
+            "distance": 1
+          }
+        ]
+      }
+    },
+    "22": {
+      "NE": {
+        "nodes": [
+          {
+            "id": 1,
+            "name": "NE"
+          },
+          {
+            "id": 2,
+            "name": "Bugbear"
+          },
+          {
+            "id": 3,
+            "name": "Half-Orc"
+          },
+          {
+            "id": 4,
+            "name": "Warforged"
+          }
+        ],
+        "links": [
+          {
+            "source": 1,
+            "target": 2,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "distance": 1
+          },
+          {
+            "source": 1,
+            "target": 4,
+            "distance": 2
+          }
+        ]
+      }
+    }
+  }
+}

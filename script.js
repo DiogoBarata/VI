@@ -14,6 +14,7 @@ function init(){
 	selectFilter('race_filter', options['Races'], 'Races:');
 }
 
+var dateHisto = 'All';
 
 function createVis3(id,relation,centre){
 	const margin = {top: 10, right: 30, bottom: 30, left: 40},
@@ -29,9 +30,9 @@ function createVis3(id,relation,centre){
         .attr("class","node")
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
-    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/network_all_data.json").then(function(data) {
-		const linkObject = data[relation][centre].links;
-        const nodeObject = data[relation][centre].nodes;
+    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/network_all_data_with_dates.json").then(function(data) {
+		const linkObject = data[relation][dateHisto][centre].links;
+        const nodeObject = data[relation][dateHisto][centre].nodes;
         // Initialize the links
         var link = svg
             .selectAll("line")

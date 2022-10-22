@@ -150,8 +150,7 @@ def create_json(center,count_dict):
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
     data = json.load(f)
-    new_json = {'Class_Align':None}
-    
+    new_json = {}
     for character in data:
         class_align(data,character)
         align_class(data,character)
