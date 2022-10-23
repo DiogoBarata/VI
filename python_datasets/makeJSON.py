@@ -185,9 +185,8 @@ def align_race(data,char,year):
                     align_race_count[year][aux_align][aux_race] += 1
 
 # Generate JSONS structures
-def create_json(center,count_dict,global_arrays):
+def create_json(center,count_dict):
     relation = list(count_dict[center].keys())
-    no_relations = list(set(relation) - set(global_arrays))
     id = 1
     network_json = {'nodes':[],'links':[]}
     network_json['nodes'].append({'id':id,'name':center})
@@ -196,11 +195,34 @@ def create_json(center,count_dict,global_arrays):
         network_json['nodes'].append({'id':id,'name':rel})
         network_json['links'].append({'source':1,'target':id,'distance':count_dict[center][rel]})
         id+=1
-    for rel in no_relations:
-        pass
-
     return network_json
 
+def separateCounts(new_json,count1,rel1,count2,rel2):
+    # Create and append the network JSON structure to a JSON file
+    first_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    second_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    for year in YEARS:
+        for fun_var in count1[year]:
+            first_json[year][fun_var]=create_json(fun_var,count1[year])
+        for fun_var in count2[year]:
+            second_json[year][fun_var]=create_json(fun_var,count2[year])
+    new_json[rel1] = first_json
+    new_json[rel2] = second_json
+
+def getGlobalVar(string):
+    new_string = string.split('_')
+    if new_string[0] == 'Class':
+        return CLASSES
+    elif new_string[0] == 'Race':
+        return RACES
+    elif new_string[0] == 'Alignment':
+        return ALIGNS
+
+def addNoRelations(new_json):
+    for rel in new_json:
+        globalVar = getGlobalVar(rel)
+        for year in new_json[rel]:
+            no_relation = list(set(new_json[rel][year].keys()) - set(globalVar))
 
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
@@ -216,36 +238,11 @@ with open(filename,"r",encoding="utf-8") as f:
         align_race(data,character,year)
 
     # Create and append the network JSON structure to a JSON file
-    class_align_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    class_race_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    for fun_year in class_align_count:
-        for fun_class in class_align_count[fun_year]:
-            class_align_json[fun_year][fun_class]=create_json(fun_class,class_align_count[fun_year],CLASSES)
-        for fun_class in class_race_count[fun_year]:
-            class_race_json[fun_year][fun_class]=create_json(fun_class,class_race_count[fun_year],CLASSES)
-    new_json['Class_Alignment'] = class_align_json
-    new_json['Class_Race'] = class_race_json
-    
-    race_class_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    race_align_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    for fun_year in class_align_count:
-        for fun_race in race_class_count[fun_year]:
-            race_class_json[fun_year][fun_race] = create_json(fun_race, race_class_count[fun_year],RACES)
-        for fun_race in race_align_count[fun_year]:
-            race_align_json[fun_year][fun_race] = create_json(fun_race, race_align_count[fun_year],RACES)
-    new_json['Race_Class'] = race_class_json
-    new_json['Race_Alignment'] = race_align_json
+    separateCounts(new_json,class_align_count,'Class_Alignment',class_race_count,'Class_Race')
+    separateCounts(new_json,race_class_count,'Race_Class',race_align_count,'Race_Alignment')
+    separateCounts(new_json,align_class_count,'Alignment_Class',align_race_count,'Alignment_Race')
 
-    align_class_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    align_race_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    for fun_year in class_align_count:
-        for fun_align in align_class_count[fun_year]:
-            align_class_json[fun_year][fun_align] = create_json(fun_align,align_class_count[fun_year],ALIGNS)
-        for fun_align in align_race_count[fun_year]:
-            align_race_json[fun_year][fun_align] = create_json(fun_align,align_race_count[fun_year],ALIGNS)
-    new_json['Alignment_Class'] = align_class_json
-    new_json['Alignment_Race'] = align_race_json
-
+    addNoRelations(new_json)
 
 with open('network_all_data_with_dates.json',"w") as f:
     json.dump(new_json,f,indent=2)

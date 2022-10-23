@@ -10,11 +10,112 @@ const options = {
 }
 
 function init(){
+	createVis2('.vis2')
 	selectFilter('class_filter', options['Classes'],'Classes:');
 	selectFilter('race_filter', options['Races'], 'Races:');
 }
 
 var dateHisto = 'All';
+
+function createVis2(id){
+	// set the dimensions and margins of the graph
+	const margin = {top: 30, right: 30, bottom: 70, left: 60},
+	width = 460 - margin.left - margin.right,
+	height = 400 - margin.top - margin.bottom;
+
+	// append the svg object to the body of the page
+	const svg = d3.select(id)
+		.append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+			.attr("transform", `translate(${margin.left},${margin.top})`);
+
+	// Parse the Data
+	d3.csv("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/years.csv").then( function(data) {
+		// X axis
+		const x = d3.scaleBand()
+			.range([ 0, width ])
+			.domain(data.map(d => d.Year))
+			.padding(0.2);
+		svg.append("g")
+			.attr("transform", `translate(0, ${height})`)
+			.call(d3.axisBottom(x))
+			.selectAll("text")
+				.attr("transform", "translate(-10,0)rotate(-45)")
+				.style("text-anchor", "end");
+
+		// Add Y axis
+		const y = d3.scaleLinear()
+			.domain([0, 4000])
+			.range([ height, 0]);
+		svg.append("g")
+			.call(d3.axisLeft(y));
+
+		svg.append('text')
+			.attr('x',85)
+			.text('Number of Players along the Years')
+		// Add Tooltip
+		var tooltip = d3.select("#my_dataviz")
+			.append("div")
+			.style("opacity", 0)
+			.attr("class", "tooltip")
+			.style("background-color", "black")
+			.style("color", "white")
+			.style("border-radius", "5px")
+			.style("padding", "10px")
+
+		// Bars
+		svg.selectAll("mybar")
+			.data(data)
+			.join("rect")
+				.attr('class','allbars')
+				.attr("x", d => x(d.Year))
+				.attr("y", d => y(d.Players))
+				.attr("width", x.bandwidth())
+				.attr("height", d => height - y(d.Players))
+				.attr("fill", "#2296F3")
+			.on("mouseover", function(event, d){    
+				tooltip
+					.transition()
+					.duration(100)
+					.style("opacity", 1)
+				tooltip
+					.html("Range: ")
+					.style("left", (event.x)/2-100 + "px")
+					.style("top", (event.y)/2 + "px")
+			})
+			.on("mouseleave", function (event,d) {
+				d3.selectAll(".myRect")
+					.style("opacity",1)
+				tooltip
+					.transition()
+					.duration(100)
+					.style("opacity", 0)
+			})
+			.on("mousemove", function (event,d) {
+				tooltip
+					.style("left", (event.x)/2-100 + "px")
+					.style("top", (event.y)/2 + "px")
+			})
+			.on("click", function (event,d) {
+				// Select and deselect a bar
+				if (!d3.select(this).classed("selected")){
+					d3.select(this).classed("selected",true)
+					d3.selectAll('.allbars').style('fill', '#2296F3'); //fill all circles black
+					d3.select(this).style("fill", "#012B4E"); //then fill this circle lightcoral
+					dateHisto = d.Year
+					updateNet(sel_relation,centreNode)
+				}else{
+					d3.select(this).classed("selected",false)
+					d3.selectAll('.allbars').style('fill', '#2296F3'); //fill all circles black
+					d3.select(this).style("fill", "#2296F3")
+					dateHisto = 'All'
+					updateNet(sel_relation,centreNode)
+				}
+			})
+	})
+}
 
 function createVis3(id,relation,centre){
 	const margin = {top: 10, right: 30, bottom: 30, left: 40},
@@ -30,7 +131,8 @@ function createVis3(id,relation,centre){
         .attr("class","node")
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
-    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/network_all_data_with_dates.json").then(function(data) {
+    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_all_data_with_dates.json").then(function(data) {
+		console.log(data[relation],relation,dateHisto,centre)
 		const linkObject = data[relation][dateHisto][centre].links;
         const nodeObject = data[relation][dateHisto][centre].nodes;
         // Initialize the links
@@ -91,7 +193,7 @@ function updateNet(relation,centre){
 
 }
 
-function selectFilter(filterId, data,legend){
+function selectFilter(filterId, data, legend){
 	d3.select(".div_"+filterId).remove();
 	var filter = d3.select('.'+filterId)
 		.append('div')
@@ -112,7 +214,7 @@ function selectFilter(filterId, data,legend){
 		.attr("onClick", "changeSelect(this)");
 }
 
-function radioFilter(filterId, data,legend){
+function radioFilter(filterId, data, legend){
 	d3.select(".div_"+filterId).remove();
 	var filter = d3.select('.'+filterId)
 		.append('div')
@@ -164,14 +266,18 @@ $selects.on('change', function() {
 	sel_relation = sel1 + '_' + sel2
 
 	if (sel1=='Class'){
-		radioFilter('class_filter', options['Classes'], 'Classes:');
-		selectFilter('race_filter', options['Races'], 'Races:');
+		if(prevCentreSel != 'Class'){
+			radioFilter('class_filter', options['Classes'], 'Classes:');
+			selectFilter('race_filter', options['Races'], 'Races:');
+		}
 		if(prevCentreSel =='Race'){centreNode='';}
 		prevCentreSel = 'Class'
 	}
 	else if(sel1=='Race'){
-		radioFilter('race_filter', options['Races'], 'Races:');
-		selectFilter('class_filter', options['Classes'],'Classes:');
+		if(prevCentreSel != 'Race'){
+			radioFilter('race_filter', options['Races'], 'Races:');
+			selectFilter('class_filter', options['Classes'],'Classes:');
+		}
 		if(prevCentreSel =='Class'){centreNode='';}
 		prevCentreSel = 'Race'
 	}
