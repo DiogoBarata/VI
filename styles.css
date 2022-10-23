@@ -58,3 +58,12 @@ body{
     grid-column: 1/-1;
 }
 
+.vis1{
+    background-image: url('resources/imgs/the_radar.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    border: 1px solid rgb(0, 0, 0);
+}
+.vis2{
+    border: 1px solid rgb(0, 0, 0);
+}

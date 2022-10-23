@@ -33,7 +33,8 @@ function createVis2(id){
 
 	// Parse the Data
 	d3.csv("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/years.csv").then( function(data) {
-		// X axis
+		console.log(data)	
+	// X axis
 		const x = d3.scaleBand()
 			.range([ 0, width ])
 			.domain(data.map(d => d.Year))
@@ -42,7 +43,7 @@ function createVis2(id){
 			.attr("transform", `translate(0, ${height})`)
 			.call(d3.axisBottom(x))
 			.selectAll("text")
-				.attr("transform", "translate(-10,0)rotate(-45)")
+			.attr("transform", "translate(12,0)")
 				.style("text-anchor", "end");
 
 		// Add Y axis
@@ -55,8 +56,9 @@ function createVis2(id){
 		svg.append('text')
 			.attr('x',85)
 			.text('Number of Players along the Years')
+
 		// Add Tooltip
-		var tooltip = d3.select("#my_dataviz")
+		var tooltip = d3.select(id)
 			.append("div")
 			.style("opacity", 0)
 			.attr("class", "tooltip")
@@ -64,7 +66,7 @@ function createVis2(id){
 			.style("color", "white")
 			.style("border-radius", "5px")
 			.style("padding", "10px")
-
+	
 		// Bars
 		svg.selectAll("mybar")
 			.data(data)
@@ -75,13 +77,13 @@ function createVis2(id){
 				.attr("width", x.bandwidth())
 				.attr("height", d => height - y(d.Players))
 				.attr("fill", "#2296F3")
-			.on("mouseover", function(event, d){    
+			.on("mouseover", function(event, d){
 				tooltip
 					.transition()
 					.duration(100)
 					.style("opacity", 1)
 				tooltip
-					.html("Range: ")
+					.html("IRL event: " + d.IRL)
 					.style("left", (event.x)/2-100 + "px")
 					.style("top", (event.y)/2 + "px")
 			})
@@ -153,32 +155,34 @@ function createVis3(id,relation,centre){
         node.append("text")
             .text(function(d){ return d.name;})
 
+		
+		function linkDistance(d) {
+			calcDist = 10*(1/d.distance) + 1
+			return calcDist;
+		}
+		// This function is run at each iteration of the force algorithm
+		// Updating the nodes position.
+		function ticked() {
+			link
+				.attr("x1", d => d.source.x)
+				.attr("y1", d => d.source.y)
+				.attr("x2", d => d.target.x)
+				.attr("y2", d => d.target.y);
+			node
+				.attr("transform", d => `translate(${d.x},${d.y})`);
+			
+		}
         // Initialize the network
         const simulation = d3.forceSimulation(nodeObject)           // Force algorithm is applied to nodes
-            .force("link", d3.forceLink()                           // This force provides links between nodes
-                .distance(linkDistance)      
+            .force("link", d3.forceLink()                           // This force provides links between nodes  
                 .id(function(d) { return d.id; })                   // This provide  the id of a node
                 .links(linkObject)                                  // and this the list of links
+				.distance(linkDistance)
             )
             .force("charge", d3.forceManyBody().strength(-1000))    // This adds repulsion between nodes
             .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
             .on("end", ticked);
-        function linkDistance(d) {
-            calcDist = 10*(1/d.distance) + 1
-            return calcDist;
-        }
-        // This function is run at each iteration of the force algorithm
-        // Updating the nodes position.
-        function ticked() {
-            link
-                .attr("x1", d => d.source.x)
-                .attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x)
-                .attr("y2", d => d.target.y);
-            node
-                .attr("transform", d => `translate(${d.x},${d.y})`);
-            
-        }
+        
     });    
 }
 
