@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 """"
 {"thirsty_davinci Sorcerer 13|Cleric 1": {
     "name": ["thirsty_davinci"], 
@@ -37,7 +38,7 @@ RACES = ['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom',
         'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
         'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
         'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
-
+YEARS = ['2018','2019','2020','2021','2022','All']
 VARS = ["class","alignment"]
 filename = "datasets/cleaned/dnd_chars_all_cleaned.json"
 
@@ -46,97 +47,147 @@ filename = "datasets/cleaned/dnd_chars_all_cleaned.json"
 # class     |   x   |   \   |   x   |
 # align     |   X   |   x   |   \   |
 
-class_align_count = {}
-align_class_count = {}
+class_align_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+align_class_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
 
-race_class_count = {}
-class_race_count = {}
+race_class_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+class_race_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
 
-race_align_count = {}
-align_race_count = {}
+race_align_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+align_race_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+
 
 # Generate dicts to use for the JSON
-def class_align(data,char):
+def class_align(data,char,year):
     aux_align = data[char]['alignment'][0]
     for char_class in data[char]['class']:
         if char_class in CLASSES:
             if aux_align != 'None':
-                if char_class not in class_align_count:
-                    class_align_count[char_class] = {aux_align:1}
+                if char_class not in class_align_count['All']:
+                    class_align_count['All'][char_class] = {aux_align:1}
                 else:
-                    if aux_align not in class_align_count[char_class]:
-                        class_align_count[char_class][aux_align] = 1
+                    if aux_align not in class_align_count['All'][char_class]:
+                        class_align_count['All'][char_class][aux_align] = 1
                     else:
-                        class_align_count[char_class][aux_align] += 1
+                        class_align_count['All'][char_class][aux_align] += 1
+                
+                if char_class not in class_align_count[year]:
+                    class_align_count[year][char_class] = {aux_align:1}
+                else:
+                    if aux_align not in class_align_count[year][char_class]:
+                        class_align_count[year][char_class][aux_align] = 1
+                    else:
+                        class_align_count[year][char_class][aux_align] += 1
 
-def align_class(data,char):
+def align_class(data,char,year):
     aux_align = data[char]['alignment'][0]
     if aux_align != 'None':
         for char_class in data[char]['class']:
             if char_class in CLASSES:
-                if aux_align not in align_class_count:
-                    align_class_count[aux_align] = {char_class:1}
+                if aux_align not in align_class_count['All']:
+                    align_class_count['All'][aux_align] = {char_class:1}
                 else:
-                    if char_class not in align_class_count[aux_align]:
-                        align_class_count[aux_align][char_class] = 1
+                    if char_class not in align_class_count['All'][aux_align]:
+                        align_class_count['All'][aux_align][char_class] = 1
                     else:
-                        align_class_count[aux_align][char_class] += 1
+                        align_class_count['All'][aux_align][char_class] += 1
 
-def class_race(data,char):
+                if aux_align not in align_class_count[year]:
+                    align_class_count[year][aux_align] = {char_class:1}
+                else:
+                    if char_class not in align_class_count[year][aux_align]:
+                        align_class_count[year][aux_align][char_class] = 1
+                    else:
+                        align_class_count[year][aux_align][char_class] += 1
+
+def class_race(data,char,year):
     aux_race = data[char]['race'][0]
     for char_class in data[char]['class']:
         if char_class in CLASSES:
             if aux_race != '':
-                if char_class not in class_race_count:
-                    class_race_count[char_class] = {aux_race:1}
+                if char_class not in class_race_count['All']:
+                    class_race_count['All'][char_class] = {aux_race:1}
                 else:
-                    if aux_race not in class_race_count[char_class]:
-                        class_race_count[char_class][aux_race] = 1
+                    if aux_race not in class_race_count['All'][char_class]:
+                        class_race_count['All'][char_class][aux_race] = 1
                     else:
-                        class_race_count[char_class][aux_race] += 1
+                        class_race_count['All'][char_class][aux_race] += 1
+                
+                if char_class not in class_race_count[year]:
+                    class_race_count[year][char_class] = {aux_race:1}
+                else:
+                    if aux_race not in class_race_count[year][char_class]:
+                        class_race_count[year][char_class][aux_race] = 1
+                    else:
+                        class_race_count[year][char_class][aux_race] += 1
 
-def race_class(data,char):
+def race_class(data,char,year):
     aux_race = data[char]['race'][0]
     if aux_race != '':
         for char_class in data[char]['class']:
             if char_class in CLASSES:
-                if aux_race not in race_class_count:
-                    race_class_count[aux_race] = {char_class:1}
+                if aux_race not in race_class_count['All']:
+                    race_class_count['All'][aux_race] = {char_class:1}
                 else:
-                    if char_class not in race_class_count[aux_race]:
-                        race_class_count[aux_race][char_class] = 1
+                    if char_class not in race_class_count['All'][aux_race]:
+                        race_class_count['All'][aux_race][char_class] = 1
                     else:
-                        race_class_count[aux_race][char_class] += 1
+                        race_class_count['All'][aux_race][char_class] += 1
+                
+                if aux_race not in race_class_count[year]:
+                    race_class_count[year][aux_race] = {char_class:1}
+                else:
+                    if char_class not in race_class_count[year][aux_race]:
+                        race_class_count[year][aux_race][char_class] = 1
+                    else:
+                        race_class_count[year][aux_race][char_class] += 1
 
-def race_align(data,char):
+def race_align(data,char,year):
     aux_race = data[char]['race'][0]
     aux_align = data[char]['alignment'][0]
     if aux_race != '':
         if aux_align != 'None':
-            if aux_race not in race_align_count:
-                race_align_count[aux_race] = {aux_align:1}
+            if aux_race not in race_align_count['All']:
+                race_align_count['All'][aux_race] = {aux_align:1}
             else:
-                if aux_align not in race_align_count[aux_race]:
-                    race_align_count[aux_race][aux_align] = 1
+                if aux_align not in race_align_count['All'][aux_race]:
+                    race_align_count['All'][aux_race][aux_align] = 1
                 else:
-                    race_align_count[aux_race][aux_align] += 1
+                    race_align_count['All'][aux_race][aux_align] += 1
+            
+            if aux_race not in race_align_count[year]:
+                race_align_count[year][aux_race] = {aux_align:1}
+            else:
+                if aux_align not in race_align_count[year][aux_race]:
+                    race_align_count[year][aux_race][aux_align] = 1
+                else:
+                    race_align_count[year][aux_race][aux_align] += 1
 
-def align_race(data,char):
+def align_race(data,char,year):
     aux_race = data[char]['race'][0]
     aux_align = data[char]['alignment'][0]
     if aux_race != '':
         if aux_align != 'None':
-            if aux_align not in align_race_count:
-                align_race_count[aux_align] = {aux_race:1}
+            if aux_align not in align_race_count['All']:
+                align_race_count['All'][aux_align] = {aux_race:1}
             else:
-                if aux_race not in align_race_count[aux_align]:
-                    align_race_count[aux_align][aux_race] = 1
+                if aux_race not in align_race_count['All'][aux_align]:
+                    align_race_count['All'][aux_align][aux_race] = 1
                 else:
-                    align_race_count[aux_align][aux_race] += 1
+                    align_race_count['All'][aux_align][aux_race] += 1
+
+            if aux_align not in align_race_count[year]:
+                align_race_count[year][aux_align] = {aux_race:1}
+            else:
+                if aux_race not in align_race_count[year][aux_align]:
+                    align_race_count[year][aux_align][aux_race] = 1
+                else:
+                    align_race_count[year][aux_align][aux_race] += 1
 
 # Generate JSONS structures
-def create_json(center,count_dict):
+def create_json(center,count_dict,global_arrays):
     relation = list(count_dict[center].keys())
+    no_relations = list(set(relation) - set(global_arrays))
     id = 1
     network_json = {'nodes':[],'links':[]}
     network_json['nodes'].append({'id':id,'name':center})
@@ -145,44 +196,56 @@ def create_json(center,count_dict):
         network_json['nodes'].append({'id':id,'name':rel})
         network_json['links'].append({'source':1,'target':id,'distance':count_dict[center][rel]})
         id+=1
+    for rel in no_relations:
+        pass
+
     return network_json
+
 
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
     data = json.load(f)
     new_json = {}
     for character in data:
-        class_align(data,character)
-        align_class(data,character)
-        race_class(data,character)
-        class_race(data,character)
-        race_align(data,character)
-        align_race(data,character)
+        year = (str((datetime.strptime(data[character]['date'][0], '%Y-%m-%d %H:%M:%S')).year))
+        class_align(data,character,year)
+        align_class(data,character,year)
+        race_class(data,character,year)
+        class_race(data,character,year)
+        race_align(data,character,year)
+        align_race(data,character,year)
+
     # Create and append the network JSON structure to a JSON file
-    class_align_json = {}
-    class_race_json = {}
-    for fun_class in CLASSES:
-        class_align_json[fun_class] = create_json(fun_class,class_align_count)
-        class_race_json[fun_class] = create_json(fun_class,class_race_count)
+    class_align_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    class_race_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    for fun_year in class_align_count:
+        for fun_class in class_align_count[fun_year]:
+            class_align_json[fun_year][fun_class]=create_json(fun_class,class_align_count[fun_year],CLASSES)
+        for fun_class in class_race_count[fun_year]:
+            class_race_json[fun_year][fun_class]=create_json(fun_class,class_race_count[fun_year],CLASSES)
     new_json['Class_Alignment'] = class_align_json
     new_json['Class_Race'] = class_race_json
     
-    race_class_json = {}
-    race_align_json = {}
-    for fun_race in RACES:
-        race_class_json[fun_race] = create_json(fun_race, race_class_count)
-        race_align_json[fun_race] = create_json(fun_race, race_align_count)
+    race_class_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    race_align_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    for fun_year in class_align_count:
+        for fun_race in race_class_count[fun_year]:
+            race_class_json[fun_year][fun_race] = create_json(fun_race, race_class_count[fun_year],RACES)
+        for fun_race in race_align_count[fun_year]:
+            race_align_json[fun_year][fun_race] = create_json(fun_race, race_align_count[fun_year],RACES)
     new_json['Race_Class'] = race_class_json
     new_json['Race_Alignment'] = race_align_json
 
-    align_class_json = {}
-    align_race_json = {}
-    for fun_align in ALIGNS:
-        align_class_json[fun_align] = create_json(fun_align,align_class_count)
-        align_race_json[fun_align] = create_json(fun_align,align_race_count)
+    align_class_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    align_race_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    for fun_year in class_align_count:
+        for fun_align in align_class_count[fun_year]:
+            align_class_json[fun_year][fun_align] = create_json(fun_align,align_class_count[fun_year],ALIGNS)
+        for fun_align in align_race_count[fun_year]:
+            align_race_json[fun_year][fun_align] = create_json(fun_align,align_race_count[fun_year],ALIGNS)
     new_json['Alignment_Class'] = align_class_json
     new_json['Alignment_Race'] = align_race_json
 
 
-with open('network_all_data.json',"w") as f:
+with open('network_all_data_with_dates.json',"w") as f:
     json.dump(new_json,f,indent=2)
