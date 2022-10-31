@@ -76,7 +76,7 @@ function createVis2(id){
 				.attr("y", d => y(d.Players))
 				.attr("width", x.bandwidth())
 				.attr("height", d => height - y(d.Players))
-				.attr("fill", "#2296F3")
+				.attr("fill", "#e41a1c")
 			.on("mouseover", function(event, d){
 				tooltip
 					.transition()
@@ -104,14 +104,14 @@ function createVis2(id){
 				// Select and deselect a bar
 				if (!d3.select(this).classed("selected")){
 					d3.select(this).classed("selected",true)
-					d3.selectAll('.allbars').style('fill', '#2296F3'); //fill all circles black
-					d3.select(this).style("fill", "#012B4E"); //then fill this circle lightcoral
+					d3.selectAll('.allbars').style('fill', '#e41a1c'); //fill all circles black
+					d3.select(this).style("fill", "#5d0f02"); //then fill this circle lightcoral
 					dateHisto = d.Year
 					updateNet(sel_relation,centreNode)
 				}else{
 					d3.select(this).classed("selected",false)
-					d3.selectAll('.allbars').style('fill', '#2296F3'); //fill all circles black
-					d3.select(this).style("fill", "#2296F3")
+					d3.selectAll('.allbars').style('fill', '#e41a1c'); //fill all circles black
+					d3.select(this).style("fill", "#e41a1c")
 					dateHisto = 'All'
 					updateNet(sel_relation,centreNode)
 				}
