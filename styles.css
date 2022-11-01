@@ -4,6 +4,8 @@
 
 body{
     background-image: url('resources/imgs/old_paper.png');
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 20px;
 }
 
 .grid-container {
@@ -59,9 +61,6 @@ body{
 }
 
 .vis1{
-    background-image: url('resources/imgs/the_radar.png');
-    background-repeat: no-repeat;
-    background-position-x: center;
     border: 1px solid rgb(0, 0, 0);
 }
 .vis2{

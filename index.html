@@ -6,19 +6,15 @@
 	<title>VI Dungeon and Dragons</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="radar.js"></script>
 	<script src="script.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 </head>
 
 <body onload="init()">
-	<style>
-		body {
-		  font-family: Copperplate, Papyrus, fantasy;
-		}
-		</style>
-	<p style="font-size:25px;text-align:center;">Dungeon & Dragons</p>
+	<p style="font-size:35px;text-align:center;">Dungeon & Dragons</p>
 	<div class="grid-container">
-    	<div class="player_filter">PLAYER FILTER TODO</div>
+    	<div class="player_filter"></div>
     
       	<div class="grid_filters">
 			<div class="class_filter">
@@ -29,7 +25,17 @@
       	</div>
 
     	<div class="grid_charts">
-			<div class="vis1"></div>
+			<div class="vis1">
+				<div class="vis1_filter">
+					<p>Options</p>
+					<input type="radio" id="radar_btt1" value="Class">
+					<label for="radar_btt1">Class</label><br>
+					<input type="radio" id="radar_btt2" value="Race">
+					<label for="radar_btt2">Race</label><br>
+					<input type="radio" id="radar_btt3" value="Skill">
+					<label for="radar_btt3">Skill</label>
+				</div>
+			</div>
 			<div class="vis2"></div>
 			<div class="vis3"></div>
 			<div class="vis3_filter">
@@ -37,7 +43,7 @@
 					<p>Center Node Type</p>
 					<select name="Centre_Node" id="select_1">
 						<option value="None"> Select Node </option>
-						<option value="Class"> Class </option>
+						<option value="Class" selected='selected'> Class </option>
 						<option value="Race"> Race </option>
 						<!-- <option value="Alignment"> Alignment </option> -->
 					</select>
@@ -48,7 +54,7 @@
 						<option value="None"> Select Node </option>
 						<option value="Class"> Class </option>
 						<option value="Race"> Race </option>
-						<option value="Alignment"> Alignment </option>
+						<option value="Alignment" selected='selected'> Alignment </option>
 					</select>
 				</div>
         	</div>   

@@ -9,13 +9,55 @@ const options = {
 	'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
 }
 
+var dateHisto = 'All';
+
 function init(){
-	createVis2('.vis2')
-	selectFilter('class_filter', options['Classes'],'Classes:');
+	createVis1('.vis1');
+	createVis2('.vis2');
+	dateHisto='All';
+	sel_relation = 'Class_Alignment';
+	centreNode = 'Paladin';
+	createVis3('.vis3',sel_relation,centreNode);
+	radioFilter('class_filter', options['Classes'], 'Classes:');
 	selectFilter('race_filter', options['Races'], 'Races:');
+	radiobtn = document.getElementById("class_filter7");
+	radiobtn.checked = true;
 }
 
-var dateHisto = 'All';
+function createVis1(id){
+	radar_color = "#e41a1c"
+	// set the dimensions and margins of the graph
+	const margin = {top: 60, right: 30, bottom: 45, left: 30},
+	width = 460 - margin.left - margin.right,
+	height = 400 - margin.top - margin.bottom;
+	
+	var data = [{
+		"name": "Dwarf",
+        "axes": [
+			{"axis": "HP","value": 48},
+            {"axis": "AC","value": 16},
+            {"axis": "Str","value": 15},
+            {"axis": "Dex","value": 13},
+            {"axis": "Con","value": 16},
+            {"axis": "Int","value": 11},
+            {"axis": "Wis","value": 14},
+            {"axis": "Cha","value": 12}
+        ]
+    }];
+	data[0]['color'] = radar_color;
+
+	var radarChartOptions = {
+		w: width,
+		h: height,
+		margin: margin,
+		maxValue: 60,
+		levels: 6,
+		roundStrokes: false,
+		format: '.0f'
+	};
+	// Draw the chart, get a reference the created svg element :
+	let svg_radar2 = RadarChart(id, data, radarChartOptions);
+}
 
 function createVis2(id){
 	// set the dimensions and margins of the graph
@@ -33,8 +75,7 @@ function createVis2(id){
 
 	// Parse the Data
 	d3.csv("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/years.csv").then( function(data) {
-		console.log(data)	
-	// X axis
+		// X axis
 		const x = d3.scaleBand()
 			.range([ 0, width ])
 			.domain(data.map(d => d.Year))
@@ -104,13 +145,13 @@ function createVis2(id){
 				// Select and deselect a bar
 				if (!d3.select(this).classed("selected")){
 					d3.select(this).classed("selected",true)
-					d3.selectAll('.allbars').style('fill', '#e41a1c'); //fill all circles black
-					d3.select(this).style("fill", "#5d0f02"); //then fill this circle lightcoral
+					d3.selectAll('.allbars').style('fill', '#e41a1c');
+					d3.select(this).style("fill", "#5d0f02");
 					dateHisto = d.Year
 					updateNet(sel_relation,centreNode)
 				}else{
 					d3.select(this).classed("selected",false)
-					d3.selectAll('.allbars').style('fill', '#e41a1c'); //fill all circles black
+					d3.selectAll('.allbars').style('fill', '#e41a1c');
 					d3.select(this).style("fill", "#e41a1c")
 					dateHisto = 'All'
 					updateNet(sel_relation,centreNode)
@@ -134,7 +175,7 @@ function createVis3(id,relation,centre){
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
     d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_all_data_with_dates.json").then(function(data) {
-		console.log(data[relation],relation,dateHisto,centre)
+		
 		const linkObject = data[relation][dateHisto][centre].links;
         const nodeObject = data[relation][dateHisto][centre].nodes;
         // Initialize the links
@@ -143,6 +184,8 @@ function createVis3(id,relation,centre){
             .data(linkObject)
             .join("line")
             .style("stroke", "#aaa");
+		link.append("text")
+		.text(function(d){return d.distance})
         // Initialize the nodes
         var node = svg.selectAll(".node")
             .data(nodeObject)
@@ -250,6 +293,7 @@ function changeRadio(radio_selection){
 	centreNode=radio_selection.value;
 	updateNet(sel_relation,centreNode)
 }
+
 
 var prevCentreSel = ''
 var $selects = $('select');
