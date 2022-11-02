@@ -187,7 +187,7 @@ function createVis3(id,relation,centre){
         .attr("class","node")
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
-    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_all_data_with_dates.json").then(function(data) {
+    d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_data.json").then(function(data) {
 		
 		const linkObject = data[relation][dateHisto][country][centre].links;
         const nodeObject = data[relation][dateHisto][country][centre].nodes;
