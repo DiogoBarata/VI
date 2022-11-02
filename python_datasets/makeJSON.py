@@ -47,10 +47,11 @@ def attr_sctructure(centre,rel,dict_count,year,country):
 
 def data_to_network(char,year):
     align = char['alignment'][0]
+    align_continue = True
     race = char['race'][0]
     country = char['location'][0]
     if country not in COUNTRIES: country = 'Other'
-
+    if align not in ALIGNS: align_continue = False
     for char_class in char['class']:
         if char_class in CLASSES:
             combo_name = char_class + '_' + race
@@ -58,17 +59,29 @@ def data_to_network(char,year):
             char_class = 'Custom'
             combo_name = char_class + '_' + race
         
-        #class_align
-        attr_sctructure(char_class,align,class_align_count,'All','All')
-        attr_sctructure(char_class,align,class_align_count,'All',country)
-        attr_sctructure(char_class,align,class_align_count,year,'All')
-        attr_sctructure(char_class,align,class_align_count,year,country)
+        if align_continue:
+            #class_align
+            attr_sctructure(char_class,align,class_align_count,'All','All')
+            attr_sctructure(char_class,align,class_align_count,'All',country)
+            attr_sctructure(char_class,align,class_align_count,year,'All')
+            attr_sctructure(char_class,align,class_align_count,year,country)
+            #align_class
+            attr_sctructure(align,char_class,align_class_count,'All','All')
+            attr_sctructure(align,char_class,align_class_count,'All',country)
+            attr_sctructure(align,char_class,align_class_count,year,'All')
+            attr_sctructure(align,char_class,align_class_count,year,country)
+            #combo_align
+            attr_sctructure(combo_name,align,combo_align_count,'All','All')
+            attr_sctructure(combo_name,align,combo_align_count,'All',country)
+            attr_sctructure(combo_name,align,combo_align_count,year,'All')
+            attr_sctructure(combo_name,align,combo_align_count,year,country)
+            #align_combo
+            attr_sctructure(align,combo_name,align_combo_count,'All','All')
+            attr_sctructure(align,combo_name,align_combo_count,'All',country)
+            attr_sctructure(align,combo_name,align_combo_count,year,'All')
+            attr_sctructure(align,combo_name,align_combo_count,year,country)
+        
         #class_race
-        attr_sctructure(align,char_class,align_class_count,'All','All')
-        attr_sctructure(align,char_class,align_class_count,'All',country)
-        attr_sctructure(align,char_class,align_class_count,year,'All')
-        attr_sctructure(align,char_class,align_class_count,year,country)
-        #align_class
         attr_sctructure(char_class,race,class_race_count,'All','All')
         attr_sctructure(char_class,race,class_race_count,'All',country)
         attr_sctructure(char_class,race,class_race_count,year,'All')
@@ -78,27 +91,18 @@ def data_to_network(char,year):
         attr_sctructure(race,char_class,race_class_count,'All',country)
         attr_sctructure(race,char_class,race_class_count,year,'All')
         attr_sctructure(race,char_class,race_class_count,year,country)
-        #combo_align
-        attr_sctructure(combo_name,align,combo_align_count,'All','All')
-        attr_sctructure(combo_name,align,combo_align_count,'All',country)
-        attr_sctructure(combo_name,align,combo_align_count,year,'All')
-        attr_sctructure(combo_name,align,combo_align_count,year,country)
-        #align_combo
-        attr_sctructure(align,combo_name,align_combo_count,'All','All')
-        attr_sctructure(align,combo_name,align_combo_count,'All',country)
-        attr_sctructure(align,combo_name,align_combo_count,year,'All')
-        attr_sctructure(align,combo_name,align_combo_count,year,country)
 
-    #align_race
-    attr_sctructure(align,race,align_race_count,'All','All')
-    attr_sctructure(align,race,align_race_count,'All',country)
-    attr_sctructure(align,race,align_race_count,year,'All')
-    attr_sctructure(align,race,align_race_count,year,country)
-    #race_align
-    attr_sctructure(race,align,race_align_count,'All','All')
-    attr_sctructure(race,align,race_align_count,'All',country)
-    attr_sctructure(race,align,race_align_count,year,'All')
-    attr_sctructure(race,align,race_align_count,year,country)
+    if align_continue:
+        #align_race
+        attr_sctructure(align,race,align_race_count,'All','All')
+        attr_sctructure(align,race,align_race_count,'All',country)
+        attr_sctructure(align,race,align_race_count,year,'All')
+        attr_sctructure(align,race,align_race_count,year,country)
+        #race_align
+        attr_sctructure(race,align,race_align_count,'All','All')
+        attr_sctructure(race,align,race_align_count,'All',country)
+        attr_sctructure(race,align,race_align_count,year,'All')
+        attr_sctructure(race,align,race_align_count,year,country)
 
 
 # Generate JSONS structures
