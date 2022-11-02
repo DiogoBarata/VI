@@ -204,9 +204,10 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.append("path")
 		.attr("class", "radarArea")
 		.attr("d", d => radarLine(d.axes))
-		.style("fill", (d,i) => cfg.color(i))
+		.style("fill", i.color)
 		.style("fill-opacity", cfg.opacityArea)
 		.on('mouseover', function(d, i) {
+			console.log(i)
 			//Dim all blobs
 			parent.selectAll(".radarArea")
 				.transition().duration(200)
@@ -233,16 +234,16 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.style("filter" , "url(#glow)");
 
 	//Append the circles
-	blobWrapper.selectAll(".radarCircle")
-		.data(d => d.axes)
-		.enter()
-		.append("circle")
-		.attr("class", "radarCircle")
-		.attr("r", cfg.dotRadius)
-		.attr("cx", (d,i) => rScale(d.value) * cos(angleSlice * i - HALF_PI))
-		.attr("cy", (d,i) => rScale(d.value) * sin(angleSlice * i - HALF_PI))
-		.style("fill", "#1f1e1d")
-		.style("fill-opacity", 0.8);
+	// blobWrapper.selectAll(".radarCircle")
+	// 	.data(d => d.axes)
+	// 	.enter()
+	// 	.append("circle")
+	// 	.attr("class", "radarCircle")
+	// 	.attr("r", cfg.dotRadius)
+	// 	.attr("cx", (d,i) => rScale(d.value) * cos(angleSlice * i - HALF_PI))
+	// 	.attr("cy", (d,i) => rScale(d.value) * sin(angleSlice * i - HALF_PI))
+	// 	.style("fill", "#1f1e1d")
+	// 	.style("fill-opacity", 0.8);
 
 	/////////////////////////////////////////////////////////
 	//////// Append invisible circles for tooltip ///////////
@@ -270,7 +271,8 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 				.attr('y', this.cy.baseVal.value - 10)
 				.transition()
 				.style('display', 'block')
-				.text(Format(d.value) + cfg.unit);
+				.style("font-size", "16px")
+				.text(i.value);
 		})
 		.on("mouseout", function(){
 			tooltip.transition()

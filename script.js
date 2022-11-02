@@ -10,14 +10,23 @@ const options = {
 }
 
 var dateHisto = 'All';
+var country = 'All';
+var sel_relation = 'Class_Alignment';
+var centreNode = 'Paladin';
+var radar_option = 'Class';
 
 function init(){
-	createVis1('.vis1');
-	createVis2('.vis2');
-	dateHisto='All';
+	dateHisto = 'All';
+	country = 'All';
 	sel_relation = 'Class_Alignment';
 	centreNode = 'Paladin';
-	createVis3('.vis3',sel_relation,centreNode);
+	radar_option = 'Class';
+
+	createVis1('.vis1');
+	createVis2('.vis2');
+	//Vis3 is being created by the initiallization of the buttons
+	//createVis3('.vis3',sel_relation,centreNode);
+
 	radioFilter('class_filter', options['Classes'], 'Classes:');
 	selectFilter('race_filter', options['Races'], 'Races:');
 	radiobtn = document.getElementById("class_filter7");
@@ -30,33 +39,37 @@ function createVis1(id){
 	const margin = {top: 60, right: 30, bottom: 45, left: 30},
 	width = 460 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
-	
-	var data = [{
-		"name": "Dwarf",
-        "axes": [
-			{"axis": "HP","value": 48},
-            {"axis": "AC","value": 16},
-            {"axis": "Str","value": 15},
-            {"axis": "Dex","value": 13},
-            {"axis": "Con","value": 16},
-            {"axis": "Int","value": 11},
-            {"axis": "Wis","value": 14},
-            {"axis": "Cha","value": 12}
-        ]
-    }];
-	data[0]['color'] = radar_color;
+	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json").then(function(data) {
+		radar_selected = (data[radar_option][dateHisto][country][centreNode])
+		radar_mean = (data[radar_option][dateHisto][country]['Mean'])
+		
+		var radar_data = [{
+			"name": "Dwarf",
+			"axes": [
+				{"axis": "HP","value": 48},
+				{"axis": "AC","value": 16},
+				{"axis": "Str","value": 15},
+				{"axis": "Dex","value": 13},
+				{"axis": "Con","value": 16},
+				{"axis": "Int","value": 11},
+				{"axis": "Wis","value": 14},
+				{"axis": "Cha","value": 12}
+			],
+			"color": "#ff00fb"
+		}];
 
-	var radarChartOptions = {
-		w: width,
-		h: height,
-		margin: margin,
-		maxValue: 60,
-		levels: 6,
-		roundStrokes: false,
-		format: '.0f'
-	};
-	// Draw the chart, get a reference the created svg element :
-	let svg_radar2 = RadarChart(id, data, radarChartOptions);
+		var radarChartOptions = {
+			w: width,
+			h: height,
+			margin: margin,
+			maxValue: 60,
+			levels: 6,
+			roundStrokes: false,
+			format: '.0f'
+		};
+		// Draw the chart, get a reference the created svg element :
+		let svg_radar2 = RadarChart(id, radar_data, radarChartOptions);
+	});
 }
 
 function createVis2(id){
@@ -176,8 +189,8 @@ function createVis3(id,relation,centre){
     
     d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_all_data_with_dates.json").then(function(data) {
 		
-		const linkObject = data[relation][dateHisto][centre].links;
-        const nodeObject = data[relation][dateHisto][centre].nodes;
+		const linkObject = data[relation][dateHisto][country][centre].links;
+        const nodeObject = data[relation][dateHisto][country][centre].nodes;
         // Initialize the links
         var link = svg
             .selectAll("line")
@@ -284,8 +297,6 @@ function radioFilter(filterId, data, legend){
 		.attr("onClick", "changeRadio(this)");
 }
 
-var centreNode=''
-var sel_relation = ''
 
 function changeSelect(select_selection){}
 

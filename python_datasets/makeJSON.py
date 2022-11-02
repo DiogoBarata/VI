@@ -1,228 +1,128 @@
 import json
 from datetime import datetime
-""""
-{"thirsty_davinci Sorcerer 13|Cleric 1": {
-    "name": ["thirsty_davinci"], 
-    "race": ["Dwarf"], 
-    "date": ["2022-08-23 13:02:11"], 
-    "class": {
-        "Sorcerer": {
-            "class": ["Sorcerer"], 
-            "subclass": ["Clockwork Soul"], 
-            "level": [13], 
-            "originality": 0.00409695849270464
-        }, 
-        "Cleric": {
-            "class": ["Cleric"], 
-            "subclass": ["Order Domain"], 
-            "level": [1], 
-            "originality": 0.005964356700705374}
-        }
-    }
-    "level": [14], 
-    "feats": ["Fey Touched", "War Caster", "Metamagic Adept"], 
-    "HP": [146], "AC": [10], "attributes": {"Str": [9], "Dex": [11], "Con": [20], "Int": [14], "Wis": [14], "Cha": [20]}, 
-    "alignment": ["None"], 
-    "skills": ["Arcana", "Religion", "Intimidation"], 
-    "choices": {"metamagic": ["Twinned Spell", "Subtle Spell", "Quickened Spell", "Extended Spell"]}, 
-    "location": ["CA"]},
-"""
-
 
 CLASSES = ['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
-'Ranger','Rogue','Sorcerer','Warlock','Wizard']
+    'Ranger','Rogue','Sorcerer','Warlock','Wizard']
 ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
 RACES = ['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
-        'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
-        'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
-        'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
-        'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
-        'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
+    'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
+    'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
+    'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
+    'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
+    'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
+
 YEARS = ['2018','2019','2020','2021','2022','All']
-VARS = ["class","alignment"]
-filename = "datasets/cleaned/dnd_chars_all_cleaned.json"
+COUNTRIES = ['CA','US','BR','AU','GB','IT','DE']
 
-#relations  |race   |class  |align  |
-# race      |   \   |   x   |   x   |
-# class     |   x   |   \   |   x   |
-# align     |   X   |   x   |   \   |
+filename = "python_datasets/cleaned/dnd_chars_all_cleaned.json"
 
-class_align_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-align_class_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+# relations |race   |class  |align  |combo  |
+# race      |   \   |   x   |   x   |   \   |
+# class     |   x   |   \   |   x   |   \   |
+# align     |   X   |   x   |   \   |       |
+# combo     |   \   |   \   |       |   \   |
 
-race_class_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-class_race_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+class_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+align_class_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
-race_align_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-align_race_count = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+race_class_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+class_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
+race_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+align_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+
+combo_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+align_combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
 # Generate dicts to use for the JSON
-def class_align(data,char,year):
-    aux_align = data[char]['alignment'][0]
-    for char_class in data[char]['class']:
+
+def attr_sctructure(centre,rel,dict_count,year,country):
+    if centre not in dict_count[year][country]:
+        dict_count[year][country][centre] = {rel:1}
+    else:
+        if rel not in dict_count[year][country][centre]:
+            dict_count[year][country][centre][rel] = 1
+        else:
+            dict_count[year][country][centre][rel] += 1
+
+def data_to_network(char,year):
+    align = char['alignment'][0]
+    race = char['race'][0]
+    country = char['location'][0]
+    if country not in COUNTRIES: country = 'Other'
+
+    for char_class in char['class']:
         if char_class in CLASSES:
-            if aux_align != 'None':
-                if char_class not in class_align_count['All']:
-                    class_align_count['All'][char_class] = {aux_align:1}
-                else:
-                    if aux_align not in class_align_count['All'][char_class]:
-                        class_align_count['All'][char_class][aux_align] = 1
-                    else:
-                        class_align_count['All'][char_class][aux_align] += 1
-                
-                if char_class not in class_align_count[year]:
-                    class_align_count[year][char_class] = {aux_align:1}
-                else:
-                    if aux_align not in class_align_count[year][char_class]:
-                        class_align_count[year][char_class][aux_align] = 1
-                    else:
-                        class_align_count[year][char_class][aux_align] += 1
+            combo_name = char_class + '_' + race
+        else:
+            char_class = 'Custom'
+            combo_name = char_class + '_' + race
+        
+        #class_align
+        attr_sctructure(char_class,align,class_align_count,'All','All')
+        attr_sctructure(char_class,align,class_align_count,'All',country)
+        attr_sctructure(char_class,align,class_align_count,year,'All')
+        attr_sctructure(char_class,align,class_align_count,year,country)
+        #class_race
+        attr_sctructure(align,char_class,align_class_count,'All','All')
+        attr_sctructure(align,char_class,align_class_count,'All',country)
+        attr_sctructure(align,char_class,align_class_count,year,'All')
+        attr_sctructure(align,char_class,align_class_count,year,country)
+        #align_class
+        attr_sctructure(char_class,race,class_race_count,'All','All')
+        attr_sctructure(char_class,race,class_race_count,'All',country)
+        attr_sctructure(char_class,race,class_race_count,year,'All')
+        attr_sctructure(char_class,race,class_race_count,year,country)
+        #race_class
+        attr_sctructure(race,char_class,race_class_count,'All','All')
+        attr_sctructure(race,char_class,race_class_count,'All',country)
+        attr_sctructure(race,char_class,race_class_count,year,'All')
+        attr_sctructure(race,char_class,race_class_count,year,country)
+        #combo_align
+        attr_sctructure(combo_name,align,combo_align_count,'All','All')
+        attr_sctructure(combo_name,align,combo_align_count,'All',country)
+        attr_sctructure(combo_name,align,combo_align_count,year,'All')
+        attr_sctructure(combo_name,align,combo_align_count,year,country)
+        #align_combo
+        attr_sctructure(align,combo_name,align_combo_count,'All','All')
+        attr_sctructure(align,combo_name,align_combo_count,'All',country)
+        attr_sctructure(align,combo_name,align_combo_count,year,'All')
+        attr_sctructure(align,combo_name,align_combo_count,year,country)
 
-def align_class(data,char,year):
-    aux_align = data[char]['alignment'][0]
-    if aux_align != 'None':
-        for char_class in data[char]['class']:
-            if char_class in CLASSES:
-                if aux_align not in align_class_count['All']:
-                    align_class_count['All'][aux_align] = {char_class:1}
-                else:
-                    if char_class not in align_class_count['All'][aux_align]:
-                        align_class_count['All'][aux_align][char_class] = 1
-                    else:
-                        align_class_count['All'][aux_align][char_class] += 1
+    #align_race
+    attr_sctructure(align,race,align_race_count,'All','All')
+    attr_sctructure(align,race,align_race_count,'All',country)
+    attr_sctructure(align,race,align_race_count,year,'All')
+    attr_sctructure(align,race,align_race_count,year,country)
+    #race_align
+    attr_sctructure(race,align,race_align_count,'All','All')
+    attr_sctructure(race,align,race_align_count,'All',country)
+    attr_sctructure(race,align,race_align_count,year,'All')
+    attr_sctructure(race,align,race_align_count,year,country)
 
-                if aux_align not in align_class_count[year]:
-                    align_class_count[year][aux_align] = {char_class:1}
-                else:
-                    if char_class not in align_class_count[year][aux_align]:
-                        align_class_count[year][aux_align][char_class] = 1
-                    else:
-                        align_class_count[year][aux_align][char_class] += 1
-
-def class_race(data,char,year):
-    aux_race = data[char]['race'][0]
-    for char_class in data[char]['class']:
-        if char_class in CLASSES:
-            if aux_race != '':
-                if char_class not in class_race_count['All']:
-                    class_race_count['All'][char_class] = {aux_race:1}
-                else:
-                    if aux_race not in class_race_count['All'][char_class]:
-                        class_race_count['All'][char_class][aux_race] = 1
-                    else:
-                        class_race_count['All'][char_class][aux_race] += 1
-                
-                if char_class not in class_race_count[year]:
-                    class_race_count[year][char_class] = {aux_race:1}
-                else:
-                    if aux_race not in class_race_count[year][char_class]:
-                        class_race_count[year][char_class][aux_race] = 1
-                    else:
-                        class_race_count[year][char_class][aux_race] += 1
-
-def race_class(data,char,year):
-    aux_race = data[char]['race'][0]
-    if aux_race != '':
-        for char_class in data[char]['class']:
-            if char_class in CLASSES:
-                if aux_race not in race_class_count['All']:
-                    race_class_count['All'][aux_race] = {char_class:1}
-                else:
-                    if char_class not in race_class_count['All'][aux_race]:
-                        race_class_count['All'][aux_race][char_class] = 1
-                    else:
-                        race_class_count['All'][aux_race][char_class] += 1
-                
-                if aux_race not in race_class_count[year]:
-                    race_class_count[year][aux_race] = {char_class:1}
-                else:
-                    if char_class not in race_class_count[year][aux_race]:
-                        race_class_count[year][aux_race][char_class] = 1
-                    else:
-                        race_class_count[year][aux_race][char_class] += 1
-
-def race_align(data,char,year):
-    aux_race = data[char]['race'][0]
-    aux_align = data[char]['alignment'][0]
-    if aux_race != '':
-        if aux_align != 'None':
-            if aux_race not in race_align_count['All']:
-                race_align_count['All'][aux_race] = {aux_align:1}
-            else:
-                if aux_align not in race_align_count['All'][aux_race]:
-                    race_align_count['All'][aux_race][aux_align] = 1
-                else:
-                    race_align_count['All'][aux_race][aux_align] += 1
-            
-            if aux_race not in race_align_count[year]:
-                race_align_count[year][aux_race] = {aux_align:1}
-            else:
-                if aux_align not in race_align_count[year][aux_race]:
-                    race_align_count[year][aux_race][aux_align] = 1
-                else:
-                    race_align_count[year][aux_race][aux_align] += 1
-
-def align_race(data,char,year):
-    aux_race = data[char]['race'][0]
-    aux_align = data[char]['alignment'][0]
-    if aux_race != '':
-        if aux_align != 'None':
-            if aux_align not in align_race_count['All']:
-                align_race_count['All'][aux_align] = {aux_race:1}
-            else:
-                if aux_race not in align_race_count['All'][aux_align]:
-                    align_race_count['All'][aux_align][aux_race] = 1
-                else:
-                    align_race_count['All'][aux_align][aux_race] += 1
-
-            if aux_align not in align_race_count[year]:
-                align_race_count[year][aux_align] = {aux_race:1}
-            else:
-                if aux_race not in align_race_count[year][aux_align]:
-                    align_race_count[year][aux_align][aux_race] = 1
-                else:
-                    align_race_count[year][aux_align][aux_race] += 1
 
 # Generate JSONS structures
-def create_json(center,count_dict):
+def network_json(center,count_dict):
     relation = list(count_dict[center].keys())
     id = 1
-    network_json = {'nodes':[],'links':[]}
-    network_json['nodes'].append({'id':id,'name':center})
+    network_struct = {'nodes':[],'links':[]}
+    network_struct['nodes'].append({'id':id,'name':center})
     id +=1
     for rel in relation:
-        network_json['nodes'].append({'id':id,'name':rel})
-        network_json['links'].append({'source':1,'target':id,'distance':count_dict[center][rel]})
+        network_struct['nodes'].append({'id':id,'name':rel})
+        network_struct['links'].append({'source':1,'target':id,'distance':count_dict[center][rel]})
         id+=1
-    return network_json
+    return network_struct
 
-def separateCounts(new_json,count1,rel1,count2,rel2):
+def counts_json(new_json,count1,rel):
     # Create and append the network JSON structure to a JSON file
-    first_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
-    second_json = {'All':{},'2018':{},'2019':{},'2020':{},'2021':{},'2022':{}}
+    first_json = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
     for year in YEARS:
-        for fun_var in count1[year]:
-            first_json[year][fun_var]=create_json(fun_var,count1[year])
-        for fun_var in count2[year]:
-            second_json[year][fun_var]=create_json(fun_var,count2[year])
-    new_json[rel1] = first_json
-    new_json[rel2] = second_json
-
-def getGlobalVar(string):
-    new_string = string.split('_')
-    if new_string[0] == 'Class':
-        return CLASSES
-    elif new_string[0] == 'Race':
-        return RACES
-    elif new_string[0] == 'Alignment':
-        return ALIGNS
-
-def addNoRelations(new_json):
-    for rel in new_json:
-        globalVar = getGlobalVar(rel)
-        for year in new_json[rel]:
-            no_relation = list(set(new_json[rel][year].keys()) - set(globalVar))
+        for country in COUNTRIES:
+            for fun_var in count1[year][country]:
+                first_json[year][country][fun_var]=network_json(fun_var,count1[year][country])
+    new_json[rel] = first_json
+    
 
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
@@ -230,19 +130,20 @@ with open(filename,"r",encoding="utf-8") as f:
     new_json = {}
     for character in data:
         year = (str((datetime.strptime(data[character]['date'][0], '%Y-%m-%d %H:%M:%S')).year))
-        class_align(data,character,year)
-        align_class(data,character,year)
-        race_class(data,character,year)
-        class_race(data,character,year)
-        race_align(data,character,year)
-        align_race(data,character,year)
+        data_to_network(data[character],year)
 
     # Create and append the network JSON structure to a JSON file
-    separateCounts(new_json,class_align_count,'Class_Alignment',class_race_count,'Class_Race')
-    separateCounts(new_json,race_class_count,'Race_Class',race_align_count,'Race_Alignment')
-    separateCounts(new_json,align_class_count,'Alignment_Class',align_race_count,'Alignment_Race')
+    COUNTRIES.append('All')
+    COUNTRIES.append('Other')
+    counts_json(new_json,class_align_count,'Class_Alignment')
+    counts_json(new_json,align_class_count,'Alignemnt_Class')
+    counts_json(new_json,class_race_count,'Class_Race')
+    counts_json(new_json,race_class_count,'Race_Class')
+    counts_json(new_json,align_race_count,'Alignment_Race')
+    counts_json(new_json,race_align_count,'Race_Alignment')
+    counts_json(new_json,align_combo_count,'Alignment_Combo')
+    counts_json(new_json,combo_align_count,'Combo_Alignment')
 
-    addNoRelations(new_json)
 
-with open('network_all_data_with_dates.json',"w") as f:
+with open('resources/datasets/network_data.json',"w") as f:
     json.dump(new_json,f,indent=2)

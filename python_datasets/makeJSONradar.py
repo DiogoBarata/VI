@@ -33,6 +33,7 @@ filename = "python_datasets/cleaned/dnd_chars_all_cleaned.json"
 class_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 skill_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
 
 def attr_sctructure(item,item_count,year,hp,ac,stre,dex,con,inte,wis,cha,country):
@@ -67,16 +68,20 @@ def data_to_radar(data,char,year):
 
     for char_class in data[char]['class']:
         if char_class in CLASSES:
-            attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
-            attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
-            attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
-            attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')    
+            combo_name = char_class + '_' + race
         else:
             char_class = 'Custom'
-            attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)  
-            attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
-            attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
-            attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')       
+            combo_name = char_class + '_' + race
+
+        attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
+        attr_sctructure(char_class,class_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
+        attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
+        attr_sctructure(char_class,class_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')       
+        
+        attr_sctructure(combo_name,combo_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
+        attr_sctructure(combo_name,combo_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
+        attr_sctructure(combo_name,combo_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
+        attr_sctructure(combo_name,combo_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')       
 
     # Just to colapse the entire race section
     if 1==1:
@@ -142,17 +147,21 @@ with open(filename,"r",encoding="utf-8") as f:
     cal_mean(class_count)
     cal_mean(race_count)
     cal_mean(skill_count)
+    cal_mean(combo_count)
     
     COUNTRIES.append('Other')
     COUNTRIES.append('All')
 
+    # Create and append the network JSON structure to a JSON file
     dict_to_json(class_count)
     dict_to_json(race_count)
     dict_to_json(skill_count)
-    # Create and append the network JSON structure to a JSON file
+    dict_to_json(combo_count)
+
     new_json['Class'] = class_count
     new_json['Race'] = race_count
     new_json['Skills'] = skill_count
+    new_json['Combo'] = combo_count
 
 with open('radar_data.json',"w") as f:
     json.dump(new_json,f,indent=2)
