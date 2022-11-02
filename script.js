@@ -174,8 +174,8 @@ function createVis2(id){
 }
 
 function createVis3(id,relation,centre){
-	const margin = {top: 10, right: 30, bottom: 30, left: 40},
-      width = 700 - margin.left - margin.right,
+	const margin = {top: 10, right: 30, bottom: 10, left: 30},
+      width = 950 - margin.left - margin.right,
       height = 400 - margin.top - margin.bottom;
     // Append the svg object to the body of the page
     const svg = d3.select(id)
@@ -213,7 +213,7 @@ function createVis3(id,relation,centre){
 
 		
 		function linkDistance(d) {
-			calcDist = 10*(1/d.distance) + 1
+			calcDist = 100*(1/d.distance) + 1
 			return calcDist;
 		}
 		// This function is run at each iteration of the force algorithm
@@ -234,8 +234,9 @@ function createVis3(id,relation,centre){
                 .id(function(d) { return d.id; })                   // This provide  the id of a node
                 .links(linkObject)                                  // and this the list of links
 				.distance(linkDistance)
+				.strength(0.01)
             )
-            .force("charge", d3.forceManyBody().strength(-1000))    // This adds repulsion between nodes
+            .force("charge", d3.forceManyBody())    // This adds repulsion between nodes
             .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
             .on("end", ticked);
         

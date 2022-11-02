@@ -45,7 +45,7 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     border: 1px solid rgb(0, 0, 0);
-    width: 850px;
+    width: 950px;
     height: 400px;
 }
 
