@@ -1,35 +1,50 @@
 const options = {
-	"Classes":['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
+	'Classes':['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
 	'Ranger','Rogue','Sorcerer','Warlock','Wizard'],
-	"Races":['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
+	'Races':['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
 	'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
 	'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
 	'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
 	'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
-	'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
+	'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti'],
+	'Skills':['Arcana', 'Religion', 'Intimidation', 'History', 'Insight', 'Perception', 
+	'Persuasion', 'Athletics', 'Survival', 'Acrobatics', 'Sleight of Hand', 'Deception', 
+	'Performance', 'Stealth', 'Investigation', 'Nature', 'Animal Handling', 'Medicine'],
+	'Countries':['All','CA','US','BR','AU','GB','IT','DE','Other']
 }
 
+// Init global variables
 var dateHisto = 'All';
-var country = 'All';
-var sel_relation = 'Class_Alignment';
-var centreNode = 'Paladin';
-var radar_option = 'Class';
+var net_relation = 'bitch';
+var radar_option = 'class';
+
+var class_name = 'Paladin';
+var race_name = 'Aarakocra';
+var skill_name = 'Arcana';
+var country_name = 'All';
+
+var prev_class_name = '';
+var prev_race_name = '';
+var prev_skill_name = '';
+var prev_country_name = '';
+
 
 function init(){
-	dateHisto = 'All';
-	country = 'All';
-	sel_relation = 'Class_Alignment';
-	centreNode = 'Paladin';
-	radar_option = 'Class';
-
 	createVis1('.vis1');
 	createVis2('.vis2');
 	//Vis3 is being created by the initiallization of the buttons
-	//createVis3('.vis3',sel_relation,centreNode);
 
 	radioFilter('class_filter', options['Classes'], 'Classes:');
-	selectFilter('race_filter', options['Races'], 'Races:');
-	radiobtn = document.getElementById("class_filter7");
+	radioFilter('race_filter', options['Races'], 'Races:');
+	radioFilter('skill_filter', options['Skills'], 'Skills:');
+	radioFilter('country_filter',options['Countries'], 'Countries:')
+	radiobtn = document.getElementById("class_filter_"+class_name);
+	radiobtn.checked = true;
+	radiobtn = document.getElementById("race_filter_"+race_name);
+	radiobtn.checked = true;
+	radiobtn = document.getElementById("skill_filter_"+skill_name);
+	radiobtn.checked = true;
+	radiobtn = document.getElementById("country_filter_"+country_name);
 	radiobtn.checked = true;
 }
 
@@ -40,24 +55,11 @@ function createVis1(id){
 	width = 460 - margin.left - margin.right,
 	height = 400 - margin.top - margin.bottom;
 	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json").then(function(data) {
-		radar_selected = (data[radar_option][dateHisto][country][centreNode])
-		radar_mean = (data[radar_option][dateHisto][country]['Mean'])
-		
-		var radar_data = [{
-			"name": "Dwarf",
-			"axes": [
-				{"axis": "HP","value": 48},
-				{"axis": "AC","value": 16},
-				{"axis": "Str","value": 15},
-				{"axis": "Dex","value": 13},
-				{"axis": "Con","value": 16},
-				{"axis": "Int","value": 11},
-				{"axis": "Wis","value": 14},
-				{"axis": "Cha","value": 12}
-			],
-			"color": "#ff00fb"
-		}];
+		centreNode = getCentreNode()
+		radar_selected = (data[radar_option][dateHisto][country_name][centreNode])
+		radar_mean = (data[radar_option][dateHisto][country_name]['Mean'])
 
+		var radar_data = [radar_selected];
 		var radarChartOptions = {
 			w: width,
 			h: height,
@@ -70,6 +72,336 @@ function createVis1(id){
 		// Draw the chart, get a reference the created svg element :
 		let svg_radar2 = RadarChart(id, radar_data, radarChartOptions);
 	});
+}
+
+function RadarChart(parent_selector, data, options) {
+	const max = Math.max;
+	const sin = Math.sin;
+	const cos = Math.cos;
+	const HALF_PI = Math.PI / 2;
+
+	//Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
+	const wrap = (text, width) => {
+	  text.each(function() {
+			var text = d3.select(this),
+				words = text.text().split(/\s+/).reverse(),
+				word,
+				line = [],
+				lineNumber = 0,
+				lineHeight = 1.4, // ems
+				y = text.attr("y"),
+				x = text.attr("x"),
+				dy = parseFloat(text.attr("dy")),
+				tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+
+			while (word = words.pop()) {
+			  line.push(word);
+			  tspan.text(line.join(" "));
+			  if (tspan.node().getComputedTextLength() > width) {
+					line.pop();
+					tspan.text(line.join(" "));
+					line = [word];
+					tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+			  }
+			}
+	  });
+	}//wrap
+
+	const cfg = {
+		w: 600,					//Width of the circle
+		h: 600,					//Height of the circle
+		margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
+		levels: 3,				//How many levels or inner circles should there be drawn
+		maxValue: 0, 			//What is the value that the biggest circle will represent
+		labelFactor: 1.25, 		//How much farther than the radius of the outer circle should the labels be placed
+		wrapWidth: 60, 			//The number of pixels after which a label needs to be given a new line
+		opacityArea: 0.35, 		//The opacity of the area of the blob
+		dotRadius: 4, 			//The size of the colored circles of each blog
+		opacityCircles: 0.05, 	//The opacity of the circles of each blob
+		strokeWidth: 2, 		//The width of the stroke around each blob
+		roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+		color: d3.scaleOrdinal(d3.schemeCategory10),	//Color function,
+		format: '.2%',
+		unit: '',
+		legend: false
+	};
+
+	//Put all of the options into a variable called cfg
+	if('undefined' !== typeof options){
+	  for(var i in options){
+		if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
+	  }
+	}
+
+	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
+	// var maxValue = max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.map(function(o){return o.value;}))}));
+	let maxValue = 0;
+	for (let j=0; j < data.length; j++) {
+		for (let i = 0; i < data[j].axes.length; i++) {
+			data[j].axes[i]['id'] = data[j].name;
+			if (data[j].axes[i]['value'] > maxValue) {
+				maxValue = data[j].axes[i]['value'];
+			}
+		}
+	}
+	maxValue = max(cfg.maxValue, maxValue);
+
+	const allAxis = data[0].axes.map((i, j) => i.axis),	//Names of each axis
+		total = allAxis.length,							//The number of different axes
+		radius = Math.min(cfg.w/2, cfg.h/2), 			//Radius of the outermost circle
+		Format = d3.format(cfg.format),					//Formatting
+		angleSlice = Math.PI * 2 / total;				//The width in radians of each "slice"
+
+	//Scale for the radius
+	const rScale = d3.scaleLinear()
+		.range([0, radius])
+		.domain([0, maxValue]);
+
+	/////////////////////////////////////////////////////////
+	//////////// Create the container SVG and g /////////////
+	/////////////////////////////////////////////////////////
+	const parent = d3.select(parent_selector);
+
+	//Remove whatever chart with the same id/class was present before
+	parent.select("svg").remove();
+
+	//Initiate the radar chart SVG
+	let svg = parent.append("svg")
+			.attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
+			.attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
+			.attr("class", "radar");
+
+	//Append a g element
+	let g = svg.append("g")
+			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
+
+	/////////////////////////////////////////////////////////
+	////////// Glow filter for some extra ///////////////////
+	/////////////////////////////////////////////////////////
+
+	//Filter for the outside glow
+	let filter = g.append('defs').append('filter').attr('id','glow'),
+		feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','coloredBlur'),
+		feMerge = filter.append('feMerge'),
+		feMergeNode_1 = feMerge.append('feMergeNode').attr('in','coloredBlur'),
+		feMergeNode_2 = feMerge.append('feMergeNode').attr('in','SourceGraphic');
+
+	/////////////////////////////////////////////////////////
+	/////////////// Draw the Circular grid //////////////////
+	/////////////////////////////////////////////////////////
+
+	//Wrapper for the grid & axes
+	let axisGrid = g.append("g").attr("class", "axisWrapper");
+
+	//Draw the background circles
+	axisGrid.selectAll(".levels")
+	   .data(d3.range(1,(cfg.levels+1)).reverse())
+	   .enter()
+		.append("circle")
+		.attr("class", "gridCircle")
+		.attr("r", d => radius / cfg.levels * d)
+		.style("fill", "#e41a1c")
+		.style("stroke", "#e41a1c")
+		.style("fill-opacity", cfg.opacityCircles)
+		.style("filter" , "url(#glow)");
+
+	//Text indicating at what % each level is
+	axisGrid.selectAll(".axisLabel")
+	   .data(d3.range(1,(cfg.levels+1)).reverse())
+	   .enter().append("text")
+	   .attr("class", "axisLabel")
+	   .attr("x", 4)
+	   .attr("y", d => -d * radius / cfg.levels)
+	   .attr("dy", "0.4em")
+	   .style("font-size", "18px")
+	   .attr("fill", "#000000")
+	   .text(d => Format(maxValue * d / cfg.levels) + cfg.unit);
+
+	/////////////////////////////////////////////////////////
+	//////////////////// Draw the axes //////////////////////
+	/////////////////////////////////////////////////////////
+
+	//Create the straight lines radiating outward from the center
+	var axis = axisGrid.selectAll(".axis")
+		.data(allAxis)
+		.enter()
+		.append("g")
+		.attr("class", "axis");
+	//Append the lines
+	axis.append("line")
+		.attr("x1", 0)
+		.attr("y1", 0)
+		.attr("x2", (d, i) => rScale(maxValue *1.1) * cos(angleSlice * i - HALF_PI))
+		.attr("y2", (d, i) => rScale(maxValue* 1.1) * sin(angleSlice * i - HALF_PI))
+		.attr("class", "line")
+		.style("stroke", "#5d0f02")
+		.style("stroke-width", "2px");
+
+	//Append the labels at each axis
+	// axis.append('button')
+	// .style('background','none')
+	// .style('border', 'none')
+	axis.append("text")
+		.attr("class", "legend")
+		.style("font-size", "16px")
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.35em")
+		.attr("x", (d,i) => rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI))
+		.attr("y", (d,i) => rScale(maxValue * cfg.labelFactor) * sin(angleSlice * i - HALF_PI))
+		.text(d => d)
+		.call(wrap, cfg.wrapWidth)
+		.on("click", function (event,d) {
+			// Click on legend, d returns label
+		});
+
+	/////////////////////////////////////////////////////////
+	///////////// Draw the radar chart blobs ////////////////
+	/////////////////////////////////////////////////////////
+
+	//The radial line function
+	const radarLine = d3.radialLine()
+		.curve(d3.curveLinearClosed)
+		.radius(d => rScale(d.value))
+		.angle((d,i) => i * angleSlice);
+
+	if(cfg.roundStrokes) {
+		radarLine.curve(d3.curveCardinalClosed)
+	}
+
+	//Create a wrapper for the blobs
+	const blobWrapper = g.selectAll(".radarWrapper")
+		.data(data)
+		.enter().append("g")
+		.attr("class", "radarWrapper");
+
+	//Append the backgrounds
+	blobWrapper
+		.append("path")
+		.attr("class", "radarArea")
+		.attr("d", d => radarLine(d.axes))
+		.style("fill", i.color)
+		.style("fill-opacity", cfg.opacityArea)
+		.on('mouseover', function(d, i) {
+			//Dim all blobs
+			parent.selectAll(".radarArea")
+				.transition().duration(200)
+				.style("fill-opacity", 0.1);
+			//Bring back the hovered over blob
+			d3.select(this)
+				.transition().duration(200)
+				.style("fill-opacity", 0.7);
+		})
+		.on('mouseout', () => {
+			//Bring back all blobs
+			parent.selectAll(".radarArea")
+				.transition().duration(200)
+				.style("fill-opacity", cfg.opacityArea);
+		});
+
+	//Create the outlines
+	blobWrapper.append("path")
+		.attr("class", "radarStroke")
+		.attr("d", function(d,i) { return radarLine(d.axes); })
+		.style("stroke-width", cfg.strokeWidth + "px")
+		.style("stroke", "#cad10a")
+		.style("fill", "none")
+		.style("filter" , "url(#glow)");
+
+	//Append the circles
+	// blobWrapper.selectAll(".radarCircle")
+	// 	.data(d => d.axes)
+	// 	.enter()
+	// 	.append("circle")
+	// 	.attr("class", "radarCircle")
+	// 	.attr("r", cfg.dotRadius)
+	// 	.attr("cx", (d,i) => rScale(d.value) * cos(angleSlice * i - HALF_PI))
+	// 	.attr("cy", (d,i) => rScale(d.value) * sin(angleSlice * i - HALF_PI))
+	// 	.style("fill", "#1f1e1d")
+	// 	.style("fill-opacity", 0.8);
+
+	/////////////////////////////////////////////////////////
+	//////// Append invisible circles for tooltip ///////////
+	/////////////////////////////////////////////////////////
+
+	//Wrapper for the invisible circles on top
+	const blobCircleWrapper = g.selectAll(".radarCircleWrapper")
+		.data(data)
+		.enter().append("g")
+		.attr("class", "radarCircleWrapper");
+
+	//Append a set of invisible circles on top for the mouseover pop-up
+	blobCircleWrapper.selectAll(".radarInvisibleCircle")
+		.data(d => d.axes)
+		.enter().append("circle")
+		.attr("class", "radarInvisibleCircle")
+		.attr("r", cfg.dotRadius * 1.5)
+		.attr("cx", (d,i) => rScale(d.value) * cos(angleSlice*i - HALF_PI))
+		.attr("cy", (d,i) => rScale(d.value) * sin(angleSlice*i - HALF_PI))
+		.style("fill", "none")
+		.style("pointer-events", "all")
+		.on("mouseover", function(d,i) {
+			tooltip
+				.attr('x', this.cx.baseVal.value - 10)
+				.attr('y', this.cy.baseVal.value - 10)
+				.transition()
+				.style('display', 'block')
+				.style("font-size", "16px")
+				.text(i.value);
+		})
+		.on("mouseout", function(){
+			tooltip.transition()
+				.style('display', 'none').text('');
+		});
+
+	const tooltip = g.append("text")
+		.attr("class", "tooltip")
+		.attr('x', 0)
+		.attr('y', 0)
+		.style("font-size", "12px")
+		.style('display', 'none')
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.35em");
+
+	if (cfg.legend !== false && typeof cfg.legend === "object") {
+		let legendZone = svg.append('g');
+		let names = data.map(el => el.name);
+		if (cfg.legend.title) {
+			let title = legendZone.append("text")
+				.attr("class", "title")
+				.attr('transform', `translate(${cfg.legend.translateX},${cfg.legend.translateY})`)
+				.attr("x", cfg.w - 70)
+				.attr("y", 10)
+				.attr("font-size", "12px")
+				.attr("fill", "#404040")
+				.text(cfg.legend.title);
+		}
+		let legend = legendZone.append("g")
+			.attr("class", "legend")
+			.attr("height", 100)
+			.attr("width", 200)
+			.attr('transform', `translate(${cfg.legend.translateX},${cfg.legend.translateY + 20})`);
+		// Create rectangles markers
+		legend.selectAll('rect')
+		  .data(names)
+		  .enter()
+		  .append("rect")
+		  .attr("x", cfg.w - 65)
+		  .attr("y", (d,i) => i * 20)
+		  .attr("width", 10)
+		  .attr("height", 10)
+		  .style("fill", (d,i) => cfg.color(i));
+		// Create labels
+		legend.selectAll('text')
+		  .data(names)
+		  .enter()
+		  .append("text")
+		  .attr("x", cfg.w - 52)
+		  .attr("y", (d,i) => i * 20 + 9)
+		  .attr("font-size", "11px")
+		  .attr("fill", "#737373")
+		  .text(d => d);
+	}
+	return svg;
 }
 
 function createVis2(id){
@@ -156,18 +488,19 @@ function createVis2(id){
 			})
 			.on("click", function (event,d) {
 				// Select and deselect a bar
+				centreNode = getCentreNode()
 				if (!d3.select(this).classed("selected")){
 					d3.select(this).classed("selected",true)
 					d3.selectAll('.allbars').style('fill', '#e41a1c');
 					d3.select(this).style("fill", "#5d0f02");
 					dateHisto = d.Year
-					updateNet(sel_relation,centreNode)
+					updateNet(net_relation,centreNode)
 				}else{
 					d3.select(this).classed("selected",false)
 					d3.selectAll('.allbars').style('fill', '#e41a1c');
 					d3.select(this).style("fill", "#e41a1c")
 					dateHisto = 'All'
-					updateNet(sel_relation,centreNode)
+					updateNet(net_relation,centreNode)
 				}
 			})
 	})
@@ -184,13 +517,12 @@ function createVis3(id,relation,centre){
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("class","node")
+        .attr("class","network")
         .attr("transform",`translate(${margin.left}, ${margin.top})`);
     
     d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_data.json").then(function(data) {
-		
-		const linkObject = data[relation][dateHisto][country][centre].links;
-        const nodeObject = data[relation][dateHisto][country][centre].nodes;
+		const linkObject = data[relation][dateHisto][country_name][centre].links;
+        const nodeObject = data[relation][dateHisto][country_name][centre].nodes;
         // Initialize the links
         var link = svg
             .selectAll("line")
@@ -204,7 +536,7 @@ function createVis3(id,relation,centre){
             .data(nodeObject)
             .enter().append("g")
             .attr("class","node")
-        node.append("circle")
+		node.append("circle")
             .attr("r",15)
             .attr("stroke", "grey")
             .style("fill", "grey")
@@ -244,6 +576,10 @@ function createVis3(id,relation,centre){
 }
 
 function updateNet(relation,centre){
+	aux_relation = relation.split('_')[0]
+	if(aux_relation == 'class'){centre=class_name}
+	else if(aux_relation == 'race'){centre=race_name}
+
 	if(centre=='' && !(relation == ''|| relation.startsWith('None') || relation.endsWith('None'))){
 		d3.select("#netVis").remove();
 	}
@@ -251,28 +587,6 @@ function updateNet(relation,centre){
 		d3.select("#netVis").remove();
 		createVis3(".vis3",relation,centre);
 	}
-
-}
-
-function selectFilter(filterId, data, legend){
-	d3.select(".div_"+filterId).remove();
-	var filter = d3.select('.'+filterId)
-		.append('div')
-		.attr('class','div_'+ filterId)
-	filter
-		.append('legend')
-		.text(legend)
-	filter
-		.selectAll("input")
-		.data(data)
-		.enter()
-		.append('label')
-		.attr('for',function(d,i){ return filterId+i; })
-		.text(function(d) { return d; })
-		.append("input")
-		.attr("type", "checkbox")
-		.attr("id", function(d,i) { return filterId+i; })
-		.attr("onClick", "changeSelect(this)");
 }
 
 function radioFilter(filterId, data, legend){
@@ -288,24 +602,38 @@ function radioFilter(filterId, data, legend){
 		.data(data)
 		.enter()
 		.append('label')
-		.attr('for',function(d,i){ return filterId+i; })
+		.attr('for',function(d,i){ return filterId+'_'+d; })
 		.text(function(d) { return d; })
 		.append("input")
 		.attr("type", "radio")
-		.attr("name","radio_filter")
-		.attr("id", function(d,i) { return filterId+i; })
+		.attr("name","radio"+"_"+filterId)
+		.attr("id", function(d,i) { return filterId+'_'+d; })
 		.attr("value", function(d,i) { return d; })
 		.attr("onClick", "changeRadio(this)");
 }
 
-
-function changeSelect(select_selection){}
-
 function changeRadio(radio_selection){
-	centreNode=radio_selection.value;
-	updateNet(sel_relation,centreNode)
+	radio_group_name = (radio_selection.name).substring(6)
+	radio_group_name = radio_group_name.split('_')[0]
+	radio_value = radio_selection.value
+	relation_name = net_relation.split('_')[0]
+	
+	if (radio_group_name == 'class'){class_name = radio_value}
+	else if(radio_group_name == 'race'){race_name = radio_value}
+	else if(radio_group_name == 'country'){country_name = radio_value}
+	else if(radio_group_name == 'skill'){skill = radio_value}
+
+	if(radio_group_name==relation_name){
+		centreNode = getCentreNode();
+		updateNet(net_relation,centreNode)
+	}
 }
 
+function getCentreNode(){
+	relation_name = net_relation.split('_')[0]
+	if (relation_name == 'class'){return class_name}
+	else if(relation_name == 'race'){return race_name}
+}
 
 var prevCentreSel = ''
 var $selects = $('select');
@@ -323,24 +651,8 @@ $selects.on('change', function() {
 	var sel1 = sel.options[sel.selectedIndex].value;
 	var sel = document.getElementById('select_2');
 	var sel2 = sel.options[sel.selectedIndex].value;
-	sel_relation = sel1 + '_' + sel2
-
-	if (sel1=='Class'){
-		if(prevCentreSel != 'Class'){
-			radioFilter('class_filter', options['Classes'], 'Classes:');
-			selectFilter('race_filter', options['Races'], 'Races:');
-		}
-		if(prevCentreSel =='Race'){centreNode='';}
-		prevCentreSel = 'Class'
-	}
-	else if(sel1=='Race'){
-		if(prevCentreSel != 'Race'){
-			radioFilter('race_filter', options['Races'], 'Races:');
-			selectFilter('class_filter', options['Classes'],'Classes:');
-		}
-		if(prevCentreSel =='Class'){centreNode='';}
-		prevCentreSel = 'Race'
-	}
-	updateNet(sel_relation,centreNode)
+	net_relation = sel1 + '_' + sel2
+	centreNode = getCentreNode()
+	updateNet(net_relation,centreNode)
 });
 $selects.eq(0).trigger('change');

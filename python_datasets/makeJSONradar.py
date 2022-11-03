@@ -91,10 +91,11 @@ def data_to_radar(data,char,year):
         attr_sctructure(race,race_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')
 
     for skill in skills:
-        attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
-        attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
-        attr_sctructure(skill,skill_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
-        attr_sctructure(skill,skill_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')
+        if skill != 'None':
+            attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
+            attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
+            attr_sctructure(skill,skill_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
+            attr_sctructure(skill,skill_count,year,hp,ac,stre,dex,con,inte,wis,cha,'All')
 
 def cal_mean(dict_mean):
     for year in YEARS:
@@ -143,7 +144,7 @@ with open(filename,"r",encoding="utf-8") as f:
     for character in data:
         year = (str((datetime.strptime(data[character]['date'][0], '%Y-%m-%d %H:%M:%S')).year))
         data_to_radar(data,character,year)
-        
+
     cal_mean(class_count)
     cal_mean(race_count)
     cal_mean(skill_count)

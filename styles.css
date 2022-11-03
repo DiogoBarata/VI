@@ -13,12 +13,10 @@ body{
     grid-template-columns: 2fr 3fr;
 }
 
-.player_filter{
-    grid-column: 1/-1;
-}
-
 .class_filter >div,
-.race_filter >div{
+.race_filter >div,
+.skill_filter >div,
+.country_filter >div{
     height: 300px;
     width: auto;
     overflow-y: auto;
@@ -27,11 +25,20 @@ body{
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(0, 0, 0);
+}
 
+.class_filter,
+.race_filter,
+.country_filter,
+.skill_filter{
+    height: 300px;
+    width: auto;
 }
 
 .class_filter label,
-.race_filter label{
+.race_filter label,
+.country_filter label,
+.skill_filter label{
     display: block;
 }
 

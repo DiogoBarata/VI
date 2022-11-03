@@ -6,7 +6,6 @@
 	<title>VI Dungeon and Dragons</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script src="radar.js"></script>
 	<script src="script.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 </head>
@@ -14,14 +13,13 @@
 <body onload="init()">
 	<p style="font-size:35px;text-align:center;">Dungeon & Dragons</p>
 	<div class="grid-container">
-    	<div class="player_filter"></div>
     
       	<div class="grid_filters">
-			<div class="class_filter">
-			</div>
-			<div class="race_filter">
-			</div>
-			<div class="country_filter">OTHER FILTERS TODO</div>
+			<div class="class_filter"></div>
+			<div class="race_filter"></div>
+			<div class="originality"></div>
+			<div class="country_filter"></div>
+			<div class="skill_filter"></div>
       	</div>
 
     	<div class="grid_charts">
@@ -33,17 +31,17 @@
 					<p>Center Node Type</p>
 					<select name="Centre_Node" id="select_1">
 						<option value="None"> Select Node </option>
-						<option value="Class" selected='selected'> Class </option>
-						<option value="Race"> Race </option>
+						<option value="class" selected='selected'> Class </option>
+						<option value="race"> Race </option>
 					</select>
 				</div>
 				<div class="vis3_filter_rel">
 					<p>Relation Node Type</p>
 					<select name="Rel_Node" id="select_2">
 						<option value="None"> Select Node </option>
-						<option value="Class"> Class </option>
-						<option value="Race"> Race </option>
-						<option value="Alignment" selected='selected'> Alignment </option>
+						<option value="class"> Class </option>
+						<option value="race"> Race </option>
+						<option value="alignment" selected='selected'> Alignment </option>
 					</select>
 				</div>
         	</div>   

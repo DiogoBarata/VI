@@ -169,6 +169,9 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.style("stroke-width", "2px");
 
 	//Append the labels at each axis
+	// axis.append('button')
+	// .style('background','none')
+	// .style('border', 'none')
 	axis.append("text")
 		.attr("class", "legend")
 		.style("font-size", "16px")
@@ -177,7 +180,10 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.attr("x", (d,i) => rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI))
 		.attr("y", (d,i) => rScale(maxValue * cfg.labelFactor) * sin(angleSlice * i - HALF_PI))
 		.text(d => d)
-		.call(wrap, cfg.wrapWidth);
+		.call(wrap, cfg.wrapWidth)
+		.on("click", function (event,d) {
+			// Click on legend, d returns label
+		});
 
 	/////////////////////////////////////////////////////////
 	///////////// Draw the radar chart blobs ////////////////
@@ -207,7 +213,6 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.style("fill", i.color)
 		.style("fill-opacity", cfg.opacityArea)
 		.on('mouseover', function(d, i) {
-			console.log(i)
 			//Dim all blobs
 			parent.selectAll(".radarArea")
 				.transition().duration(200)
