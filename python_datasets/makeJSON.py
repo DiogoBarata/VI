@@ -34,8 +34,8 @@ align_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT'
 combo_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 align_combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
-# Generate dicts to use for the JSON
 
+# Generate dicts to use for the JSON
 def attr_sctructure(centre,rel,dict_count,year,country):
     if centre not in dict_count[year][country]:
         dict_count[year][country][centre] = {rel:1}
@@ -104,7 +104,6 @@ def data_to_network(char,year):
         attr_sctructure(race,align,race_align_count,year,'All')
         attr_sctructure(race,align,race_align_count,year,country)
 
-
 # Generate JSONS structures
 def network_json(center,count_dict):
     relation = list(count_dict[center].keys())
@@ -139,14 +138,14 @@ with open(filename,"r",encoding="utf-8") as f:
     # Create and append the network JSON structure to a JSON file
     COUNTRIES.append('All')
     COUNTRIES.append('Other')
-    counts_json(new_json,class_align_count,'Class_Alignment')
-    counts_json(new_json,align_class_count,'Alignemnt_Class')
-    counts_json(new_json,class_race_count,'Class_Race')
-    counts_json(new_json,race_class_count,'Race_Class')
-    counts_json(new_json,align_race_count,'Alignment_Race')
-    counts_json(new_json,race_align_count,'Race_Alignment')
-    counts_json(new_json,align_combo_count,'Alignment_Combo')
-    counts_json(new_json,combo_align_count,'Combo_Alignment')
+    counts_json(new_json,class_align_count,'class_alignment')
+    counts_json(new_json,align_class_count,'alignemnt_class')
+    counts_json(new_json,class_race_count,'class_race')
+    counts_json(new_json,race_class_count,'race_class')
+    counts_json(new_json,align_race_count,'alignment_race')
+    counts_json(new_json,race_align_count,'race_alignment')
+    counts_json(new_json,align_combo_count,'alignment_combo')
+    counts_json(new_json,combo_align_count,'combo_alignment')
 
 
 with open('resources/datasets/network_data.json',"w") as f:

@@ -158,10 +158,10 @@ with open(filename,"r",encoding="utf-8") as f:
     dict_to_json(skill_count)
     dict_to_json(combo_count)
 
-    new_json['Class'] = class_count
-    new_json['Race'] = race_count
-    new_json['Skills'] = skill_count
-    new_json['Combo'] = combo_count
+    new_json['class'] = class_count
+    new_json['race'] = race_count
+    new_json['skills'] = skill_count
+    new_json['combo'] = combo_count
 
-with open('radar_data.json',"w") as f:
+with open('resources/datasets/radar_data.json',"w") as f:
     json.dump(new_json,f,indent=2)
