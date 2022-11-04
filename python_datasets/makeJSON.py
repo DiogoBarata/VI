@@ -3,14 +3,18 @@ from datetime import datetime
 
 CLASSES = ['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
     'Ranger','Rogue','Sorcerer','Warlock','Wizard']
-ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
 RACES = ['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
     'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
     'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
     'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
     'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
     'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
+COMBOS = []
+for c in CLASSES:
+    for r in RACES:
+        COMBOS.append(c+'_'+r)
 
+ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
 YEARS = ['2018','2019','2020','2021','2022','All']
 COUNTRIES = ['CA','US','BR','AU','GB','IT','DE']
 
@@ -34,7 +38,8 @@ align_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT'
 combo_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 align_combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
-
+DICTS = [class_align_count,align_class_count,race_class_count,class_race_count,race_align_count,
+align_race_count,combo_align_count,align_combo_count]
 # Generate dicts to use for the JSON
 def attr_sctructure(centre,rel,dict_count,year,country):
     if centre not in dict_count[year][country]:
@@ -125,7 +130,28 @@ def counts_json(new_json,count1,rel):
             for fun_var in count1[year][country]:
                 first_json[year][country][fun_var]=network_json(fun_var,count1[year][country])
     new_json[rel] = first_json
-    
+
+def getGlobalVar(text):
+    if text == 'class':
+        return CLASSES
+    if text == 'alignment':
+        return ALIGNS
+    if text == 'race':
+        return RACES
+    if text == 'combo':
+        return COMBOS
+
+def dontExit():
+    for aux in new_json:
+        main_key = aux.split('_')[0]
+        global_var = getGlobalVar(main_key)
+        for year in YEARS:
+            for country in COUNTRIES:
+                keys_list = list(new_json[aux][year][country].keys())
+                for ind_key in global_var:
+                    if ind_key not in keys_list:
+                        network_struct = {'nodes':[{'id':1,'name':ind_key}],'links':[{'source':1,'target':1,'distance':1}]}
+                        new_json[aux][year][country][ind_key] = network_struct
 
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
@@ -138,14 +164,16 @@ with open(filename,"r",encoding="utf-8") as f:
     # Create and append the network JSON structure to a JSON file
     COUNTRIES.append('All')
     COUNTRIES.append('Other')
+    CLASSES.append('Custom')
     counts_json(new_json,class_align_count,'class_alignment')
-    counts_json(new_json,align_class_count,'alignemnt_class')
+    counts_json(new_json,align_class_count,'alignment_class')
     counts_json(new_json,class_race_count,'class_race')
     counts_json(new_json,race_class_count,'race_class')
     counts_json(new_json,align_race_count,'alignment_race')
     counts_json(new_json,race_align_count,'race_alignment')
     counts_json(new_json,align_combo_count,'alignment_combo')
     counts_json(new_json,combo_align_count,'combo_alignment')
+    dontExit()
 
 
 with open('resources/datasets/network_data.json',"w") as f:
