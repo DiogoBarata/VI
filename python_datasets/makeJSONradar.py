@@ -141,7 +141,7 @@ def getGlobalVar(text):
         return RACES
     if text == 'combo':
         return COMBOS
-    if text == 'skills':
+    if text == 'skill':
         return SKILLS
 
 def dontExit():
@@ -161,6 +161,7 @@ def dontExit():
                         {'axis':'Cha','value':0}]
                         radar_struct = {'name':ind_key,'axes':axis}
                         new_json[aux][year][country][ind_key] = radar_struct
+
 total_min_max = {}
 copyDict = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 min_max = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
@@ -209,7 +210,7 @@ with open(filename,"r",encoding="utf-8") as f:
 
     new_json['class'] = class_count
     new_json['race'] = race_count
-    new_json['skills'] = skill_count
+    new_json['skill'] = skill_count
     new_json['combo'] = combo_count
     dontExit()
     getMinMax()
