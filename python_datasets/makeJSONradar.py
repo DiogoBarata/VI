@@ -2,31 +2,24 @@ import json
 from datetime import datetime
 
 
-"""
-{'CA': 2355, 'US': 3750, 'BR': 162, 'None': 3262, 'IL': 27, 'AU': 164, 
-'GB': 343, 'PL': 4, 'NZ': 56, 'IT': 152, 'EC': 14, 'DE': 131, 'SG': 20, 
-'AT': 26, 'SE': 28, 'NL': 96, 'HU': 4, 'CR': 36, 'BE': 21, 'CL': 22, 
-'GR': 8, 'IS': 10, 'JP': 15, 'TR': 36, 'ES': 11, 'MX': 19, 'TH': 1, 
-'NO': 14, 'RO': 1, 'VE': 1, 'ID': 4, 'ZA': 8, 'PH': 25, 'FR': 3, 'DO': 8, 
-'IE': 14, 'FI': 3, 'CH': 7, 'DK': 3, 'BG': 3, 'LT': 4, 'AR': 2, 'PR': 1, 
-'PY': 3, 'HR': 1, 'IN': 5, 'PT': 2, 'SK': 1, 'CY': 1, 'RU': 2, 'BB': 1, 
-'BH': 1, 'KR': 1, 'PE': 2}
-"""
-#{'Others': 575, 'CA': 2355, 'US': 3750, 'BR': 162, 'None': 3262, 'AU': 164, 'GB': 343, 'IT': 152, 'DE': 131}
-
-COUNTRIES = ['CA','US','BR','AU','GB','IT','DE']
-
-ATTRIBUTES = ['HP','AC','Str','Dex','Con','Int','Wis','Cha']
 CLASSES = ['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
 'Ranger','Rogue','Sorcerer','Warlock','Wizard']
-ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
 RACES = ['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
         'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
         'Goblin', 'Goliath', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 
         'Kalashtar', 'Kenku', 'Kobold', 'Leonin', 'Lizardfolk', 'Loxodon', 'Minotaur', 
         'Orc', 'Satyr', 'Shifter', 'Simic hybrid', 'Tabaxi', 'Tiefling', 'Triton', 
         'Turtle', 'Vedalken', 'Warforged', 'Yaun-Ti']
+COMBOS = []
+for c in CLASSES:
+    for r in RACES:
+        COMBOS.append(c+'_'+r)
+
+COUNTRIES = ['CA','US','BR','AU','GB','IT','DE']
+ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
+ATTRIBUTES = ['HP','AC','Str','Dex','Con','Int','Wis','Cha']
 YEARS = ['2018','2019','2020','2021','2022','All']
+SKILLS = []
 
 filename = "python_datasets/cleaned/dnd_chars_all_cleaned.json"
 
@@ -92,6 +85,8 @@ def data_to_radar(data,char,year):
 
     for skill in skills:
         if skill != 'None':
+            if skill not in SKILLS:
+                SKILLS.append(skill)
             attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,country)
             attr_sctructure(skill,skill_count,'All',hp,ac,stre,dex,con,inte,wis,cha,'All')
             attr_sctructure(skill,skill_count,year,hp,ac,stre,dex,con,inte,wis,cha,country)
@@ -137,6 +132,36 @@ def dict_to_json(dictJson):
                 aux = {'name':name,'axes':aux_arr}
                 dictJson[year][country][name] = aux
 
+def getGlobalVar(text):
+    if text == 'class':
+        return CLASSES
+    if text == 'alignment':
+        return ALIGNS
+    if text == 'race':
+        return RACES
+    if text == 'combo':
+        return COMBOS
+    if text == 'skills':
+        return SKILLS
+
+def dontExit():
+    for aux in new_json:
+        global_var = getGlobalVar(aux)
+        for year in YEARS:
+            for country in COUNTRIES:
+                keys_list = list(new_json[aux][year][country].keys())
+                for ind_key in global_var:
+                    if ind_key not in keys_list:
+                        axis = [{'axis':'HP','value':0},{'axis':'AC','value':0},
+                        {'axis':'Str','value':0},
+                        {'axis':'Dex','value':0},
+                        {'axis':'Con','value':0},
+                        {'axis':'Int','value':0},
+                        {'axis':'Wis','value':0},
+                        {'axis':'Cha','value':0}]
+                        radar_struct = {'name':ind_key,'axes':axis}
+                        new_json[aux][year][country][ind_key] = radar_struct
+
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
     data = json.load(f)
@@ -163,6 +188,7 @@ with open(filename,"r",encoding="utf-8") as f:
     new_json['race'] = race_count
     new_json['skills'] = skill_count
     new_json['combo'] = combo_count
+    dontExit()
 
 with open('resources/datasets/radar_data.json',"w") as f:
     json.dump(new_json,f,indent=2)
