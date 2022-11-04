@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+import operator
 
 CLASSES = ['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
     'Ranger','Rogue','Sorcerer','Warlock','Wizard']
@@ -191,24 +192,26 @@ def data_to_network(char,year):
 
 # Generate JSONS structures
 def network_json(center,count_dict):
-    relation = list(count_dict[center].keys())
     id = 1
     network_struct = {'nodes':[],'links':[]}
     network_struct['nodes'].append({'id':id,'name':center})
     id +=1
-    for rel in relation:
+    sorted_d = dict( sorted(count_dict[center].items(), key=operator.itemgetter(1),reverse=True))
+    for rel in sorted_d:
+        if id > 11:
+            break
         network_struct['nodes'].append({'id':id,'name':rel})
         network_struct['links'].append({'source':1,'target':id,'distance':count_dict[center][rel]})
         id+=1
     return network_struct
 
-def counts_json(new_json,count1,rel):
+def counts_json(new_json,count_dict,rel):
     # Create and append the network JSON structure to a JSON file
     first_json = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
     for year in YEARS:
         for country in COUNTRIES:
-            for fun_var in count1[year][country]:
-                first_json[year][country][fun_var]=network_json(fun_var,count1[year][country])
+            for fun_var in count_dict[year][country]:
+                first_json[year][country][fun_var]=network_json(fun_var,count_dict[year][country])
     new_json[rel] = first_json
 
 def getGlobalVar(text):
