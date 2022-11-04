@@ -1,0 +1,4810 @@
+{
+  "class": {
+    "All": {
+      "All": {
+        "min": {
+          "HP": "Rogue",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Cleric",
+          "Con": "Bard",
+          "Int": "Barbarian",
+          "Wis": "Sorcerer",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Ranger",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Cleric",
+          "Con": "Bard",
+          "Int": "Barbarian",
+          "Wis": "Sorcerer",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Ranger",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Wizard",
+          "AC": "Sorcerer",
+          "Str": "Wizard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Fighter",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Monk",
+          "AC": "Wizard",
+          "Str": "Warlock",
+          "Dex": "Druid",
+          "Con": "Druid",
+          "Int": "Barbarian",
+          "Wis": "Fighter",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Ranger",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Paladin",
+          "Wis": "Artificer",
+          "Cha": "Druid"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Sorcerer",
+          "AC": "Wizard",
+          "Str": "Artificer",
+          "Dex": "Paladin",
+          "Con": "Warlock",
+          "Int": "Barbarian",
+          "Wis": "Paladin",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Paladin",
+          "Str": "Fighter",
+          "Dex": "Ranger",
+          "Con": "Fighter",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Monk",
+          "AC": "Warlock",
+          "Str": "Bard",
+          "Dex": "Paladin",
+          "Con": "Bard",
+          "Int": "Barbarian",
+          "Wis": "Paladin",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Custom",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Bard"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Rogue",
+          "AC": "Wizard",
+          "Str": "Wizard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Fighter",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      }
+    },
+    "2018": {
+      "All": {
+        "min": {
+          "HP": "Bard",
+          "AC": "Wizard",
+          "Str": "Wizard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Barbarian",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Rogue",
+          "AC": "Wizard",
+          "Str": "Wizard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Paladin",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Artificer",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Sorcerer",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Fighter",
+          "AC": "Cleric",
+          "Str": "Paladin",
+          "Dex": "Ranger",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Monk",
+          "Con": "Druid",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Ranger"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Warlock",
+          "Con": "Fighter",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Ranger",
+          "AC": "Paladin",
+          "Str": "Fighter",
+          "Dex": "Ranger",
+          "Con": "Fighter",
+          "Int": "Wizard",
+          "Wis": "Ranger",
+          "Cha": "Rogue"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Artificer",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      }
+    },
+    "2019": {
+      "All": {
+        "min": {
+          "HP": "Sorcerer",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Paladin",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Paladin",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Wizard",
+          "AC": "Wizard",
+          "Str": "Sorcerer",
+          "Dex": "Paladin",
+          "Con": "Bard",
+          "Int": "Barbarian",
+          "Wis": "Sorcerer",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Fighter",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Druid",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Cleric",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Warlock",
+          "AC": "Monk",
+          "Str": "Fighter",
+          "Dex": "Ranger",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Monk",
+          "Con": "Paladin",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Wizard",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Paladin",
+          "Con": "Warlock",
+          "Int": "Paladin",
+          "Wis": "Paladin",
+          "Cha": "Druid"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Ranger",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Bard",
+          "Con": "Paladin",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Bard"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Warlock",
+          "AC": "Wizard",
+          "Str": "Wizard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Paladin",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      }
+    },
+    "2020": {
+      "All": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Wizard",
+          "Str": "Rogue",
+          "Dex": "Paladin",
+          "Con": "Rogue",
+          "Int": "Paladin",
+          "Wis": "Paladin",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Paladin",
+          "Con": "Custom",
+          "Int": "Barbarian",
+          "Wis": "Paladin",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Ranger",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Druid",
+          "AC": "Wizard",
+          "Str": "Bard",
+          "Dex": "Paladin",
+          "Con": "Rogue",
+          "Int": "Custom",
+          "Wis": "Barbarian",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Warlock"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Fighter",
+          "AC": "Paladin",
+          "Str": "Fighter",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Druid",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Rogue",
+          "Con": "Cleric",
+          "Int": "Wizard",
+          "Wis": "Sorcerer",
+          "Cha": "Warlock"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Monk",
+          "AC": "Sorcerer",
+          "Str": "Rogue",
+          "Dex": "Warlock",
+          "Con": "Rogue",
+          "Int": "Cleric",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter",
+          "Str": "Paladin",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Bard"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Cleric",
+          "Str": "Fighter",
+          "Dex": "Ranger",
+          "Con": "Wizard",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Bard"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Cleric",
+          "AC": "Cleric",
+          "Str": "Cleric",
+          "Dex": "Cleric",
+          "Con": "Cleric",
+          "Int": "Cleric",
+          "Wis": "Cleric",
+          "Cha": "Cleric"
+        },
+        "max": {
+          "HP": "Sorcerer",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Custom",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Monk",
+          "Cha": "Paladin"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Wizard",
+          "Str": "Warlock",
+          "Dex": "Paladin",
+          "Con": "Rogue",
+          "Int": "Paladin",
+          "Wis": "Paladin",
+          "Cha": "Ranger"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      }
+    },
+    "2021": {
+      "All": {
+        "min": {
+          "HP": "Rogue",
+          "AC": "Wizard",
+          "Str": "Bard",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Rogue",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Custom",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Sorcerer",
+          "AC": "Warlock",
+          "Str": "Bard",
+          "Dex": "Cleric",
+          "Con": "Bard",
+          "Int": "Paladin",
+          "Wis": "Artificer",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter",
+          "Str": "Paladin",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Druid",
+          "AC": "Wizard",
+          "Str": "Warlock",
+          "Dex": "Cleric",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Rogue",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Paladin",
+          "AC": "Warlock",
+          "Str": "Wizard",
+          "Dex": "Druid",
+          "Con": "Monk",
+          "Int": "Monk",
+          "Wis": "Barbarian",
+          "Cha": "Monk"
+        },
+        "max": {
+          "HP": "Wizard",
+          "AC": "Artificer",
+          "Str": "Fighter",
+          "Dex": "Monk",
+          "Con": "Wizard",
+          "Int": "Wizard",
+          "Wis": "Warlock",
+          "Cha": "Warlock"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Druid",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Warlock",
+          "Str": "Artificer",
+          "Dex": "Paladin",
+          "Con": "Warlock",
+          "Int": "Barbarian",
+          "Wis": "Warlock",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Paladin",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Rogue",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Paladin",
+          "Cha": "Sorcerer"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter",
+          "Str": "Wizard",
+          "Dex": "Rogue",
+          "Con": "Wizard",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Druid",
+          "AC": "Druid",
+          "Str": "Druid",
+          "Dex": "Druid",
+          "Con": "Druid",
+          "Int": "Druid",
+          "Wis": "Druid",
+          "Cha": "Druid"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Bard"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Mean",
+          "AC": "Wizard",
+          "Str": "Bard",
+          "Dex": "Paladin",
+          "Con": "Rogue",
+          "Int": "Barbarian",
+          "Wis": "Fighter",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Artificer",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Custom",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Sorcerer"
+        }
+      }
+    },
+    "2022": {
+      "All": {
+        "min": {
+          "HP": "Wizard",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Paladin",
+          "Con": "Bard",
+          "Int": "Barbarian",
+          "Wis": "Barbarian",
+          "Cha": "Druid"
+        },
+        "max": {
+          "HP": "Fighter",
+          "AC": "Cleric",
+          "Str": "Barbarian",
+          "Dex": "Ranger",
+          "Con": "Fighter",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Sorcerer",
+          "Str": "Sorcerer",
+          "Dex": "Cleric",
+          "Con": "Custom",
+          "Int": "Paladin",
+          "Wis": "Barbarian",
+          "Cha": "Barbarian"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Fighter",
+          "Dex": "Monk",
+          "Con": "Fighter",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Bard",
+          "AC": "Sorcerer",
+          "Str": "Wizard",
+          "Dex": "Paladin",
+          "Con": "Druid",
+          "Int": "Paladin",
+          "Wis": "Barbarian",
+          "Cha": "Druid"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Paladin",
+          "Str": "Paladin",
+          "Dex": "Ranger",
+          "Con": "Fighter",
+          "Int": "Custom",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Bard",
+          "AC": "Monk",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Warlock",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Fighter",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Ranger",
+          "Con": "Sorcerer",
+          "Int": "Wizard",
+          "Wis": "Ranger",
+          "Cha": "Sorcerer"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Barbarian",
+          "AC": "Paladin",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Wizard",
+          "Wis": "Druid",
+          "Cha": "Warlock"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Barbarian",
+          "AC": "Barbarian",
+          "Str": "Barbarian",
+          "Dex": "Barbarian",
+          "Con": "Barbarian",
+          "Int": "Barbarian",
+          "Wis": "Barbarian",
+          "Cha": "Barbarian"
+        },
+        "max": {
+          "HP": "Cleric",
+          "AC": "Fighter",
+          "Str": "Fighter",
+          "Dex": "Ranger",
+          "Con": "Paladin",
+          "Int": "Artificer",
+          "Wis": "Cleric",
+          "Cha": "Rogue"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer",
+          "AC": "Artificer",
+          "Str": "Artificer",
+          "Dex": "Artificer",
+          "Con": "Artificer",
+          "Int": "Artificer",
+          "Wis": "Artificer",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Monk",
+          "Str": "Barbarian",
+          "Dex": "Rogue",
+          "Con": "Barbarian",
+          "Int": "Druid",
+          "Wis": "Druid",
+          "Cha": "Sorcerer"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Sorcerer",
+          "AC": "Wizard",
+          "Str": "Artificer",
+          "Dex": "Paladin",
+          "Con": "Wizard",
+          "Int": "Paladin",
+          "Wis": "Paladin",
+          "Cha": "Artificer"
+        },
+        "max": {
+          "HP": "Fighter",
+          "AC": "Fighter",
+          "Str": "Barbarian",
+          "Dex": "Monk",
+          "Con": "Barbarian",
+          "Int": "Artificer",
+          "Wis": "Druid",
+          "Cha": "Bard"
+        }
+      }
+    }
+  },
+  "race": {
+    "All": {
+      "All": {
+        "min": {
+          "HP": "Tabaxi",
+          "AC": "Changeling",
+          "Str": "Kobold",
+          "Dex": "Hobgoblin",
+          "Con": "Changeling",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Firbolg"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Halfling",
+          "Con": "Loxodon",
+          "Int": "Vedalken",
+          "Wis": "Firbolg",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Simic hybrid",
+          "AC": "Simic hybrid",
+          "Str": "Vedalken",
+          "Dex": "Loxodon",
+          "Con": "Changeling",
+          "Int": "Bugbear",
+          "Wis": "Simic hybrid",
+          "Cha": "Orc"
+        },
+        "max": {
+          "HP": "Aasimar",
+          "AC": "Turtle",
+          "Str": "Leonin",
+          "Dex": "Elf",
+          "Con": "Leonin",
+          "Int": "Simic hybrid",
+          "Wis": "Firbolg",
+          "Cha": "Half-Elf"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Hobgoblin",
+          "AC": "Genasi",
+          "Str": "Kobold",
+          "Dex": "Hobgoblin",
+          "Con": "Satyr",
+          "Int": "Satyr",
+          "Wis": "Goliath",
+          "Cha": "Turtle"
+        },
+        "max": {
+          "HP": "Shifter",
+          "AC": "Warforged",
+          "Str": "Goliath",
+          "Dex": "Elf",
+          "Con": "Loxodon",
+          "Int": "Vedalken",
+          "Wis": "Firbolg",
+          "Cha": "Aasimar"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Changeling",
+          "Str": "Changeling",
+          "Dex": "Changeling",
+          "Con": "Changeling",
+          "Int": "Changeling",
+          "Wis": "Changeling",
+          "Cha": "Changeling"
+        },
+        "max": {
+          "HP": "Yaun-Ti",
+          "AC": "Warforged",
+          "Str": "Minotaur",
+          "Dex": "Kobold",
+          "Con": "Yaun-Ti",
+          "Int": "Yaun-Ti",
+          "Wis": "Yaun-Ti",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Kobold",
+          "Con": "Orc",
+          "Int": "Hobgoblin",
+          "Wis": "Changeling",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Goliath",
+          "AC": "Goliath",
+          "Str": "Goliath",
+          "Dex": "Goliath",
+          "Con": "Goliath",
+          "Int": "Goliath",
+          "Wis": "Goliath",
+          "Cha": "Goliath"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Simic hybrid",
+          "Str": "Orc",
+          "Dex": "Gith",
+          "Con": "Warforged",
+          "Int": "Aarakocra",
+          "Wis": "Centaur",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Turtle",
+          "Str": "Warforged",
+          "Dex": "Tabaxi",
+          "Con": "Gith",
+          "Int": "Goblin",
+          "Wis": "Gith",
+          "Cha": "Half-Elf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Changeling",
+          "Str": "Changeling",
+          "Dex": "Changeling",
+          "Con": "Changeling",
+          "Int": "Changeling",
+          "Wis": "Changeling",
+          "Cha": "Changeling"
+        },
+        "max": {
+          "HP": "Minotaur",
+          "AC": "Warforged",
+          "Str": "Minotaur",
+          "Dex": "Simic hybrid",
+          "Con": "Minotaur",
+          "Int": "Gnome",
+          "Wis": "Firbolg",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Gnome",
+          "Str": "Kobold",
+          "Dex": "Turtle",
+          "Con": "Satyr",
+          "Int": "Goliath",
+          "Wis": "Bugbear",
+          "Cha": "Firbolg"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Turtle",
+          "Str": "Orc",
+          "Dex": "Aarakocra",
+          "Con": "Minotaur",
+          "Int": "Vedalken",
+          "Wis": "Aarakocra",
+          "Cha": "Satyr"
+        }
+      }
+    },
+    "2018": {
+      "All": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Minotaur",
+          "AC": "Dwarf",
+          "Str": "Goliath",
+          "Dex": "Tabaxi",
+          "Con": "Hobgoblin",
+          "Int": "Gnome",
+          "Wis": "Kalashtar",
+          "Cha": "Tiefling"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Triton",
+          "AC": "Dwarf",
+          "Str": "Triton",
+          "Dex": "Lizardfolk",
+          "Con": "Dwarf",
+          "Int": "Genasi",
+          "Wis": "Lizardfolk",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Centaur",
+          "AC": "Centaur",
+          "Str": "Centaur",
+          "Dex": "Centaur",
+          "Con": "Centaur",
+          "Int": "Centaur",
+          "Wis": "Centaur",
+          "Cha": "Centaur"
+        },
+        "max": {
+          "HP": "Changeling",
+          "AC": "Loxodon",
+          "Str": "Warforged",
+          "Dex": "Gith",
+          "Con": "Loxodon",
+          "Int": "Gnome",
+          "Wis": "Firbolg",
+          "Cha": "Changeling"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Dragonborn",
+          "AC": "Dragonborn",
+          "Str": "Dragonborn",
+          "Dex": "Half-Elf",
+          "Con": "Dragonborn",
+          "Int": "Gnome",
+          "Wis": "Firbolg",
+          "Cha": "Half-Elf"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Half-Orc",
+          "Str": "Dwarf",
+          "Dex": "Kobold",
+          "Con": "Orc",
+          "Int": "Kobold",
+          "Wis": "Elf",
+          "Cha": "Half-Elf"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Tabaxi",
+          "AC": "Half-Orc",
+          "Str": "Half-Orc",
+          "Dex": "Tabaxi",
+          "Con": "Triton",
+          "Int": "Aarakocra",
+          "Wis": "Triton",
+          "Cha": "Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Elf",
+          "Str": "Half-Orc",
+          "Dex": "Halfling",
+          "Con": "Half-Orc",
+          "Int": "Goblin",
+          "Wis": "Dragonborn",
+          "Cha": "Tiefling"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Human",
+          "AC": "Goliath",
+          "Str": "Goliath",
+          "Dex": "Elf",
+          "Con": "Dwarf",
+          "Int": "Elf",
+          "Wis": "Human",
+          "Cha": "Elf"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Hobgoblin",
+          "AC": "Warforged",
+          "Str": "Hobgoblin",
+          "Dex": "Aarakocra",
+          "Con": "Hobgoblin",
+          "Int": "Hobgoblin",
+          "Wis": "Kalashtar",
+          "Cha": "Yaun-Ti"
+        }
+      }
+    },
+    "2019": {
+      "All": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Aarakocra",
+          "Con": "Genasi",
+          "Int": "Vedalken",
+          "Wis": "Aarakocra",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Turtle",
+          "Str": "Bugbear",
+          "Dex": "Kobold",
+          "Con": "Genasi",
+          "Int": "Vedalken",
+          "Wis": "Firbolg",
+          "Cha": "Tiefling"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Goliath",
+          "AC": "Kobold",
+          "Str": "Orc",
+          "Dex": "Kobold",
+          "Con": "Goliath",
+          "Int": "Vedalken",
+          "Wis": "Shifter",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Changeling",
+          "Str": "Changeling",
+          "Dex": "Changeling",
+          "Con": "Changeling",
+          "Int": "Changeling",
+          "Wis": "Changeling",
+          "Cha": "Changeling"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Tabaxi",
+          "Str": "Bugbear",
+          "Dex": "Halfling",
+          "Con": "Halfling",
+          "Int": "Gnome",
+          "Wis": "Loxodon",
+          "Cha": "Tiefling"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Hobgoblin",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Tabaxi",
+          "Con": "Dwarf",
+          "Int": "Hobgoblin",
+          "Wis": "Aasimar",
+          "Cha": "Gnome"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Simic hybrid",
+          "AC": "Simic hybrid",
+          "Str": "Dwarf",
+          "Dex": "Goblin",
+          "Con": "Simic hybrid",
+          "Int": "Kenku",
+          "Wis": "Firbolg",
+          "Cha": "Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Goliath",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Elf",
+          "Con": "Dwarf",
+          "Int": "Gnome",
+          "Wis": "Kenku",
+          "Cha": "Half-Elf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Aasimar",
+          "AC": "Aasimar",
+          "Str": "Aasimar",
+          "Dex": "Aasimar",
+          "Con": "Aasimar",
+          "Int": "Aasimar",
+          "Wis": "Aasimar",
+          "Cha": "Aasimar"
+        },
+        "max": {
+          "HP": "Tiefling",
+          "AC": "Tiefling",
+          "Str": "Dwarf",
+          "Dex": "Gnome",
+          "Con": "Dwarf",
+          "Int": "Gnome",
+          "Wis": "Firbolg",
+          "Cha": "Half-Elf"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        }
+      }
+    },
+    "2020": {
+      "All": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Satyr",
+          "Str": "Satyr",
+          "Dex": "Orc",
+          "Con": "Satyr",
+          "Int": "Custom",
+          "Wis": "Triton",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Aasimar",
+          "AC": "Turtle",
+          "Str": "Minotaur",
+          "Dex": "Tabaxi",
+          "Con": "Loxodon",
+          "Int": "Vedalken",
+          "Wis": "Firbolg",
+          "Cha": "Satyr"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Aasimar",
+          "AC": "Turtle",
+          "Str": "Orc",
+          "Dex": "Kobold",
+          "Con": "Leonin",
+          "Int": "Gnome",
+          "Wis": "Turtle",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Hobgoblin",
+          "AC": "Yaun-Ti",
+          "Str": "Goblin",
+          "Dex": "Simic hybrid",
+          "Con": "Satyr",
+          "Int": "Custom",
+          "Wis": "Orc",
+          "Cha": "Shifter"
+        },
+        "max": {
+          "HP": "Loxodon",
+          "AC": "Turtle",
+          "Str": "Orc",
+          "Dex": "Kenku",
+          "Con": "Loxodon",
+          "Int": "Loxodon",
+          "Wis": "Firbolg",
+          "Cha": "Eladrin"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Half-Orc",
+          "AC": "Aasimar",
+          "Str": "Half-Orc",
+          "Dex": "Gnome",
+          "Con": "Satyr",
+          "Int": "Gnome",
+          "Wis": "Satyr",
+          "Cha": "Aasimar"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Yaun-Ti",
+          "AC": "Gnome",
+          "Str": "Orc",
+          "Dex": "Elf",
+          "Con": "Yaun-Ti",
+          "Int": "Gnome",
+          "Wis": "Kenku",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Centaur",
+          "AC": "Centaur",
+          "Str": "Centaur",
+          "Dex": "Centaur",
+          "Con": "Centaur",
+          "Int": "Centaur",
+          "Wis": "Centaur",
+          "Cha": "Centaur"
+        },
+        "max": {
+          "HP": "Bugbear",
+          "AC": "Turtle",
+          "Str": "Half-Orc",
+          "Dex": "Gith",
+          "Con": "Warforged",
+          "Int": "Gnome",
+          "Wis": "Firbolg",
+          "Cha": "Bugbear"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Tiefling",
+          "AC": "Tiefling",
+          "Str": "Tiefling",
+          "Dex": "Tabaxi",
+          "Con": "Goblin",
+          "Int": "Goblin",
+          "Wis": "Dwarf",
+          "Cha": "Dwarf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Aasimar",
+          "AC": "Warforged",
+          "Str": "Half-Orc",
+          "Dex": "Elf",
+          "Con": "Minotaur",
+          "Int": "Dwarf",
+          "Wis": "Human",
+          "Cha": "Aasimar"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Custom",
+          "AC": "Custom",
+          "Str": "Custom",
+          "Dex": "Custom",
+          "Con": "Custom",
+          "Int": "Custom",
+          "Wis": "Custom",
+          "Cha": "Custom"
+        },
+        "max": {
+          "HP": "Minotaur",
+          "AC": "Warforged",
+          "Str": "Minotaur",
+          "Dex": "Tabaxi",
+          "Con": "Minotaur",
+          "Int": "Gnome",
+          "Wis": "Kalashtar",
+          "Cha": "Changeling"
+        }
+      }
+    },
+    "2021": {
+      "All": {
+        "min": {
+          "HP": "Leonin",
+          "AC": "Vedalken",
+          "Str": "Vedalken",
+          "Dex": "Centaur",
+          "Con": "Aarakocra",
+          "Int": "Bugbear",
+          "Wis": "Goliath",
+          "Cha": "Centaur"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Turtle",
+          "Str": "Goliath",
+          "Dex": "Elf",
+          "Con": "Goliath",
+          "Int": "Yaun-Ti",
+          "Wis": "Firbolg",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Minotaur",
+          "AC": "Kalashtar",
+          "Str": "Minotaur",
+          "Dex": "Aarakocra",
+          "Con": "Minotaur",
+          "Int": "Gith",
+          "Wis": "Firbolg",
+          "Cha": "Eladrin"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Centaur",
+          "AC": "Centaur",
+          "Str": "Centaur",
+          "Dex": "Centaur",
+          "Con": "Centaur",
+          "Int": "Centaur",
+          "Wis": "Centaur",
+          "Cha": "Centaur"
+        },
+        "max": {
+          "HP": "Aarakocra",
+          "AC": "Turtle",
+          "Str": "Bugbear",
+          "Dex": "Aarakocra",
+          "Con": "Dwarf",
+          "Int": "Yaun-Ti",
+          "Wis": "Firbolg",
+          "Cha": "Changeling"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Elf",
+          "AC": "Warforged",
+          "Str": "Bugbear",
+          "Dex": "Elf",
+          "Con": "Yaun-Ti",
+          "Int": "Yaun-Ti",
+          "Wis": "Yaun-Ti",
+          "Cha": "Yaun-Ti"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Warforged",
+          "Str": "Half-Orc",
+          "Dex": "Tabaxi",
+          "Con": "Warforged",
+          "Int": "Human",
+          "Wis": "Halfling",
+          "Cha": "Tabaxi"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Bugbear",
+          "AC": "Bugbear",
+          "Str": "Bugbear",
+          "Dex": "Bugbear",
+          "Con": "Bugbear",
+          "Int": "Bugbear",
+          "Wis": "Bugbear",
+          "Cha": "Bugbear"
+        },
+        "max": {
+          "HP": "Dragonborn",
+          "AC": "Dragonborn",
+          "Str": "Dragonborn",
+          "Dex": "Elf",
+          "Con": "Lizardfolk",
+          "Int": "Gnome",
+          "Wis": "Dragonborn",
+          "Cha": "Dragonborn"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Gith",
+          "AC": "Tiefling",
+          "Str": "Warforged",
+          "Dex": "Tabaxi",
+          "Con": "Gith",
+          "Int": "Goblin",
+          "Wis": "Gith",
+          "Cha": "Half-Elf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Minotaur",
+          "AC": "Aasimar",
+          "Str": "Minotaur",
+          "Dex": "Goblin",
+          "Con": "Minotaur",
+          "Int": "Dwarf",
+          "Wis": "Elf",
+          "Cha": "Tiefling"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Vedalken",
+          "Str": "Kobold",
+          "Dex": "Centaur",
+          "Con": "Triton",
+          "Int": "Eladrin",
+          "Wis": "Changeling",
+          "Cha": "Centaur"
+        },
+        "max": {
+          "HP": "Custom",
+          "AC": "Human",
+          "Str": "Goliath",
+          "Dex": "Tabaxi",
+          "Con": "Hobgoblin",
+          "Int": "Vedalken",
+          "Wis": "Firbolg",
+          "Cha": "Aasimar"
+        }
+      }
+    },
+    "2022": {
+      "All": {
+        "min": {
+          "HP": "Simic hybrid",
+          "AC": "Simic hybrid",
+          "Str": "Simic hybrid",
+          "Dex": "Simic hybrid",
+          "Con": "Simic hybrid",
+          "Int": "Simic hybrid",
+          "Wis": "Simic hybrid",
+          "Cha": "Simic hybrid"
+        },
+        "max": {
+          "HP": "Loxodon",
+          "AC": "Turtle",
+          "Str": "Leonin",
+          "Dex": "Shifter",
+          "Con": "Dwarf",
+          "Int": "Gith",
+          "Wis": "Loxodon",
+          "Cha": "Aasimar"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Leonin",
+          "AC": "Turtle",
+          "Str": "Leonin",
+          "Dex": "Elf",
+          "Con": "Leonin",
+          "Int": "Vedalken",
+          "Wis": "Loxodon",
+          "Cha": "Aasimar"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Hobgoblin",
+          "AC": "Hobgoblin",
+          "Str": "Hobgoblin",
+          "Dex": "Hobgoblin",
+          "Con": "Hobgoblin",
+          "Int": "Hobgoblin",
+          "Wis": "Hobgoblin",
+          "Cha": "Hobgoblin"
+        },
+        "max": {
+          "HP": "Loxodon",
+          "AC": "Loxodon",
+          "Str": "Bugbear",
+          "Dex": "Loxodon",
+          "Con": "Loxodon",
+          "Int": "Gith",
+          "Wis": "Loxodon",
+          "Cha": "Triton"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Dragonborn",
+          "AC": "",
+          "Str": "Dragonborn",
+          "Dex": "Dragonborn",
+          "Con": "Dragonborn",
+          "Int": "Tiefling",
+          "Wis": "Aasimar",
+          "Cha": "Tiefling"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Human",
+          "AC": "Elf",
+          "Str": "Goliath",
+          "Dex": "Kobold",
+          "Con": "Human",
+          "Int": "Gnome",
+          "Wis": "Aasimar",
+          "Cha": "Half-Elf"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Dwarf",
+          "AC": "Warforged",
+          "Str": "Bugbear",
+          "Dex": "Gnome",
+          "Con": "Dwarf",
+          "Int": "Tiefling",
+          "Wis": "Dwarf",
+          "Cha": "Warforged"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Half-Elf",
+          "AC": "Half-Elf",
+          "Str": "Tiefling",
+          "Dex": "Tiefling",
+          "Con": "Tiefling",
+          "Int": "Human",
+          "Wis": "Half-Elf",
+          "Cha": "Half-Elf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Aarakocra",
+          "AC": "Aarakocra",
+          "Str": "Aarakocra",
+          "Dex": "Aarakocra",
+          "Con": "Aarakocra",
+          "Int": "Aarakocra",
+          "Wis": "Aarakocra",
+          "Cha": "Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Dwarf",
+          "Str": "Halfling",
+          "Dex": "Human",
+          "Con": "Halfling",
+          "Int": "Firbolg",
+          "Wis": "Firbolg",
+          "Cha": "Dragonborn"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Changeling",
+          "AC": "Changeling",
+          "Str": "Changeling",
+          "Dex": "Changeling",
+          "Con": "Changeling",
+          "Int": "Changeling",
+          "Wis": "Changeling",
+          "Cha": "Changeling"
+        },
+        "max": {
+          "HP": "Loxodon",
+          "AC": "Warforged",
+          "Str": "Orc",
+          "Dex": "Shifter",
+          "Con": "Bugbear",
+          "Int": "Shifter",
+          "Wis": "Firbolg",
+          "Cha": "Aasimar"
+        }
+      }
+    }
+  },
+  "skills": {
+    "All": {
+      "All": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Arcana",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Athletics"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Religion",
+          "Str": "Intimidation",
+          "Dex": "Stealth",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Arcana",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Religion",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Investigation",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "History",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Medicine"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Religion",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Religion",
+          "Int": "History",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Acrobatics",
+          "AC": "Arcana",
+          "Str": "Performance",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Athletics",
+          "Cha": "Survival"
+        },
+        "max": {
+          "HP": "Deception",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Animal Handling",
+          "AC": "Arcana",
+          "Str": "Investigation",
+          "Dex": "Religion",
+          "Con": "Nature",
+          "Int": "Animal Handling",
+          "Wis": "Persuasion",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Medicine",
+          "Str": "Intimidation",
+          "Dex": "Stealth",
+          "Con": "Arcana",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Deception"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Arcana",
+          "Str": "Sleight of Hand",
+          "Dex": "Athletics",
+          "Con": "Stealth",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Investigation",
+          "Str": "Sleight of Hand",
+          "Dex": "Religion",
+          "Con": "Sleight of Hand",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Animal Handling",
+          "Con": "Athletics",
+          "Int": "Investigation",
+          "Wis": "Religion",
+          "Cha": "Sleight of Hand"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Deception",
+          "AC": "Sleight of Hand",
+          "Str": "Sleight of Hand",
+          "Dex": "Intimidation",
+          "Con": "Deception",
+          "Int": "Animal Handling",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Intimidation",
+          "Str": "Animal Handling",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Nature",
+          "Cha": "Deception"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Arcana",
+          "Str": "Stealth",
+          "Dex": "Medicine",
+          "Con": "History",
+          "Int": "Survival",
+          "Wis": "Sleight of Hand",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Survival",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Survival",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      }
+    },
+    "2018": {
+      "All": {
+        "min": {
+          "HP": "Deception",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Performance",
+          "Int": "Animal Handling",
+          "Wis": "Deception",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Acrobatics",
+          "Str": "Intimidation",
+          "Dex": "Stealth",
+          "Con": "Animal Handling",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Deception",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Sleight of Hand",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Survival",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Athletics",
+          "Int": "Investigation",
+          "Wis": "Insight",
+          "Cha": "Deception"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Investigation",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Survival",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Insight",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Insight",
+          "Int": "Arcana",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Animal Handling",
+          "Str": "Deception",
+          "Dex": "Animal Handling",
+          "Con": "Animal Handling",
+          "Int": "Athletics",
+          "Wis": "Stealth",
+          "Cha": "Survival"
+        },
+        "max": {
+          "HP": "Medicine",
+          "AC": "Medicine",
+          "Str": "Intimidation",
+          "Dex": "Deception",
+          "Con": "Medicine",
+          "Int": "Animal Handling",
+          "Wis": "Medicine",
+          "Cha": "Deception"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Nature",
+          "AC": "Arcana",
+          "Str": "Performance",
+          "Dex": "Arcana",
+          "Con": "Nature",
+          "Int": "Performance",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "Medicine",
+          "Str": "Intimidation",
+          "Dex": "Performance",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Animal Handling",
+          "Cha": "Deception"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Stealth",
+          "AC": "Arcana",
+          "Str": "Nature",
+          "Dex": "Religion",
+          "Con": "Nature",
+          "Int": "Religion",
+          "Wis": "Performance",
+          "Cha": "Religion"
+        },
+        "max": {
+          "HP": "Religion",
+          "AC": "Religion",
+          "Str": "Religion",
+          "Dex": "Acrobatics",
+          "Con": "Medicine",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Nature"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Performance",
+          "Str": "Performance",
+          "Dex": "Performance",
+          "Con": "Performance",
+          "Int": "Performance",
+          "Wis": "Performance",
+          "Cha": "Performance"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Animal Handling",
+          "Str": "Animal Handling",
+          "Dex": "Sleight of Hand",
+          "Con": "Medicine",
+          "Int": "Investigation",
+          "Wis": "Medicine",
+          "Cha": "Sleight of Hand"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Insight",
+          "Str": "Sleight of Hand",
+          "Dex": "Arcana",
+          "Con": "Performance",
+          "Int": "Athletics",
+          "Wis": "Sleight of Hand",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Intimidation",
+          "Str": "Athletics",
+          "Dex": "Nature",
+          "Con": "Intimidation",
+          "Int": "Insight",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Sleight of Hand",
+          "Str": "Sleight of Hand",
+          "Dex": "History",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Performance",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      }
+    },
+    "2019": {
+      "All": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Deception",
+          "Str": "Sleight of Hand",
+          "Dex": "Medicine",
+          "Con": "Performance",
+          "Int": "Intimidation",
+          "Wis": "Sleight of Hand",
+          "Cha": "Athletics"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Intimidation",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Deception",
+          "AC": "Performance",
+          "Str": "Sleight of Hand",
+          "Dex": "History",
+          "Con": "Sleight of Hand",
+          "Int": "Athletics",
+          "Wis": "Sleight of Hand",
+          "Cha": "Perception"
+        },
+        "max": {
+          "HP": "Survival",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Investigation",
+          "AC": "Sleight of Hand",
+          "Str": "Sleight of Hand",
+          "Dex": "Intimidation",
+          "Con": "Acrobatics",
+          "Int": "Intimidation",
+          "Wis": "Sleight of Hand",
+          "Cha": "Perception"
+        },
+        "max": {
+          "HP": "Survival",
+          "AC": "Acrobatics",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Intimidation",
+          "Int": "History",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Arcana",
+          "Str": "History",
+          "Dex": "Nature",
+          "Con": "Animal Handling",
+          "Int": "Athletics",
+          "Wis": "Athletics",
+          "Cha": "Survival"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Intimidation",
+          "Str": "Intimidation",
+          "Dex": "Stealth",
+          "Con": "Athletics",
+          "Int": "History",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Investigation",
+          "Str": "History",
+          "Dex": "Medicine",
+          "Con": "Performance",
+          "Int": "Intimidation",
+          "Wis": "History",
+          "Cha": "Acrobatics"
+        },
+        "max": {
+          "HP": "Deception",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Arcana",
+          "Int": "History",
+          "Wis": "Athletics",
+          "Cha": "Persuasion"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Deception",
+          "Str": "Deception",
+          "Dex": "Medicine",
+          "Con": "History",
+          "Int": "Medicine",
+          "Wis": "Sleight of Hand",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Animal Handling",
+          "Int": "History",
+          "Wis": "Nature",
+          "Cha": "Deception"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Animal Handling",
+          "AC": "Sleight of Hand",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Deception",
+          "Int": "Athletics",
+          "Wis": "Athletics",
+          "Cha": "Athletics"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Medicine",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Athletics",
+          "Int": "History",
+          "Wis": "Religion",
+          "Cha": "Investigation"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Animal Handling",
+          "AC": "Arcana",
+          "Str": "Nature",
+          "Dex": "Religion",
+          "Con": "Investigation",
+          "Int": "Animal Handling",
+          "Wis": "Religion",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Religion",
+          "AC": "Religion",
+          "Str": "Religion",
+          "Dex": "Acrobatics",
+          "Con": "Religion",
+          "Int": "Religion",
+          "Wis": "Medicine",
+          "Cha": "Medicine"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Deception",
+          "Str": "Sleight of Hand",
+          "Dex": "Medicine",
+          "Con": "Deception",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Religion",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Nature",
+          "Int": "Investigation",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      }
+    },
+    "2020": {
+      "All": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Insight",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Deception",
+          "Str": "Sleight of Hand",
+          "Dex": "Intimidation",
+          "Con": "Acrobatics",
+          "Int": "Animal Handling",
+          "Wis": "Investigation",
+          "Cha": "Medicine"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "Acrobatics",
+          "Str": "Animal Handling",
+          "Dex": "Acrobatics",
+          "Con": "Religion",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Nature",
+          "AC": "Deception",
+          "Str": "Sleight of Hand",
+          "Dex": "Medicine",
+          "Con": "Performance",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Investigation",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Animal Handling",
+          "AC": "Sleight of Hand",
+          "Str": "Acrobatics",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Acrobatics",
+          "Cha": "Acrobatics"
+        },
+        "max": {
+          "HP": "Medicine",
+          "AC": "Persuasion",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Insight",
+          "Int": "Nature",
+          "Wis": "Arcana",
+          "Cha": "Persuasion"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Performance",
+          "Str": "Sleight of Hand",
+          "Dex": "Religion",
+          "Con": "Nature",
+          "Int": "Athletics",
+          "Wis": "Performance",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Stealth",
+          "Con": "Religion",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Deception"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Stealth",
+          "Dex": "Intimidation",
+          "Con": "Stealth",
+          "Int": "Intimidation",
+          "Wis": "Performance",
+          "Cha": "Investigation"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Acrobatics",
+          "Int": "Investigation",
+          "Wis": "Insight",
+          "Cha": "Performance"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Persuasion",
+          "AC": "Arcana",
+          "Str": "Nature",
+          "Dex": "Arcana",
+          "Con": "Performance",
+          "Int": "Intimidation",
+          "Wis": "Persuasion",
+          "Cha": "Stealth"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Intimidation",
+          "Str": "Athletics",
+          "Dex": "Nature",
+          "Con": "Arcana",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Nature",
+          "AC": "History",
+          "Str": "Medicine",
+          "Dex": "History",
+          "Con": "Performance",
+          "Int": "Medicine",
+          "Wis": "Persuasion",
+          "Cha": "Investigation"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Athletics",
+          "Str": "Animal Handling",
+          "Dex": "Stealth",
+          "Con": "Animal Handling",
+          "Int": "Arcana",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      }
+    },
+    "2021": {
+      "All": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Performance",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Animal Handling",
+          "Wis": "Acrobatics",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Acrobatics",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Animal Handling",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Deception"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Deception",
+          "Str": "Investigation",
+          "Dex": "Religion",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Investigation",
+          "Cha": "Athletics"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Investigation",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Deception",
+          "Int": "Animal Handling",
+          "Wis": "Acrobatics",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Intimidation",
+          "AC": "Acrobatics",
+          "Str": "Athletics",
+          "Dex": "Sleight of Hand",
+          "Con": "Animal Handling",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Deception"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Animal Handling",
+          "Str": "Performance",
+          "Dex": "Animal Handling",
+          "Con": "Sleight of Hand",
+          "Int": "Animal Handling",
+          "Wis": "Investigation",
+          "Cha": "Investigation"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "Religion",
+          "Str": "Animal Handling",
+          "Dex": "Performance",
+          "Con": "Persuasion",
+          "Int": "History",
+          "Wis": "Persuasion",
+          "Cha": "Deception"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Investigation",
+          "AC": "Investigation",
+          "Str": "Performance",
+          "Dex": "Religion",
+          "Con": "Sleight of Hand",
+          "Int": "Religion",
+          "Wis": "Performance",
+          "Cha": "Survival"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Religion",
+          "Str": "Animal Handling",
+          "Dex": "Acrobatics",
+          "Con": "Nature",
+          "Int": "Investigation",
+          "Wis": "Nature",
+          "Cha": "Performance"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Deception",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Arcana",
+          "Int": "Nature",
+          "Wis": "Deception",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Medicine",
+          "AC": "Intimidation",
+          "Str": "Nature",
+          "Dex": "Investigation",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Arcana",
+          "Str": "Performance",
+          "Dex": "History",
+          "Con": "Sleight of Hand",
+          "Int": "Survival",
+          "Wis": "Performance",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Animal Handling",
+          "AC": "Perception",
+          "Str": "History",
+          "Dex": "Animal Handling",
+          "Con": "Arcana",
+          "Int": "History",
+          "Wis": "Medicine",
+          "Cha": "Performance"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Religion",
+          "AC": "Investigation",
+          "Str": "Deception",
+          "Dex": "Athletics",
+          "Con": "Investigation",
+          "Int": "Athletics",
+          "Wis": "Performance",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Survival",
+          "AC": "Nature",
+          "Str": "Animal Handling",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "History",
+          "Wis": "Religion",
+          "Cha": "Performance"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Mean",
+          "AC": "Sleight of Hand",
+          "Str": "Sleight of Hand",
+          "Dex": "Medicine",
+          "Con": "Acrobatics",
+          "Int": "Athletics",
+          "Wis": "Acrobatics",
+          "Cha": "Athletics"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "Athletics",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Athletics",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      }
+    },
+    "2022": {
+      "All": {
+        "min": {
+          "HP": "Arcana",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Arcana",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Survival"
+        },
+        "max": {
+          "HP": "Athletics",
+          "AC": "Religion",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Religion",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Performance",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Sleight of Hand",
+          "Int": "Religion",
+          "Wis": "Intimidation",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Nature",
+          "AC": "Intimidation",
+          "Str": "Intimidation",
+          "Dex": "Acrobatics",
+          "Con": "Intimidation",
+          "Int": "Investigation",
+          "Wis": "Medicine",
+          "Cha": "Deception"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Arcana",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Religion",
+          "Con": "Medicine",
+          "Int": "Intimidation",
+          "Wis": "Intimidation",
+          "Cha": "Perception"
+        },
+        "max": {
+          "HP": "Athletics",
+          "AC": "Medicine",
+          "Str": "Intimidation",
+          "Dex": "Stealth",
+          "Con": "History",
+          "Int": "Arcana",
+          "Wis": "Religion",
+          "Cha": "Deception"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Nature",
+          "AC": "Nature",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "Insight",
+          "Int": "Nature",
+          "Wis": "Persuasion",
+          "Cha": "Animal Handling"
+        },
+        "max": {
+          "HP": "Religion",
+          "AC": "Animal Handling",
+          "Str": "Animal Handling",
+          "Dex": "Investigation",
+          "Con": "Animal Handling",
+          "Int": "History",
+          "Wis": "Animal Handling",
+          "Cha": "Arcana"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Sleight of Hand",
+          "AC": "Sleight of Hand",
+          "Str": "Sleight of Hand",
+          "Dex": "Sleight of Hand",
+          "Con": "Sleight of Hand",
+          "Int": "Sleight of Hand",
+          "Wis": "Sleight of Hand",
+          "Cha": "Sleight of Hand"
+        },
+        "max": {
+          "HP": "History",
+          "AC": "Arcana",
+          "Str": "Acrobatics",
+          "Dex": "Stealth",
+          "Con": "History",
+          "Int": "Investigation",
+          "Wis": "Stealth",
+          "Cha": "Acrobatics"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Deception",
+          "Dex": "Intimidation",
+          "Con": "Sleight of Hand",
+          "Int": "Nature",
+          "Wis": "Intimidation",
+          "Cha": "Medicine"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Athletics",
+          "Str": "Athletics",
+          "Dex": "Medicine",
+          "Con": "Athletics",
+          "Int": "Medicine",
+          "Wis": "Nature",
+          "Cha": "Investigation"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Arcana",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Arcana",
+          "Con": "Arcana",
+          "Int": "Arcana",
+          "Wis": "Arcana",
+          "Cha": "Arcana"
+        },
+        "max": {
+          "HP": "Religion",
+          "AC": "Religion",
+          "Str": "Athletics",
+          "Dex": "Athletics",
+          "Con": "Athletics",
+          "Int": "Insight",
+          "Wis": "Religion",
+          "Cha": "Stealth"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "History",
+          "AC": "History",
+          "Str": "History",
+          "Dex": "History",
+          "Con": "History",
+          "Int": "History",
+          "Wis": "History",
+          "Cha": "History"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Religion",
+          "Str": "Intimidation",
+          "Dex": "Sleight of Hand",
+          "Con": "Intimidation",
+          "Int": "Arcana",
+          "Wis": "Arcana",
+          "Cha": "Deception"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Medicine",
+          "AC": "Arcana",
+          "Str": "Arcana",
+          "Dex": "Medicine",
+          "Con": "History",
+          "Int": "Athletics",
+          "Wis": "Persuasion",
+          "Cha": "Nature"
+        },
+        "max": {
+          "HP": "Performance",
+          "AC": "History",
+          "Str": "Athletics",
+          "Dex": "Acrobatics",
+          "Con": "Nature",
+          "Int": "Arcana",
+          "Wis": "Medicine",
+          "Cha": "Persuasion"
+        }
+      }
+    }
+  },
+  "combo": {
+    "All": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Bugbear",
+          "AC": "Artificer_Bugbear",
+          "Str": "Artificer_Bugbear",
+          "Dex": "Artificer_Bugbear",
+          "Con": "Artificer_Bugbear",
+          "Int": "Artificer_Bugbear",
+          "Wis": "Artificer_Bugbear",
+          "Cha": "Artificer_Bugbear"
+        },
+        "max": {
+          "HP": "Artificer_Aasimar",
+          "AC": "Artificer_Aasimar",
+          "Str": "Artificer_Aasimar",
+          "Dex": "Artificer_Aasimar",
+          "Con": "Artificer_Aasimar",
+          "Int": "Artificer_Aasimar",
+          "Wis": "Artificer_Aasimar",
+          "Cha": "Artificer_Aasimar"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Wizard_Aasimar",
+          "AC": "Wizard_Aasimar",
+          "Str": "Wizard_Aasimar",
+          "Dex": "Wizard_Aasimar",
+          "Con": "Wizard_Aasimar",
+          "Int": "Wizard_Aasimar",
+          "Wis": "Wizard_Aasimar",
+          "Cha": "Wizard_Aasimar"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Ranger_Shifter",
+          "AC": "Bard_Warforged",
+          "Str": "Paladin_Goliath",
+          "Dex": "Monk_Kalashtar",
+          "Con": "Artificer_Loxodon",
+          "Int": "Wizard_Gith",
+          "Wis": "Ranger_Satyr",
+          "Cha": "Sorcerer_Kalashtar"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Warlock_Yaun-Ti",
+          "AC": "Cleric_Dragonborn",
+          "Str": "Sorcerer_Dragonborn",
+          "Dex": "Sorcerer_Dragonborn",
+          "Con": "Warlock_Yaun-Ti",
+          "Int": "Warlock_Yaun-Ti",
+          "Wis": "Warlock_Yaun-Ti",
+          "Cha": "Warlock_Yaun-Ti"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Human",
+          "AC": "Fighter_Dwarf",
+          "Str": "Paladin_Gnome",
+          "Dex": "Ranger_Gnome",
+          "Con": "Fighter_Orc",
+          "Int": "Wizard_Tiefling",
+          "Wis": "Druid_Gnome",
+          "Cha": "Warlock_Half-Elf"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Simic hybrid",
+          "AC": "Paladin_Warforged",
+          "Str": "Barbarian_Bugbear",
+          "Dex": "Paladin_Turtle",
+          "Con": "Barbarian_Lizardfolk",
+          "Int": "Wizard_Warforged",
+          "Wis": "Druid_Dwarf",
+          "Cha": "Sorcerer_Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Druid_Goblin",
+          "AC": "Cleric_Half-Elf",
+          "Str": "Fighter_Tiefling",
+          "Dex": "Ranger_Tabaxi",
+          "Con": "Cleric_Gith",
+          "Int": "Wizard_Goblin",
+          "Wis": "Cleric_Half-Elf",
+          "Cha": "Warlock_Tiefling"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Human",
+          "AC": "Sorcerer_Halfling",
+          "Str": "Fighter_Minotaur",
+          "Dex": "Rogue_Gnome",
+          "Con": "Paladin_Dwarf",
+          "Int": "Wizard_Dwarf",
+          "Wis": "Druid_Firbolg",
+          "Cha": "Sorcerer_Yaun-Ti"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aasimar",
+          "AC": "Artificer_Aasimar",
+          "Str": "Artificer_Aasimar",
+          "Dex": "Artificer_Aasimar",
+          "Con": "Artificer_Aasimar",
+          "Int": "Artificer_Aasimar",
+          "Wis": "Artificer_Aasimar",
+          "Cha": "Artificer_Aasimar"
+        },
+        "max": {
+          "HP": "Artificer_Custom",
+          "AC": "Barbarian_Aarakocra",
+          "Str": "Barbarian_Aarakocra",
+          "Dex": "Barbarian_Aarakocra",
+          "Con": "Barbarian_Aarakocra",
+          "Int": "Barbarian_Aarakocra",
+          "Wis": "Barbarian_Aarakocra",
+          "Cha": "Barbarian_Aarakocra"
+        }
+      }
+    },
+    "2018": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Goblin",
+          "AC": "Fighter_Changeling",
+          "Str": "Paladin_Gnome",
+          "Dex": "Custom_Elf",
+          "Con": "Cleric_Loxodon",
+          "Int": "Wizard_",
+          "Wis": "Ranger_Minotaur",
+          "Cha": "Sorcerer_Half-Orc"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Turtle",
+          "AC": "Barbarian_Dwarf",
+          "Str": "Fighter_Goliath",
+          "Dex": "Paladin_Turtle",
+          "Con": "Barbarian_Dwarf",
+          "Int": "Wizard_Half-Orc",
+          "Wis": "Druid_Dwarf",
+          "Cha": "Paladin_Aasimar"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Tiefling",
+          "AC": "Fighter_Changeling",
+          "Str": "Paladin_Minotaur",
+          "Dex": "Custom_Elf",
+          "Con": "Cleric_Loxodon",
+          "Int": "Warlock_Gnome",
+          "Wis": "Warlock_Gnome",
+          "Cha": "Paladin_Minotaur"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Dragonborn",
+          "AC": "Paladin_Dwarf",
+          "Str": "Barbarian_Dragonborn",
+          "Dex": "Rogue_Human",
+          "Con": "Barbarian_Dragonborn",
+          "Int": "Wizard_Human",
+          "Wis": "Druid_Elf",
+          "Cha": "Sorcerer_Half-Elf"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Paladin_Dwarf",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Fighter_Gith",
+          "AC": "Paladin_Tiefling",
+          "Str": "Barbarian_Dwarf",
+          "Dex": "Ranger_Gnome",
+          "Con": "Fighter_Orc",
+          "Int": "Ranger_Gnome",
+          "Wis": "Druid_Gnome",
+          "Cha": "Warlock_Tiefling"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Turtle",
+          "AC": "Fighter_Human",
+          "Str": "Paladin_Turtle",
+          "Dex": "Paladin_Turtle",
+          "Con": "Fighter_Human",
+          "Int": "Wizard_Elf",
+          "Wis": "Druid_Dwarf",
+          "Cha": "Ranger_Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Wizard_Half-Elf",
+          "AC": "Cleric_Tiefling",
+          "Str": "Barbarian_Half-Orc",
+          "Dex": "Rogue_Halfling",
+          "Con": "Barbarian_Half-Orc",
+          "Int": "Wizard_Half-Elf",
+          "Wis": "Cleric_Dragonborn",
+          "Cha": "Warlock_Tiefling"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Fighter_Human",
+          "AC": "Fighter_Human",
+          "Str": "Fighter_Human",
+          "Dex": "Ranger_Human",
+          "Con": "Fighter_Human",
+          "Int": "Wizard_Human",
+          "Wis": "Ranger_Human",
+          "Cha": "Rogue_Human"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Goblin",
+          "AC": "Fighter_Minotaur",
+          "Str": "Barbarian_Half-Orc",
+          "Dex": "Ranger_Aarakocra",
+          "Con": "Barbarian_Hobgoblin",
+          "Int": "Wizard_",
+          "Wis": "Cleric_Gnome",
+          "Cha": "Rogue_Yaun-Ti"
+        }
+      }
+    },
+    "2019": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Aarakocra",
+          "AC": "Barbarian_Aarakocra",
+          "Str": "Barbarian_Aarakocra",
+          "Dex": "Barbarian_Aarakocra",
+          "Con": "Barbarian_Aarakocra",
+          "Int": "Barbarian_Aarakocra",
+          "Wis": "Barbarian_Aarakocra",
+          "Cha": "Barbarian_Aarakocra"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Druid_Half-Orc",
+          "AC": "Paladin_Warforged",
+          "Str": "Fighter_Gith",
+          "Dex": "Rogue_Kobold",
+          "Con": "Druid_Genasi",
+          "Int": "Wizard_",
+          "Wis": "Druid_Half-Orc",
+          "Cha": "Rogue_"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Warlock_Triton",
+          "AC": "Paladin_",
+          "Str": "Barbarian_Half-Elf",
+          "Dex": "Rogue_Half-Elf",
+          "Con": "Barbarian_Half-Elf",
+          "Int": "Artificer_Half-Elf",
+          "Wis": "Bard_Loxodon",
+          "Cha": "Warlock_Triton"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Dragonborn",
+          "AC": "Fighter_Dragonborn",
+          "Str": "Fighter_Bugbear",
+          "Dex": "Rogue_Halfling",
+          "Con": "Rogue_Halfling",
+          "Int": "Wizard_Elf",
+          "Wis": "Druid_Elf",
+          "Cha": "Bard_Tiefling"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Human",
+          "AC": "Fighter_Goliath",
+          "Str": "Warlock_Half-Orc",
+          "Dex": "Rogue_Genasi",
+          "Con": "Paladin_Dwarf",
+          "Int": "Wizard_Hobgoblin",
+          "Wis": "Cleric_Human",
+          "Cha": "Warlock_Genasi"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Simic hybrid",
+          "AC": "Paladin_Simic hybrid",
+          "Str": "Rogue_Elf",
+          "Dex": "Fighter_Goblin",
+          "Con": "Druid_Centaur",
+          "Int": "Sorcerer_Elf",
+          "Wis": "Druid_Centaur",
+          "Cha": "Warlock_Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Goliath",
+          "AC": "Monk_Elf",
+          "Str": "Fighter_Elf",
+          "Dex": "Rogue_Halfling",
+          "Con": "Sorcerer_Human",
+          "Int": "Wizard_Human",
+          "Wis": "Cleric_Dwarf",
+          "Cha": "Warlock_Tiefling"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Paladin_Tiefling",
+          "AC": "Paladin_Tiefling",
+          "Str": "Paladin_Dwarf",
+          "Dex": "Rogue_Gnome",
+          "Con": "Paladin_Dwarf",
+          "Int": "Wizard_Human",
+          "Wis": "Cleric_Tiefling",
+          "Cha": "Bard_Half-Elf"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Aarakocra",
+          "AC": "Barbarian_Aarakocra",
+          "Str": "Barbarian_Aarakocra",
+          "Dex": "Barbarian_Aarakocra",
+          "Con": "Barbarian_Aarakocra",
+          "Int": "Barbarian_Aarakocra",
+          "Wis": "Barbarian_Aarakocra",
+          "Cha": "Barbarian_Aarakocra"
+        }
+      }
+    },
+    "2020": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Wizard_Aasimar",
+          "AC": "Wizard_Aasimar",
+          "Str": "Wizard_Aasimar",
+          "Dex": "Wizard_Aasimar",
+          "Con": "Wizard_Aasimar",
+          "Int": "Wizard_Aasimar",
+          "Wis": "Wizard_Aasimar",
+          "Cha": "Wizard_Aasimar"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Wizard_Aasimar",
+          "AC": "Wizard_Aasimar",
+          "Str": "Wizard_Aasimar",
+          "Dex": "Wizard_Aasimar",
+          "Con": "Wizard_Aasimar",
+          "Int": "Wizard_Aasimar",
+          "Wis": "Wizard_Aasimar",
+          "Cha": "Wizard_Aasimar"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Bard_Genasi",
+          "AC": "Bard_Warforged",
+          "Str": "Bard_",
+          "Dex": "Wizard_Tabaxi",
+          "Con": "Cleric_Loxodon",
+          "Int": "Wizard_Changeling",
+          "Wis": "Cleric_Loxodon",
+          "Cha": "Warlock_Kenku"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Cleric_Dragonborn",
+          "Str": "Fighter_Half-Orc",
+          "Dex": "Rogue_Human",
+          "Con": "Barbarian_Human",
+          "Int": "Cleric_Gnome",
+          "Wis": "Cleric_Human",
+          "Cha": "Sorcerer_Tiefling"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter_Elf",
+          "Str": "Paladin_Goblin",
+          "Dex": "Fighter_Elf",
+          "Con": "Cleric_Dwarf",
+          "Int": "Wizard_Tiefling",
+          "Wis": "Sorcerer_Kenku",
+          "Cha": "Warlock_Half-Elf"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Artificer_Dragonborn",
+          "Str": "Paladin_Dragonborn",
+          "Dex": "Rogue_Gith",
+          "Con": "Wizard_Warforged",
+          "Int": "Wizard_Warforged",
+          "Wis": "Cleric_Kenku",
+          "Cha": "Sorcerer_Aasimar"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Fighter_Tiefling",
+          "Str": "Fighter_Human",
+          "Dex": "Ranger_Tabaxi",
+          "Con": "Wizard_Goblin",
+          "Int": "Wizard_Goblin",
+          "Wis": "Cleric_Dwarf",
+          "Cha": "Cleric_Dwarf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Sorcerer_Halfling",
+          "Str": "Fighter_Half-Orc",
+          "Dex": "Monk_Elf",
+          "Con": "Fighter_Minotaur",
+          "Int": "Wizard_Dwarf",
+          "Wis": "Monk_Elf",
+          "Cha": "Paladin_Aasimar"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Cleric_Half-Elf",
+          "AC": "Ranger_Warforged",
+          "Str": "Barbarian_Half-Elf",
+          "Dex": "Druid_Half-Orc",
+          "Con": "Barbarian_Half-Elf",
+          "Int": "Wizard_Genasi",
+          "Wis": "Cleric_Firbolg",
+          "Cha": "Barbarian_Changeling"
+        }
+      }
+    },
+    "2021": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Druid_Custom",
+          "AC": "Sorcerer_Kalashtar",
+          "Str": "Fighter_Leonin",
+          "Dex": "Artificer_Elf",
+          "Con": "Wizard_Yaun-Ti",
+          "Int": "Wizard_Yaun-Ti",
+          "Wis": "Wizard_Yaun-Ti",
+          "Cha": "Wizard_Yaun-Ti"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Cleric_Half-Orc",
+          "AC": "Sorcerer_Kalashtar",
+          "Str": "Fighter_Tabaxi",
+          "Dex": "Artificer_Elf",
+          "Con": "Cleric_Half-Orc",
+          "Int": "Artificer_Elf",
+          "Wis": "Cleric_Half-Orc",
+          "Cha": "Warlock_Half-Orc"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Warlock_Dwarf",
+          "AC": "Warlock_Warforged",
+          "Str": "Fighter_Goliath",
+          "Dex": "Monk_Kalashtar",
+          "Con": "Warlock_Dwarf",
+          "Int": "Wizard_Aasimar",
+          "Wis": "Druid_Turtle",
+          "Cha": "Sorcerer_Warforged"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Warlock_Yaun-Ti",
+          "AC": "Cleric_Human",
+          "Str": "Fighter_Human",
+          "Dex": "Rogue_Elf",
+          "Con": "Warlock_Yaun-Ti",
+          "Int": "Warlock_Yaun-Ti",
+          "Wis": "Warlock_Yaun-Ti",
+          "Cha": "Warlock_Yaun-Ti"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Cleric_Warforged",
+          "Str": "Barbarian_Half-Orc",
+          "Dex": "Rogue_Tabaxi",
+          "Con": "Druid_Human",
+          "Int": "Wizard_Human",
+          "Wis": "Druid_Human",
+          "Cha": "Bard_Tabaxi"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Fighter_Dwarf",
+          "AC": "Paladin_Dragonborn",
+          "Str": "Barbarian_Lizardfolk",
+          "Dex": "Wizard_Elf",
+          "Con": "Barbarian_Lizardfolk",
+          "Int": "Wizard_Elf",
+          "Wis": "Wizard_Elf",
+          "Cha": "Bard_Half-Elf"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Druid_Goblin",
+          "AC": "Fighter_Custom",
+          "Str": "Fighter_Warforged",
+          "Dex": "Ranger_Tabaxi",
+          "Con": "Wizard_Goblin",
+          "Int": "Wizard_Goblin",
+          "Wis": "Cleric_Gith",
+          "Cha": "Rogue_Half-Elf"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Barbarian_Human",
+          "AC": "Barbarian_Human",
+          "Str": "Barbarian_Human",
+          "Dex": "Rogue_Goblin",
+          "Con": "Barbarian_Human",
+          "Int": "Artificer_Dwarf",
+          "Wis": "Cleric_Human",
+          "Cha": "Bard_Tiefling"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Artificer_Custom",
+          "AC": "Artificer_Custom",
+          "Str": "Artificer_Custom",
+          "Dex": "Artificer_Custom",
+          "Con": "Artificer_Custom",
+          "Int": "Artificer_Custom",
+          "Wis": "Druid_Custom",
+          "Cha": "Warlock_Warforged"
+        }
+      }
+    },
+    "2022": {
+      "All": {
+        "min": {
+          "HP": "Artificer_Bugbear",
+          "AC": "Artificer_Bugbear",
+          "Str": "Artificer_Bugbear",
+          "Dex": "Artificer_Bugbear",
+          "Con": "Artificer_Bugbear",
+          "Int": "Artificer_Bugbear",
+          "Wis": "Artificer_Bugbear",
+          "Cha": "Artificer_Bugbear"
+        },
+        "max": {
+          "HP": "Monk_Loxodon",
+          "AC": "Artificer_",
+          "Str": "Fighter_Leonin",
+          "Dex": "Monk_Shifter",
+          "Con": "Fighter_Leonin",
+          "Int": "Wizard_Goblin",
+          "Wis": "Ranger_Satyr",
+          "Cha": "Sorcerer_Kalashtar"
+        }
+      },
+      "CA": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Fighter_Leonin",
+          "AC": "Artificer_",
+          "Str": "Fighter_Leonin",
+          "Dex": "Ranger_Halfling",
+          "Con": "Fighter_Leonin",
+          "Int": "Wizard_Tiefling",
+          "Wis": "Druid_Dragonborn",
+          "Cha": "Sorcerer_Dwarf"
+        }
+      },
+      "US": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Monk_Loxodon",
+          "AC": "Cleric_Warforged",
+          "Str": "Fighter_Bugbear",
+          "Dex": "Monk_Shifter",
+          "Con": "Cleric_Halfling",
+          "Int": "Artificer_Custom",
+          "Wis": "Cleric_Halfling",
+          "Cha": "Sorcerer_Kalashtar"
+        }
+      },
+      "BR": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Sorcerer_Dragonborn",
+          "AC": "Fighter_Dwarf",
+          "Str": "Sorcerer_Dragonborn",
+          "Dex": "Sorcerer_Dragonborn",
+          "Con": "Barbarian_Dragonborn",
+          "Int": "Rogue_Tiefling",
+          "Wis": "Rogue_Human",
+          "Cha": "Bard_Human"
+        }
+      },
+      "AU": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Fighter_Human",
+          "AC": "Paladin_Dragonborn",
+          "Str": "Barbarian_Dragonborn",
+          "Dex": "Ranger_Kobold",
+          "Con": "Fighter_Human",
+          "Int": "Wizard_Gnome",
+          "Wis": "Paladin_Aasimar",
+          "Cha": "Sorcerer_Half-Elf"
+        }
+      },
+      "GB": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Druid_Dwarf",
+          "AC": "Paladin_Warforged",
+          "Str": "Barbarian_Bugbear",
+          "Dex": "Monk_Elf",
+          "Con": "Barbarian_Bugbear",
+          "Int": "Wizard_Gnome",
+          "Wis": "Druid_Dwarf",
+          "Cha": "Rogue_Gnome"
+        }
+      },
+      "IT": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Cleric_Half-Elf",
+          "AC": "Fighter_Tiefling",
+          "Str": "Fighter_Tiefling",
+          "Dex": "Ranger_Tiefling",
+          "Con": "Paladin_Human",
+          "Int": "Artificer_Human",
+          "Wis": "Cleric_Half-Elf",
+          "Cha": "Rogue_Human"
+        }
+      },
+      "DE": {
+        "min": {
+          "HP": "Artificer_Aarakocra",
+          "AC": "Artificer_Aarakocra",
+          "Str": "Artificer_Aarakocra",
+          "Dex": "Artificer_Aarakocra",
+          "Con": "Artificer_Aarakocra",
+          "Int": "Artificer_Aarakocra",
+          "Wis": "Artificer_Aarakocra",
+          "Cha": "Artificer_Aarakocra"
+        },
+        "max": {
+          "HP": "Mean",
+          "AC": "Rogue_Dwarf",
+          "Str": "Barbarian_Halfling",
+          "Dex": "Rogue_Human",
+          "Con": "Barbarian_Halfling",
+          "Int": "Druid_Firbolg",
+          "Wis": "Druid_Firbolg",
+          "Cha": "Sorcerer_Dragonborn"
+        }
+      },
+      "Other": {
+        "min": {
+          "HP": "Artificer_Aasimar",
+          "AC": "Artificer_Aasimar",
+          "Str": "Artificer_Aasimar",
+          "Dex": "Artificer_Aasimar",
+          "Con": "Artificer_Aasimar",
+          "Int": "Paladin_Goliath",
+          "Wis": "Artificer_Aasimar",
+          "Cha": "Artificer_Aasimar"
+        },
+        "max": {
+          "HP": "Monk_Loxodon",
+          "AC": "Barbarian_",
+          "Str": "Barbarian_",
+          "Dex": "Monk_Aarakocra",
+          "Con": "Barbarian_",
+          "Int": "Artificer_Warforged",
+          "Wis": "Cleric_",
+          "Cha": "Warlock_Genasi"
+        }
+      }
+    }
+  }
+}

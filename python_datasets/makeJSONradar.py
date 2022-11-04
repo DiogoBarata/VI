@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-
+import copy
 
 CLASSES = ['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
 'Ranger','Rogue','Sorcerer','Warlock','Wizard']
@@ -161,7 +161,30 @@ def dontExit():
                         {'axis':'Cha','value':0}]
                         radar_struct = {'name':ind_key,'axes':axis}
                         new_json[aux][year][country][ind_key] = radar_struct
-
+total_min_max = {}
+copyDict = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+min_max = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+def getMinMax():  
+    for aux in new_json:
+        total_min_max[aux] = copy.deepcopy(copyDict)
+        for year in YEARS:
+            for country in COUNTRIES:
+                tmp_min = {'HP':99,'AC':99,'Str':99,'Dex':99,'Con':99,'Int':99,'Wis':99,'Cha':99}
+                tmp_max = {'HP':0,'AC':0,'Str':0,'Dex':0,'Con':0,'Int':0,'Wis':0,'Cha':0}
+                keys_min = {'HP':99,'AC':99,'Str':99,'Dex':99,'Con':99,'Int':99,'Wis':99,'Cha':99}
+                keys_max = {'HP':0,'AC':0,'Str':0,'Dex':0,'Con':0,'Int':0,'Wis':0,'Cha':0}
+                for char in new_json[aux][year][country]:
+                    for attr in new_json[aux][year][country][char]['axes']:
+                        attr_n = attr['axis']
+                        attr_v = attr['value']
+                        if tmp_min[attr_n] > attr_v:
+                            tmp_min[attr_n] = attr_v
+                            keys_min[attr_n] = char
+                        if tmp_max[attr_n] < attr_v:
+                            tmp_max[attr_n] = attr_v
+                            keys_max[attr_n] = char
+                total_min_max[aux][year][country] = {'min':keys_min,'max':keys_max}
+                            
 #----------Main------------
 with open(filename,"r",encoding="utf-8") as f:
     data = json.load(f)
@@ -189,6 +212,9 @@ with open(filename,"r",encoding="utf-8") as f:
     new_json['skills'] = skill_count
     new_json['combo'] = combo_count
     dontExit()
+    getMinMax()
 
 with open('resources/datasets/radar_data.json',"w") as f:
     json.dump(new_json,f,indent=2)
+with open('resources/datasets/radar_data_min_max.json',"w") as f:
+    json.dump(total_min_max,f,indent=2)
