@@ -19,11 +19,11 @@ var dateHisto = 'All';
 var net_relation = 'class_alignment';
 var radar_option = 'class';
 
-var class_name = 'Paladin';
-var race_name = 'Aarakocra';
+var class_name = 'Fighter';
+var race_name = 'Human';
 var skill_name = 'Arcana';
 var country_name = 'All';
-var combo_name = 'Paladin_Aarakocra';
+var combo_name = 'Fighter_Human';
 
 
 function init(){
@@ -36,6 +36,8 @@ function init(){
 	radioFilter('country_filter',options['Countries'], 'Countries:')
 	initRadioBtts()
 	// createVis3('.vis3','class_alignment',class_name)
+	createOriginal()
+	
 }
 
 function initRadioBtts(){
@@ -56,6 +58,30 @@ function initRadioBtts(){
 	disableChartRadioButton('relation','class','alignment')
 }
 
+function createOriginal(){
+	var legend = d3.select('#lgnOrgn')
+	legend
+		.text('Originality: '+class_name+'&'+race_name)
+	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json").then(function(data) {
+		minO = data[dateHisto][country_name]['Min']
+		maxO = data[dateHisto][country_name]['Max']
+		valueO = Math.round((data[dateHisto][country_name][combo_name]*100)/maxO)
+		var element = document.getElementById("orgnBar");
+		element.style.width = valueO+'%'
+		element.innerHTML = valueO +'%'
+
+	})
+}
+function updateOrign(){
+	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json").then(function(data) {
+		maxO = data[dateHisto][country_name]['Max']
+		valueO = Math.round((data[dateHisto][country_name][combo_name]*100)/maxO)
+		var element = document.getElementById("orgnBar");
+		element.style.width = valueO+'%'
+		element.innerHTML = valueO +'%'
+	})
+}
+
 function createVis1(id){
 	radar_color = "#e41a1c"
 	// set the dimensions and margins of the graph
@@ -64,7 +90,6 @@ function createVis1(id){
 	height = 400 - margin.top - margin.bottom;
 	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json").then(function(data) {
 		centreNode = getCentreNode()
-		console.log(radar_option,dateHisto,country_name,centreNode)
 		radar_selected = (data[radar_option][dateHisto][country_name][centreNode])
 		radar_mean = (data[radar_option][dateHisto][country_name]['Mean'])
 		// Remove HP because it behaves like an outlier 
@@ -667,8 +692,8 @@ function changeRadio(radio_selection){
 	radio_group_name = radio_group_name.split('_')[0]
 	radio_value = radio_selection.value
 	relation_name = net_relation.split('_')[0]
-	if (radio_group_name == 'class'){class_name = radio_value;combo_name=class_name+'_'+race_name}
-	else if(radio_group_name == 'race'){race_name = radio_value;combo_name=class_name+'_'+race_name}
+	if (radio_group_name == 'class'){updateOrign();class_name = radio_value;combo_name=class_name+'_'+race_name}
+	else if(radio_group_name == 'race'){updateOrign();race_name = radio_value;combo_name=class_name+'_'+race_name}
 	else if(radio_group_name == 'country'){country_name = getCountryCode(radio_value)}
 	else if(radio_group_name == 'skill'){skill = radio_value}
 	
@@ -707,6 +732,7 @@ function disableChartRadioButton(name,centreValue,relationValue) {
 	net_relation = centreValue+'_'+relationValue
 	updateNet()
 }
+
 function matchRadioButton(id,value){
 	radiobtn = document.getElementById(id+value);
 	radiobtn.checked = true;
