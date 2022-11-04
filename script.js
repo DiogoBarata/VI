@@ -1,5 +1,5 @@
 const options = {
-	'Classes':['Artificer','Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin',
+	'Classes':['Artificer','Barbarian','Bard','Cleric','Custom','Druid','Fighter','Monk','Paladin',
 	'Ranger','Rogue','Sorcerer','Warlock','Wizard'],
 	'Races':['Aarakocra', 'Aasimar', 'Bugbear', 'Centaur', 'Changeling', 'Custom', 
 	'Dragonborn', 'Dwarf', 'Eladrin', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 
@@ -10,34 +10,35 @@ const options = {
 	'Skills':['Arcana', 'Religion', 'Intimidation', 'History', 'Insight', 'Perception', 
 	'Persuasion', 'Athletics', 'Survival', 'Acrobatics', 'Sleight of Hand', 'Deception', 
 	'Performance', 'Stealth', 'Investigation', 'Nature', 'Animal Handling', 'Medicine'],
-	'Countries':['All','CA','US','BR','AU','GB','IT','DE','Other']
+	'Countries':['All','Canada','United States','Brazil','Australia','England','Italy','Germany','Others'],
+	'Country_Codes':['All','CA','US','BR','AU','GB','IT','DE','Other']
 }
 
 // Init global variables
 var dateHisto = 'All';
-var net_relation = 'bitch';
+var net_relation = 'class_alignment';
 var radar_option = 'class';
 
 var class_name = 'Paladin';
 var race_name = 'Aarakocra';
 var skill_name = 'Arcana';
 var country_name = 'All';
-
-var prev_class_name = '';
-var prev_race_name = '';
-var prev_skill_name = '';
-var prev_country_name = '';
+var combo_name = 'Paladin_Aarakocra';
 
 
 function init(){
 	createVis1('.vis1');
 	createVis2('.vis2');
 	//Vis3 is being created by the initiallization of the buttons
-
 	radioFilter('class_filter', options['Classes'], 'Classes:');
 	radioFilter('race_filter', options['Races'], 'Races:');
 	radioFilter('skill_filter', options['Skills'], 'Skills:');
 	radioFilter('country_filter',options['Countries'], 'Countries:')
+	initRadioBtts()
+	// createVis3('.vis3','class_alignment',class_name)
+}
+
+function initRadioBtts(){
 	radiobtn = document.getElementById("class_filter_"+class_name);
 	radiobtn.checked = true;
 	radiobtn = document.getElementById("race_filter_"+race_name);
@@ -46,6 +47,13 @@ function init(){
 	radiobtn.checked = true;
 	radiobtn = document.getElementById("country_filter_"+country_name);
 	radiobtn.checked = true;
+	radiobtn = document.getElementById("r_class");
+	radiobtn.checked = true;
+	radiobtn = document.getElementById("fc_class");
+	radiobtn.checked = true;
+	radiobtn = document.getElementById("fr_alignment");
+	radiobtn.checked = true;
+	disableChartRadioButton('relation','class','alignment')
 }
 
 function createVis1(id){
@@ -56,15 +64,17 @@ function createVis1(id){
 	height = 400 - margin.top - margin.bottom;
 	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json").then(function(data) {
 		centreNode = getCentreNode()
+		console.log(radar_option,dateHisto,country_name,centreNode)
 		radar_selected = (data[radar_option][dateHisto][country_name][centreNode])
 		radar_mean = (data[radar_option][dateHisto][country_name]['Mean'])
-
+		// Remove HP because it behaves like an outlier 
+		radar_selected['axes'].shift()
 		var radar_data = [radar_selected];
 		var radarChartOptions = {
 			w: width,
 			h: height,
 			margin: margin,
-			maxValue: 60,
+			maxValue: 20,
 			levels: 6,
 			roundStrokes: false,
 			format: '.0f'
@@ -251,9 +261,43 @@ function RadarChart(parent_selector, data, options) {
 		.text(d => d)
 		.call(wrap, cfg.wrapWidth)
 		.on("click", function (event,d) {
-			// Click on legend, d returns label
-		});
+			d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json").then(function(data) {
+				new_name = data[radar_option][dateHisto][country_name]['max'][d]
+				updates(new_name)	
+			});
+			// RADAR CLICK ME
+		})
+		.on("mouseover",function(d){d3.select(this).style("cursor","pointer")})
+		.on("mouseout",function(d){d3.select(this).style("cursor","default")});
 
+	function updates(new_name){
+		if(radar_option == 'class'){
+			class_name = new_name
+			radiobtn = document.getElementById("class_filter_"+class_name);
+			radiobtn.checked = true;
+		};
+		if(radar_option == 'race'){
+			race_name = new_name
+			radiobtn = document.getElementById("race_filter_"+race_name);
+			radiobtn.checked = true;
+		};
+		if(radar_option == 'skill'){
+			radiobtn = document.getElementById("skill_filter_"+skill_name);
+			radiobtn.checked = true;
+			skill_name = new_name
+		};
+		if(radar_option == 'combo'){
+			combo_name = new_name
+			str_split = new_name.split('_')
+			
+			radiobtn = document.getElementById("class_filter_"+str_split[0]);
+			radiobtn.checked = true;
+			radiobtn = document.getElementById("race_filter_"+str_split[1]);
+			radiobtn.checked = true;
+		};
+		updateNet()
+		updateRadar()
+	}
 	/////////////////////////////////////////////////////////
 	///////////// Draw the radar chart blobs ////////////////
 	/////////////////////////////////////////////////////////
@@ -487,20 +531,21 @@ function createVis2(id){
 					.style("top", (event.y)/2 + "px")
 			})
 			.on("click", function (event,d) {
-				// Select and deselect a bar
-				centreNode = getCentreNode()
+				// Select and deselect a bars
 				if (!d3.select(this).classed("selected")){
 					d3.select(this).classed("selected",true)
 					d3.selectAll('.allbars').style('fill', '#e41a1c');
 					d3.select(this).style("fill", "#5d0f02");
 					dateHisto = d.Year
-					updateNet(net_relation,centreNode)
+					updateNet()
+					updateRadar()
 				}else{
 					d3.select(this).classed("selected",false)
 					d3.selectAll('.allbars').style('fill', '#e41a1c');
 					d3.select(this).style("fill", "#e41a1c")
 					dateHisto = 'All'
-					updateNet(net_relation,centreNode)
+					updateNet()
+					updateRadar()
 				}
 			})
 	})
@@ -575,18 +620,23 @@ function createVis3(id,relation,centre){
     });    
 }
 
-function updateNet(relation,centre){
-	aux_relation = relation.split('_')[0]
+function updateNet(){
+	centre = getCentreNode()
+	aux_relation = net_relation.split('_')[0]
 	if(aux_relation == 'class'){centre=class_name}
 	else if(aux_relation == 'race'){centre=race_name}
 
-	if(centre=='' && !(relation == ''|| relation.startsWith('None') || relation.endsWith('None'))){
+	if(centre=='' && !(net_relation == ''|| net_relation.startsWith('None') || net_relation.endsWith('None'))){
 		d3.select("#netVis").remove();
 	}
-	if(centre!='' && !(relation == ''|| relation.startsWith('None') || relation.endsWith('None'))){
+	if(centre!='' && !(net_relation == ''|| net_relation.startsWith('None') || net_relation.endsWith('None'))){
 		d3.select("#netVis").remove();
-		createVis3(".vis3",relation,centre);
+		createVis3(".vis3",net_relation,centre);
 	}
+}
+
+function updateRadar(){
+	createVis1(".vis1");
 }
 
 function radioFilter(filterId, data, legend){
@@ -617,42 +667,63 @@ function changeRadio(radio_selection){
 	radio_group_name = radio_group_name.split('_')[0]
 	radio_value = radio_selection.value
 	relation_name = net_relation.split('_')[0]
-	
-	if (radio_group_name == 'class'){class_name = radio_value}
-	else if(radio_group_name == 'race'){race_name = radio_value}
-	else if(radio_group_name == 'country'){country_name = radio_value}
+	if (radio_group_name == 'class'){class_name = radio_value;combo_name=class_name+'_'+race_name}
+	else if(radio_group_name == 'race'){race_name = radio_value;combo_name=class_name+'_'+race_name}
+	else if(radio_group_name == 'country'){country_name = getCountryCode(radio_value)}
 	else if(radio_group_name == 'skill'){skill = radio_value}
-
-	if(radio_group_name==relation_name){
-		centreNode = getCentreNode();
-		updateNet(net_relation,centreNode)
+	
+	if(radio_group_name==relation_name || radio_group_name=='country' || ((radio_group_name=='class' || radio_group_name == 'race') && relation_name =='combo')){
+		updateNet()
+		updateRadar()
 	}
+}
+
+function getCountryCode(countryName){
+	const index = options['Countries'].indexOf(countryName)
+	return options['Country_Codes'][index]  
 }
 
 function getCentreNode(){
 	relation_name = net_relation.split('_')[0]
 	if (relation_name == 'class'){return class_name}
 	else if(relation_name == 'race'){return race_name}
+	else if(relation_name == 'combo'){return combo_name}
+	else if (relation_name == 'skill'){return skill_name}
 }
 
-var prevCentreSel = ''
-var $selects = $('select');
-$selects.on('change', function() {
-    $("option", $selects).prop("disabled", false);
-    $selects.each(function() {
-        var $select = $(this), 
-            $options = $selects.not($select).find('option'),
-            selectedText = $select.children('option:selected').text();
-        $options.each(function() {
-            if($(this).text() == selectedText) $(this).prop("disabled", true);
-        });
-    });
-	var sel = document.getElementById('select_1');
-	var sel1 = sel.options[sel.selectedIndex].value;
-	var sel = document.getElementById('select_2');
-	var sel2 = sel.options[sel.selectedIndex].value;
-	net_relation = sel1 + '_' + sel2
-	centreNode = getCentreNode()
-	updateNet(net_relation,centreNode)
+function disableChartRadioButton(name,centreValue,relationValue) {
+	if(name == 'relation'){value = centreValue}
+	if(name == 'centre'){value = relationValue}
+	// fetch all inputs of given name
+	// we need to iterate them all to enable those that might have been disabled earlier
+	$('input[name="' + name + '"]').each(function (index, radio) {
+		// disable the one of same value as the checked value
+		if (radio.value == value) {
+			radio.disabled = true;
+		} else {
+			radio.disabled = false;
+		}
+	});
+	net_relation = centreValue+'_'+relationValue
+	updateNet()
+}
+function matchRadioButton(id,value){
+	radiobtn = document.getElementById(id+value);
+	radiobtn.checked = true;
+	relationValue = document.querySelector('input[name="relation"]:checked').value
+	disableChartRadioButton('relation',value,relationValue);
+	radar_option = value
+	updateRadar()
+}
+
+//Radio Buttons Behaviour Monitor
+$('input[name="centre"]').change(function () {
+	matchRadioButton('r_',$(this).val())
 });
-$selects.eq(0).trigger('change');
+$('input[name="relation"]').change(function () {
+	centreValue = document.querySelector('input[name="centre"]:checked').value
+	disableChartRadioButton('centre', centreValue,$(this).val());
+});
+$('input[name="f_radar"]').change(function () {
+	matchRadioButton('fc_',$(this).val())
+});

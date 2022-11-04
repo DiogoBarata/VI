@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://d3js.org/d3.v7.min.js"></script>
 	<script src="script.js" defer></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body onload="init()">
@@ -23,26 +24,33 @@
       	</div>
 
     	<div class="grid_charts">
-			<div class="vis1"></div>
+			<div class="vis1">
+				<div class="vis1_filter">
+					<p>Radar Centre</p>
+					Class <input type="radio" id = 'r_class' name="f_radar" value="class"><br>
+					Race <input type="radio" id = 'r_race' name="f_radar" value="race"><br>
+					Class + Race <input type="radio" id = 'r_combo' name="f_radar" value="combo"><br>
+					Skill <input type="radio" id = 'r_skill' name="f_radar" value="skill"><br>
+				</div>
+			</div>
 			<div class="vis2"></div>
 			<div class="vis3"></div>
 			<div class="vis3_filter">
 				<div class="vis3_filter_centre">
 					<p>Center Node Type</p>
-					<select name="Centre_Node" id="select_1">
-						<option value="None"> Select Node </option>
-						<option value="class" selected='selected'> Class </option>
-						<option value="race"> Race </option>
-					</select>
+					Class <input type="radio" id = 'fc_class' name="centre" value="class"><br>
+					Race <input type="radio" id = 'fc_race' name="centre" value="race"><br>
+					Class + Race <input type="radio" id = 'fc_combo' name="centre" value="combo"><br>
+					Skill <input type="radio" id = 'fc_skill' name="centre" value="skill"><br>
 				</div>
 				<div class="vis3_filter_rel">
 					<p>Relation Node Type</p>
-					<select name="Rel_Node" id="select_2">
-						<option value="None"> Select Node </option>
-						<option value="class"> Class </option>
-						<option value="race"> Race </option>
-						<option value="alignment" selected='selected'> Alignment </option>
-					</select>
+					Class <input type="radio" id = 'fr_class' name="relation" value="class" ><br>
+					Race <input type="radio" id = 'fr_race' name="relation" value="race"><br>
+					Class + Race <input type="radio" id = 'fr_combo' name="relation" value="combo"><br>
+					Skill <input type="radio" id = 'fr_skill' name="relation" value="skill"><br>
+					Alignments <input type="radio" id = 'fr_alignment' name="relation" value="alignment"><br>
+					Feats <input type="radio" id = 'fr_feat' name="relation" value="feat"><br>
 				</div>
         	</div>   
       	</div>
