@@ -17,14 +17,16 @@ for c in CLASSES:
 ALIGNS = ['CG','CN','LG','NG','LN','LE','CE','NN','NE']
 YEARS = ['2018','2019','2020','2021','2022','All']
 COUNTRIES = ['CA','US','BR','AU','GB','IT','DE']
+SKILLS = []
 
 filename = "python_datasets/cleaned/dnd_chars_all_cleaned.json"
 
-# relations |race   |class  |align  |combo  |
-# race      |   \   |   x   |   x   |   \   |
-# class     |   x   |   \   |   x   |   \   |
-# align     |   X   |   x   |   \   |       |
-# combo     |   \   |   \   |       |   \   |
+# relations |race   |class  |align  |combo  |skill  |
+# race      |   \   |   x   |   x   |   \   |   x   |
+# class     |   x   |   \   |   x   |   \   |   x   |
+# align     |   X   |   x   |   \   |   x   |   \   |
+# combo     |   \   |   \   |   x   |   \   |   x   |
+# skill     |   x   |   x   |   x   |   x   |   \   |
 
 class_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 align_class_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
@@ -38,6 +40,16 @@ align_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT'
 combo_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 align_combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
+race_skill_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+skill_race_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+
+class_skill_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+skill_class_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+
+combo_skill_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+skill_combo_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
+
+skill_align_count = {'All':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2018':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2019':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2020':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2021':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}},'2022':{'All':{},'CA':{},'US':{},'BR':{},'AU':{},'GB':{},'IT':{},'DE':{},'Other':{}}}
 
 # Generate dicts to use for the JSON
 def attr_sctructure(centre,rel,dict_count,year,country):
@@ -54,6 +66,8 @@ def data_to_network(char,year):
     align_continue = True
     race = char['race'][0]
     country = char['location'][0]
+    skills = char['skills']
+
     if country not in COUNTRIES: country = 'Other'
     if align not in ALIGNS: align_continue = False
     for char_class in char['class']:
@@ -95,8 +109,56 @@ def data_to_network(char,year):
         attr_sctructure(race,char_class,race_class_count,'All',country)
         attr_sctructure(race,char_class,race_class_count,year,'All')
         attr_sctructure(race,char_class,race_class_count,year,country)
+        
+        #skills
+        for skill in skills:
+            if skill != 'None':
+                #class_skill
+                attr_sctructure(char_class,skill,class_skill_count,'All','All')
+                attr_sctructure(char_class,skill,class_skill_count,'All',country)
+                attr_sctructure(char_class,skill,class_skill_count,year,'All')
+                attr_sctructure(char_class,skill,class_skill_count,year,country)
+                #skill_class
+                attr_sctructure(skill,char_class,skill_class_count,'All','All')
+                attr_sctructure(skill,char_class,skill_class_count,'All',country)
+                attr_sctructure(skill,char_class,skill_class_count,year,'All')
+                attr_sctructure(skill,char_class,skill_class_count,year,country)
+                #combo_skill
+                attr_sctructure(combo_name,skill,combo_skill_count,'All','All')
+                attr_sctructure(combo_name,skill,combo_skill_count,'All',country)
+                attr_sctructure(combo_name,skill,combo_skill_count,year,'All')
+                attr_sctructure(combo_name,skill,combo_skill_count,year,country)
+                #skill_combo
+                attr_sctructure(skill,combo_name,skill_combo_count,'All','All')
+                attr_sctructure(skill,combo_name,skill_combo_count,'All',country)
+                attr_sctructure(skill,combo_name,skill_combo_count,year,'All')
+                attr_sctructure(skill,combo_name,skill_combo_count,year,country)
+        
+    #skills
+    for skill in skills:
+        if skill != 'None':
+            if skill not in SKILLS:
+                SKILLS.append(skill)
+            #skill_race
+            attr_sctructure(skill,race,skill_race_count,'All','All')
+            attr_sctructure(skill,race,skill_race_count,'All',country)
+            attr_sctructure(skill,race,skill_race_count,year,'All')
+            attr_sctructure(skill,race,skill_race_count,year,country)
+            #race_skill
+            attr_sctructure(race,skill,race_skill_count,'All','All')
+            attr_sctructure(race,skill,race_skill_count,'All',country)
+            attr_sctructure(race,skill,race_skill_count,year,'All')
+            attr_sctructure(race,skill,race_skill_count,year,country)
 
     if align_continue:
+        for skill in skills:
+            if skill != 'None':
+                #skill_align
+                attr_sctructure(skill,align,skill_align_count,'All','All')
+                attr_sctructure(skill,align,skill_align_count,'All',country)
+                attr_sctructure(skill,align,skill_align_count,year,'All')
+                attr_sctructure(skill,align,skill_align_count,year,country)
+
         #align_race
         attr_sctructure(align,race,align_race_count,'All','All')
         attr_sctructure(align,race,align_race_count,'All',country)
@@ -139,6 +201,8 @@ def getGlobalVar(text):
         return RACES
     if text == 'combo':
         return COMBOS
+    if text == 'skill':
+        return SKILLS
 
 def dontExit():
     for aux in new_json:
@@ -165,13 +229,20 @@ with open(filename,"r",encoding="utf-8") as f:
     COUNTRIES.append('Other')
     CLASSES.append('Custom')
     counts_json(new_json,class_align_count,'class_alignment')
-    counts_json(new_json,align_class_count,'alignment_class')
+    #counts_json(new_json,align_class_count,'alignment_class')
     counts_json(new_json,class_race_count,'class_race')
     counts_json(new_json,race_class_count,'race_class')
-    counts_json(new_json,align_race_count,'alignment_race')
+    #counts_json(new_json,align_race_count,'alignment_race')
     counts_json(new_json,race_align_count,'race_alignment')
-    counts_json(new_json,align_combo_count,'alignment_combo')
+    #counts_json(new_json,align_combo_count,'alignment_combo')
     counts_json(new_json,combo_align_count,'combo_alignment')
+    counts_json(new_json,skill_align_count,'skill_alignment')
+    counts_json(new_json,class_skill_count,'class_skill')
+    counts_json(new_json,skill_class_count,'skill_class')
+    counts_json(new_json,race_skill_count,'race_skill')
+    counts_json(new_json,skill_race_count,'skill_race')
+    counts_json(new_json,combo_skill_count,'combo_skill')
+    counts_json(new_json,skill_combo_count,'skill_combo')
     dontExit()
 
 
