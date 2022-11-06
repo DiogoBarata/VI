@@ -733,9 +733,10 @@ function createVis2(id) {
 }
 
 function createVis3(id, relation, centre) {
-  const margin = { top: 10, right: 30, bottom: 10, left: 30 },
-    width = 950 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+  const el = document.querySelector(".vis3");
+  const margin = { top: 10, right: 30, bottom: 10, left: 30 };
+  const width = el.clientWidth - 60;
+  const height = el.clientHeight - 20;
   // Append the svg object to the body of the page
   const svg = d3
     .select(id)
