@@ -671,7 +671,7 @@ function createVis2(id) {
     const y = d3.scaleLinear().domain([0, 4000]).range([height, 0]);
     svg.append("g").call(d3.axisLeft(y));
 
-    svg.append("text").attr("x", 85).text("Number of Players along the Years");
+    svg.append("text").attr("x", 85).text("Number of Players along the Years").style("font-weight", "bold").style("text-decoration", "underline");
 
     // Add Tooltip
     var tooltip = d3
