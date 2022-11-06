@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8" />
-	<title>VI Dungeon and Dragons</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script src="script.js" defer></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>VI Dungeon and Dragons</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="script.js" defer></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
 
-<body onload="init()">
-	<p style="font-size:35px;text-align:center;">Dungeon & Dragons</p>
-	<div class="grid-container">
-    
-      	<div class="grid_filters">
-			<div class="class_filter"></div>
-			<div class="race_filter"></div>
-			<div class="originality">
-				<legend id="lgnOrgn"></legend>
-				<div id="orgnBar"></div> 
+	<body onload="init()">
+		<h1>Dungeon & Dragons</h1>
+		<div class="grid-container">
+			<div class="grid_filters">
+				<div class="class_filter"></div>
+				<div class="race_filter"></div>
+				<div class="originality">
+					<legend id="lgnOrgn"></legend>
+					<div id="orgnBar"></div>
+				</div>
+				<div class="country_filter"></div>
+				<div class="skill_filter"></div>
 			</div>
-			<div class="country_filter"></div>
-			<div class="skill_filter"></div>
-      	</div>
 
-    	<div class="grid_charts">
-			<div class="vis1">
-				<div class="vis1_filter">
-					<p>Radar Centre</p>
-					Class <input type="radio" id = 'r_class' name="f_radar" value="class"><br>
-					Race <input type="radio" id = 'r_race' name="f_radar" value="race"><br>
-					Class + Race <input type="radio" id = 'r_combo' name="f_radar" value="combo"><br>
-					Skill <input type="radio" id = 'r_skill' name="f_radar" value="skill"><br>
+			<div class="grid_charts">
+				<div class="vis vis1">
+					<div class="vis1_filter vis_filter">
+						<legend>Radar Centre</legend>
+						<label for="">Class <input type="radio" id='r_class' name="f_radar" value="class"></label>
+						<label for="">Race <input type="radio" id='r_race' name="f_radar" value="race"></label>
+						<label for="">Class + Race <input type="radio" id='r_combo' name="f_radar" value="combo"></label>
+						<label for="">Skill <input type="radio" id='r_skill' name="f_radar" value="skill"></label>
+					</div>
 				</div>
+				<div class="vis vis2"></div>
+				<div class="vis vis3">
+					<div class="vis3_filter">
+						<div class="vis3_filter_centre">
+							<legend>Center Node Type</legend>
+							<label for="">Class <input type="radio" id='fc_class' name="centre" value="class"></label>
+							<label for="">Race <input type="radio" id='fc_race' name="centre" value="race"></label>
+							<label for="">Class + Race <input type="radio" id='fc_combo' name="centre" value="combo"></label>
+							<label for="">Skill <input type="radio" id='fc_skill' name="centre" value="skill"></label>
+						</div>
+						<div class="vis3_filter_rel">
+							<legend>Relation Node Type</legend>
+							<label for="">Class <input type="radio" id='fr_class' name="relation" value="class"></label>
+							<label for="">Race <input type="radio" id='fr_race' name="relation" value="race"></label>
+							<label for="">Class + Race <input type="radio" id='fr_combo' name="relation" value="combo"></label>
+							<label for="">Skills <input type="radio" id='fr_skill' name="relation" value="skill"></label>
+							<label for="">Alignments <input type="radio" id='fr_alignment' name="relation" value="alignment"></label>
+							<label for="">Feats <input type="radio" id='fr_feat' name="relation" value="feat"></label>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<div class="vis2"></div>
-			<div class="vis3"></div>
-			<div class="vis3_filter">
-				<div class="vis3_filter_centre">
-					<p>Center Node Type</p>
-					Class <input type="radio" id = 'fc_class' name="centre" value="class"><br>
-					Race <input type="radio" id = 'fc_race' name="centre" value="race"><br>
-					Class + Race <input type="radio" id = 'fc_combo' name="centre" value="combo"><br>
-					Skill <input type="radio" id = 'fc_skill' name="centre" value="skill"><br>
-				</div>
-				<div class="vis3_filter_rel">
-					<p>Relation Node Type</p>
-					Class <input type="radio" id = 'fr_class' name="relation" value="class" ><br>
-					Race <input type="radio" id = 'fr_race' name="relation" value="race"><br>
-					Class + Race <input type="radio" id = 'fr_combo' name="relation" value="combo"><br>
-					Skills <input type="radio" id = 'fr_skill' name="relation" value="skill"><br>
-					Alignments <input type="radio" id = 'fr_alignment' name="relation" value="alignment"><br>
-					Feats <input type="radio" id = 'fr_feat' name="relation" value="feat"><br>
-				</div>
-        	</div>   
-      	</div>
 
-    </div>
-</body>
+		</div>
+	</body>
+
 </html>
