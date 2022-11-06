@@ -110,7 +110,6 @@ function init() {
   radioFilter("skill_filter", options["Skills"], "Skills:");
   radioFilter("country_filter", options["Countries"], "Countries:");
   initRadioBtts();
-  // createVis3('.vis3','class_alignment',class_name)
   createOriginal();
 }
 
@@ -134,21 +133,7 @@ function initRadioBtts() {
 
 function createOriginal() {
   var legend = d3.select("#lgnOrgn");
-  legend.text(class_name + "&" + race_name + " Originality");
-  d3.json(
-    "https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json"
-  ).then(function (data) {
-    minO = data[dateHisto][country_name]["Min"];
-    maxO = data[dateHisto][country_name]["Max"];
-    valueO = Math.round(
-      (data[dateHisto][country_name][combo_name] * 100) / maxO
-    );
-    var element = document.getElementById("orgnBar");
-    element.style.width = valueO + "%";
-    element.innerHTML = valueO + "%";
-  });
-}
-function updateOrign() {
+  legend.text(race_name + " " + class_name + " Originality");
   d3.json(
     "https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json"
   ).then(function (data) {
@@ -156,7 +141,6 @@ function updateOrign() {
     valueO = Math.round(
       (data[dateHisto][country_name][combo_name] * 100) / maxO
     );
-	console.log(data[dateHisto][country_name][combo_name],maxO)
     var element = document.getElementById("orgnBar");
     element.style.width = valueO + "%";
     element.innerHTML = valueO + "%";
@@ -170,8 +154,6 @@ function createVis1(id) {
   const margin = { top: 60, right: 30, bottom: 45, left: 30 };
   const width = el.clientWidth - 60;
   const height = el.clientHeight - 105;
-  // width = 460 - margin.left - margin.right,
-  // height = 400 - margin.top - margin.bottom;
   d3.json(
     "https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json"
   ).then(function (data) {
@@ -200,6 +182,17 @@ function RadarChart(parent_selector, data, options) {
   const sin = Math.sin;
   const cos = Math.cos;
   const HALF_PI = Math.PI / 2;
+
+  	// Add Tooltip
+	var tooltipRadar = d3
+	.select(parent_selector)
+	.append("div")
+	.style("opacity", 0)
+	.attr("class", "tooltipRadar")
+	.style("background-color", "black")
+	.style("color", "white")
+	.style("border-radius", "5px")
+	.style("padding", "10px");
 
   //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
   const wrap = (text, width) => {
@@ -306,14 +299,7 @@ function RadarChart(parent_selector, data, options) {
   //Append a g element
   let g = svg
     .append("g")
-    .attr(
-      "transform",
-      "translate(" +
-        (cfg.w / 2 + cfg.margin.left) +
-        "," +
-        (cfg.h / 2 + cfg.margin.top) +
-        ")"
-    );
+    .attr("transform","translate("+(cfg.w / 2 + cfg.margin.left)+","+(cfg.h / 2 + cfg.margin.top)+")");
 
   /////////////////////////////////////////////////////////
   ////////// Glow filter for some extra ///////////////////
@@ -379,44 +365,24 @@ function RadarChart(parent_selector, data, options) {
     .append("line")
     .attr("x1", 0)
     .attr("y1", 0)
-    .attr(
-      "x2",
-      (d, i) => rScale(maxValue * 1.1) * cos(angleSlice * i - HALF_PI)
-    )
-    .attr(
-      "y2",
-      (d, i) => rScale(maxValue * 1.1) * sin(angleSlice * i - HALF_PI)
-    )
+    .attr("x2",(d, i) => rScale(maxValue * 1.1) * cos(angleSlice * i - HALF_PI))
+    .attr("y2",(d, i) => rScale(maxValue * 1.1) * sin(angleSlice * i - HALF_PI))
     .attr("class", "line")
     .style("stroke", "#5d0f02")
     .style("stroke-width", "2px");
 
-  //Append the labels at each axis
-  // axis.append('button')
-  // .style('background','none')
-  // .style('border', 'none')
   axis
     .append("text")
     .attr("class", "legend")
     .style("font-size", "16px")
     .attr("text-anchor", "middle")
     .attr("dy", "0.35em")
-    .attr(
-      "x",
-      (d, i) =>
-        rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI)
-    )
-    .attr(
-      "y",
-      (d, i) =>
-        rScale(maxValue * cfg.labelFactor) * sin(angleSlice * i - HALF_PI)
-    )
+    .attr("x",(d, i) => rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI))
+    .attr("y",(d, i) => rScale(maxValue * cfg.labelFactor) * sin(angleSlice * i - HALF_PI))
     .text((d) => d)
     .call(wrap, cfg.wrapWidth)
     .on("click", function (event, d) {
-      d3.json(
-        "https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json"
-      ).then(function (data) {
+      d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json").then(function (data) {
         new_name = data[radar_option][dateHisto][country_name]["max"][d];
         aux = d3.selectAll(".axis");
         updates(new_name);
@@ -447,11 +413,8 @@ function RadarChart(parent_selector, data, options) {
       skill_name = new_name;
     }
     if (radar_option == "combo") {
-      console.log(combo_name);
       combo_name = new_name;
       str_split = new_name.split("_");
-
-      console.log(combo_name);
       radiobtn = document.getElementById("class_filter_" + str_split[0]);
       radiobtn.checked = true;
       radiobtn = document.getElementById("race_filter_" + str_split[1]);
@@ -460,6 +423,7 @@ function RadarChart(parent_selector, data, options) {
     updateNet();
     updateRadar();
   }
+
   /////////////////////////////////////////////////////////
   ///////////// Draw the radar chart blobs ////////////////
   /////////////////////////////////////////////////////////
@@ -483,6 +447,7 @@ function RadarChart(parent_selector, data, options) {
     .append("g")
     .attr("class", "radarWrapper");
 
+
   //Append the backgrounds
   blobWrapper
     .append("path")
@@ -490,23 +455,36 @@ function RadarChart(parent_selector, data, options) {
     .attr("d", (d) => radarLine(d.axes))
     .style("fill", i.color)
     .style("fill-opacity", cfg.opacityArea)
-    .on("mouseover", function (d, i) {
-      //Dim all blobs
-      parent
-        .selectAll(".radarArea")
-        .transition()
-        .duration(200)
-        .style("fill-opacity", 0.1);
-      //Bring back the hovered over blob
-      d3.select(this).transition().duration(200).style("fill-opacity", 0.7);
+    .on("mouseover", function (event, d) {
+		//Dim all blobs
+		parent
+			.selectAll(".radarArea")
+			.transition()
+			.duration(200)
+			.style("fill-opacity", 0.1);
+		//Bring back the hovered over blob
+		d3.select(this).transition().duration(200).style("fill-opacity", 0.7);
+		tooltipRadar.transition().duration(100).style("opacity", 1);
+        tooltipRadar
+          .html(d.name)
+          .style("left", event.offsetX / 2 + "px")
+          .style("top", event.offsetY / 2 + "px");
+	  //TODO 
     })
     .on("mouseout", () => {
-      //Bring back all blobs
-      parent
-        .selectAll(".radarArea")
-        .transition()
-        .duration(200)
-        .style("fill-opacity", cfg.opacityArea);
+		//Bring back all blobs
+		parent
+			.selectAll(".radarArea")
+			.transition()
+			.duration(200)
+			.style("fill-opacity", cfg.opacityArea);
+        tooltipRadar.transition().duration(100).style("opacity", 0);
+      
+    })
+	.on("mousemove", function (event, d) {
+        tooltipRadar
+          .style("left", event.offsetX / 2 + "px")
+          .style("top", event.offsetY / 2 + "px");
     });
 
   //Create the outlines
@@ -638,8 +616,6 @@ function createVis2(id) {
   const width = el.clientWidth - 80;
   const height = el.clientHeight - 105;
 
-  console.log(margin, width, height);
-
   // append the svg object to the body of the page
   const svg = d3
     .select(id)
@@ -696,7 +672,6 @@ function createVis2(id) {
       .attr("height", (d) => height - y(d.Players))
       .attr("fill", "#e41a1c")
       .on("mouseover", function (event, d) {
-        console.log(event);
         tooltip.transition().duration(100).style("opacity", 1);
         tooltip
           .html("IRL event: " + d.IRL)
@@ -704,7 +679,6 @@ function createVis2(id) {
           .style("top", event.offsetY / 2 + "px");
       })
       .on("mouseleave", function (event, d) {
-        d3.selectAll(".myRect").style("opacity", 1);
         tooltip.transition().duration(100).style("opacity", 0);
       })
       .on("mousemove", function (event, d) {
@@ -815,10 +789,7 @@ function createVis3(id, relation, centre) {
     // Initialize the network
     const simulation = d3
       .forceSimulation(nodeObject) // Force algorithm is applied to nodes
-      .force(
-        "link",
-        d3
-          .forceLink() // This force provides links between nodes
+      .force("link",d3.forceLink() // This force provides links between nodes
           .id(function (d) {
             return d.id;
           }) // This provide  the id of a node
@@ -937,17 +908,17 @@ function changeRadio(radio_selection) {
   radio_value = radio_selection.value;
   relation_name = net_relation.split("_")[0];
   if (radio_group_name == "class") {
-    updateOrign();
     class_name = radio_value;
     combo_name = class_name + "_" + race_name;
+    createOriginal();
   } else if (radio_group_name == "race") {
-    updateOrign();
     race_name = radio_value;
     combo_name = class_name + "_" + race_name;
+    createOriginal();
   } else if (radio_group_name == "country") {
     country_name = getCountryCode(radio_value);
   } else if (radio_group_name == "skill") {
-    skill = radio_value;
+    skill_name = radio_value;
   }
 
   if (

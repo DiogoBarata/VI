@@ -78,7 +78,7 @@ h1 {
 #orgnBar {
     width: 2%;
     height: 20px;
-    background-color: #4caf50;
+    background-color: #e41a1c;
     text-align: center;
     vertical-align: middle;
 }
@@ -135,10 +135,32 @@ legend {
 
 label {
   display: block;
-  font-size: 12px;
+  font-size: 16px;
 }
 
-.tooltip {
+.tooltip,
+.tooltipRadar {
   position: absolute !important;
   z-index: 100;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e41a1c; 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #5d0f02; 
 }
