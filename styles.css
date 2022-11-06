@@ -31,6 +31,28 @@ h1 {
   height: calc(100vh - 10vh);
 }
 
+.grid_charts,
+.grid_filters {
+  max-width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid_charts {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.class_filter,
+.race_filter,
+.country_filter,
+.skill_filter {
+  max-width: 100%;
+  overflow: hidden;
+  height: 100%;
+  width: auto;
+}
+
 .class_filter > div,
 .race_filter > div,
 .skill_filter > div,
@@ -53,26 +75,15 @@ h1 {
   flex-direction: column;
 }
 
-.class_filter,
-.race_filter,
-.country_filter,
-.skill_filter {
-  max-width: 100%;
-  overflow: hidden;
-  height: 100%;
-  width: auto;
+#orgnBar {
+    width: 2%;
+    height: 20px;
+    background-color: #4caf50;
+    text-align: center;
+    vertical-align: middle;
 }
-
-.grid_charts,
-.grid_filters {
-  max-width: 100%;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.grid_charts {
-  border: 1px solid rgb(0, 0, 0);
+.orgnBarBg {
+    background-color: grey;
 }
 
 .vis {
@@ -90,12 +101,6 @@ h1 {
 .vis2 {
   border-bottom: 1px solid rgb(0, 0, 0);
   height: 45vh;
-}
-
-.vis_filter {
-  position: absolute;
-  top: 6px;
-  left: 6px;
 }
 
 .vis3 {
@@ -116,10 +121,10 @@ h1 {
   bottom: 6px;
 }
 
-#orgnBar {
-  width: 2%;
-  height: 20px;
-  background-color: #4caf50;
+.vis_filter {
+    position: absolute;
+    top: 6px;
+    left: 6px;
 }
 
 legend {
@@ -136,8 +141,4 @@ label {
 .tooltip {
   position: absolute !important;
   z-index: 100;
-}
-
-.orgnBarBg {
-  background-color: grey;
 }

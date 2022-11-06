@@ -156,6 +156,7 @@ function updateOrign() {
     valueO = Math.round(
       (data[dateHisto][country_name][combo_name] * 100) / maxO
     );
+	console.log(data[dateHisto][country_name][combo_name],maxO)
     var element = document.getElementById("orgnBar");
     element.style.width = valueO + "%";
     element.innerHTML = valueO + "%";
@@ -1015,7 +1016,7 @@ function matchRadioButton(id, value) {
   updateRadar();
 }
 
-//Radio Buttons Behaviour Monitor
+//Radio Buttons Filtering Behaviour Monitor
 $('input[name="centre"]').change(function () {
   matchRadioButton("r_", $(this).val());
 });
