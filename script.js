@@ -61,7 +61,7 @@ function initRadioBtts(){
 function createOriginal(){
 	var legend = d3.select('#lgnOrgn')
 	legend
-		.text('Originality: '+class_name+'&'+race_name)
+		.text(class_name+'&'+race_name+' Originality')
 	d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json").then(function(data) {
 		minO = data[dateHisto][country_name]['Min']
 		maxO = data[dateHisto][country_name]['Max']
@@ -312,9 +312,11 @@ function RadarChart(parent_selector, data, options) {
 			skill_name = new_name
 		};
 		if(radar_option == 'combo'){
+			console.log(combo_name)
 			combo_name = new_name
 			str_split = new_name.split('_')
 			
+			console.log(combo_name)
 			radiobtn = document.getElementById("class_filter_"+str_split[0]);
 			radiobtn.checked = true;
 			radiobtn = document.getElementById("race_filter_"+str_split[1]);
@@ -606,26 +608,38 @@ function createVis3(id,relation,centre){
             .data(nodeObject)
             .enter().append("g")
             .attr("class","node")
-		node.append("circle")
-            .attr("r",15)
-            .attr("stroke", "grey")
-            .style("fill", "grey")
-        node.append("text")
-            .text(function(d){ return d.name;})
-
+			.on("click", function (event,d) {
+				updates(d.name)
+			})
+			.on("mouseover",function(d){d3.select(this).style("cursor","pointer")})
+			.on("mouseout",function(d){d3.select(this).style("cursor","default")});
+		// TODO position the text inside the box
+		img_width = 80
+		img_height = 50
+		node.append('svg:image')
+			.attr("width",img_width+'px')
+			.attr("height",img_height+'px')
+            .attr("xlink:href","resources/imgs/dice.png")
+		node.append("text")
+            .text(function(d){return d.name;})
+			.style("font-family","Copperplate, Papyrus, fantasy")
+			.style("font-size","16px")
+			.style("font-weight", "bold")
+			.attr("y",28)
+			.attr("x",30)
 		
 		function linkDistance(d) {
-			calcDist = 100*(1/d.distance) + 1
+			calcDist = 15*(1/d.distance) + 1
 			return calcDist;
 		}
 		// This function is run at each iteration of the force algorithm
 		// Updating the nodes position.
 		function ticked() {
 			link
-				.attr("x1", d => d.source.x)
-				.attr("y1", d => d.source.y)
-				.attr("x2", d => d.target.x)
-				.attr("y2", d => d.target.y);
+				.attr("x1", d => d.source.x+img_width/2)
+				.attr("y1", d => d.source.y+img_height/2)
+				.attr("x2", d => d.target.x+img_width/2)
+				.attr("y2", d => d.target.y+img_height/2);
 			node
 				.attr("transform", d => `translate(${d.x},${d.y})`);
 			
@@ -636,13 +650,46 @@ function createVis3(id,relation,centre){
                 .id(function(d) { return d.id; })                   // This provide  the id of a node
                 .links(linkObject)                                  // and this the list of links
 				.distance(linkDistance)
-				.strength(0.01)
+				.strength(0.005)
             )
             .force("charge", d3.forceManyBody())    // This adds repulsion between nodes
             .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
             .on("end", ticked);
         
-    });    
+    });
+	
+	function updates(new_name){
+		rel_node = net_relation.split('_')[1]
+		// Change rel and centre?
+		// if(rel_node == 'class'){
+		// 	class_name = new_name
+		// 	radiobtn = document.getElementById("class_filter_"+class_name);
+		// 	radiobtn.checked = true;
+		// };
+		// if(rel_node == 'race'){
+		// 	race_name = new_name
+		// 	radiobtn = document.getElementById("race_filter_"+race_name);
+		// 	radiobtn.checked = true;
+		// };
+		// if(rel_node == 'skill'){
+		// 	radiobtn = document.getElementById("skill_filter_"+skill_name);
+		// 	radiobtn.checked = true;
+		// 	skill_name = new_name
+		// };
+		// if(rel_node == 'combo'){
+		// 	console.log(combo_name)
+		// 	combo_name = new_name
+		// 	str_split = new_name.split('_')
+			
+		// 	console.log(combo_name)
+		// 	radiobtn = document.getElementById("class_filter_"+str_split[0]);
+		// 	radiobtn.checked = true;
+		// 	radiobtn = document.getElementById("race_filter_"+str_split[1]);
+		// 	radiobtn.checked = true;
+		// };
+		// updateNet()
+		// updateRadar()
+	}  
 }
 
 function updateNet(){
@@ -723,7 +770,10 @@ function disableChartRadioButton(name,centreValue,relationValue) {
 	// we need to iterate them all to enable those that might have been disabled earlier
 	$('input[name="' + name + '"]').each(function (index, radio) {
 		// disable the one of same value as the checked value
-		if (radio.value == value) {
+		if (radio.value == value || 
+			(value == 'combo' && (radio.value == 'class' || radio.value == 'race')) ||
+			(value == 'class' && radio.value == 'combo') ||
+			(value == 'race' && radio.value == 'combo')) {
 			radio.disabled = true;
 		} else {
 			radio.disabled = false;
