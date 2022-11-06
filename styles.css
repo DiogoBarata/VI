@@ -27,10 +27,15 @@ body{
     border: 1px solid rgb(0, 0, 0);
 }
 
+.originality{
+    grid-column: 1/-1;
+}
+
 .class_filter,
 .race_filter,
 .country_filter,
 .skill_filter{
+    padding: 12px;
     height: 300px;
     width: auto;
 }
@@ -52,8 +57,6 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     border: 1px solid rgb(0, 0, 0);
-    width: 950px;
-    height: 400px;
 }
 
 .vis3_filter_rel,
@@ -61,10 +64,6 @@ body{
     display: block;
     margin-bottom: 70px;
     border: 1px solid rgb(0, 0, 0);
-}
-
-.country_filter {
-    grid-column: 1/-1;
 }
 
 .vis1{

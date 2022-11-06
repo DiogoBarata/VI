@@ -288,6 +288,7 @@ function RadarChart(parent_selector, data, options) {
 		.on("click", function (event,d) {
 			d3.json("https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json").then(function(data) {
 				new_name = data[radar_option][dateHisto][country_name]['max'][d]
+				aux = d3.selectAll('.axis')
 				updates(new_name)	
 			});
 			// RADAR CLICK ME
