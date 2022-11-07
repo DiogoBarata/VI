@@ -376,7 +376,6 @@ function RadarChart(parent_selector, data, options) {
 			d3.json(
 				"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json"
 			).then(function (data) {
-				console.log(data,radar_option,dateHisto,country_name,d)
 				new_name = data[radar_option][dateHisto][country_name]["max"][d];
 				updates(new_name);
 			});// RADAR CLICK ME
@@ -858,7 +857,8 @@ function getCentreNode() {
 	}
 }
 
-function disableChartRadioButton(name, centreValue, relationValue) {
+function disableChartRadioButton(name, centreValue,relationValue) {
+	centreValue = document.querySelector('input[name="centre"]:checked').value;
 	if (name == "relation") {
 		value = centreValue;
 	}
@@ -867,18 +867,20 @@ function disableChartRadioButton(name, centreValue, relationValue) {
 	}
 	// Fetch all inputs of given name
 	// and iterate them to enable those that have been disabled earlier
-	$('input[name="' + name + '"]').each(function (index, radio) {
+	var tmp = document.querySelectorAll('input[name="' + name + '"]')//.each(function (index, radio) {
+	for(var i = 0; i < tmp.length; i++){
+		radio_value = tmp[i].value
 		// disable the one of same value as the checked value
-		if (radio.value == value || 
-			(value == "combo" && (radio.value == "class" || radio.value == "race")) ||
-			(value == "class" && radio.value == "combo") ||
-			(value == "race" && radio.value == "combo")
+		if (radio_value == value || 
+			(value == "combo" && (radio_value == "class" || radio_value == "race")) ||
+			(value == "class" && radio_value == "combo") ||
+			(value == "race" && radio_value == "combo")
 		) {
-			radio.disabled = true;
+			tmp[i].disabled = true;
 		} else {
-			radio.disabled = false;
+			tmp[i].disabled = false;
 		}
-	});
+	};
 	net_relation = centreValue + "_" + relationValue;
 	updateNet();
 }
@@ -891,15 +893,3 @@ function matchRadioButton(id, value) {
 	radar_option = value;
 	updateRadar();
 }
-
-//Radio Buttons Filtering Behaviour Monitor
-$('input[name="centre"]').change(function () {
-  matchRadioButton("r_", $(this).val());
-});
-$('input[name="relation"]').change(function () {
-  centreValue = document.querySelector('input[name="centre"]:checked').value;
-  disableChartRadioButton("centre", centreValue, $(this).val());
-});
-$('input[name="f_radar"]').change(function () {
-  matchRadioButton("fc_", $(this).val());
-});
