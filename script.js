@@ -705,9 +705,6 @@ function createVis3(id, relation, centre) {
 			.data(linkObject)
 			.join("line")
 			.style("stroke", "#aaa");
-		link
-			.append("text")
-			.text(function (d) {return d.distance;});
 		
 		// Initialize the nodes
 		var node = svg
@@ -723,7 +720,8 @@ function createVis3(id, relation, centre) {
 			.append("svg:image")
 			.attr("width", img_width + "px")
 			.attr("height", img_height + "px")
-			.attr("xlink:href", "resources/imgs/dice.png");
+			.attr("xlink:href", "resources/imgs/dice.png")
+			.attr("opacity","0.75");
 		node
 			.append("text")
 			.text(function (d) {return d.name;})
@@ -750,7 +748,7 @@ function createVis3(id, relation, centre) {
 			.force("link",d3.forceLink() 						// This force provides links between nodes
 			.id(function (d) {return d.id;}) 					// This provide  the id of a node
 			.links(linkObject) 									// this the list of links
-			.distance(function(d) {return d.distance})								// and this the distance between each node
+			.distance(function(d) {return d.distance})			// and this the distance between each node
 			.strength(0.005)
 		)
 		.force("charge", d3.forceManyBody()) 					// This adds repulsion between nodes
@@ -824,6 +822,7 @@ function changeRadio(radio_selection) {
 		country_name = getCountryCode(radio_value);
 	} else if (radio_group_name == "skill") {
 		skill_name = radio_value;
+		updateOrign();
 	}
 	
 	if (radio_group_name == relation_name || 
