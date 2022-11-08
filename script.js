@@ -135,7 +135,8 @@ function updateOrign() {
 	var legend = d3.select("#lgnOrgn");
 	legend.text(race_name + " " + class_name + " Originality");
 	d3.json(
-		"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/originality_data.json"
+		"resources/datasets/originality_data.json"
+		
 	).then(function (data) {
 		minO = data[dateHisto][country_name]["Min"];
 		maxO = data[dateHisto][country_name]["Max"];
@@ -154,7 +155,7 @@ function createVis1(id) {
 	const width = el.clientWidth - 60;
 	const height = el.clientHeight - 105;
 	d3.json(
-		"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data.json"
+		"resources/datasets/radar_data.json"
 	).then(function (data) {
 			centreNode = getCentreNode();
 			radar_selected = data[radar_option][dateHisto][country_name][centreNode];
@@ -374,7 +375,7 @@ function RadarChart(parent_selector, data, options) {
 		.call(wrap, cfg.wrapWidth)
 		.on("click", function (event, d) {
 			d3.json(
-				"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/radar_data_min_max.json"
+				"resources/datasets/radar_data_min_max.json"
 			).then(function (data) {
 				new_name = data[radar_option][dateHisto][country_name]["max"][d];
 				updates(new_name);
@@ -583,7 +584,7 @@ function createVis2(id) {
 
 	// Parse the Data
 	d3.csv(
-		"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/years.csv"
+		"resources/datasets/years.csv"
 	).then(function (data) {
 		// X axis
 		const x = d3
@@ -693,7 +694,7 @@ function createVis3(id, relation, centre) {
 		.attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 	d3.json(
-		"https://raw.githubusercontent.com/DiogoBarata/VI/main/resources/datasets/network_data.json"
+		"resources/datasets/network_data.json"
 	).then(function (data) {
 		const linkObject = data[relation][dateHisto][country_name][centre].links;
 		const nodeObject = data[relation][dateHisto][country_name][centre].nodes;
@@ -732,11 +733,6 @@ function createVis3(id, relation, centre) {
 			.attr("y", 28)
 			.attr("x", 30);
 
-		function linkDistance(d) {
-			calcDist = 15 * (1 / d.distance) + 1;
-			return calcDist;
-		}
-
 		// This function is run at each iteration of the force algorithm
 		// Updating the nodes position.
 		function ticked() {
@@ -754,7 +750,7 @@ function createVis3(id, relation, centre) {
 			.force("link",d3.forceLink() 						// This force provides links between nodes
 			.id(function (d) {return d.id;}) 					// This provide  the id of a node
 			.links(linkObject) 									// this the list of links
-			.distance(linkDistance)								// and this the distance between each node
+			.distance(function(d) {return d.distance})								// and this the distance between each node
 			.strength(0.005)
 		)
 		.force("charge", d3.forceManyBody()) 					// This adds repulsion between nodes
@@ -827,7 +823,7 @@ function changeRadio(radio_selection) {
 	} else if (radio_group_name == "country") {
 		country_name = getCountryCode(radio_value);
 	} else if (radio_group_name == "skill") {
-		skill = radio_value;
+		skill_name = radio_value;
 	}
 	
 	if (radio_group_name == relation_name || 
@@ -867,7 +863,7 @@ function disableChartRadioButton(name, centreValue,relationValue) {
 	}
 	// Fetch all inputs of given name
 	// and iterate them to enable those that have been disabled earlier
-	var tmp = document.querySelectorAll('input[name="' + name + '"]')//.each(function (index, radio) {
+	var tmp = document.querySelectorAll('input[name="' + name + '"]');
 	for(var i = 0; i < tmp.length; i++){
 		radio_value = tmp[i].value
 		// disable the one of same value as the checked value
